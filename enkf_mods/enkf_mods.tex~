@@ -1,0 +1,113 @@
+% Analysis of Perfect Model Experiments with ERP Assimilation
+\documentclass[11pt]{report}
+\usepackage[a4paper,margin=0.4in]{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{epstopdf}
+\usepackage{natbib}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\usepackage{pdflscape}
+
+\title{Testing Ways of Dealing with Filter Divergence in ERP Assimilation}
+\date{\today}      
+%% ------------------------------------------------------------------------ %%
+%
+%  MATH ABBREVIATSIONS
+%
+%% ------------------------------------------------------------------------ %%
+\newcommand{\dlod}{{\Delta \text{LOD}}}
+\newcommand{\peq}{{p}_{\text{eq}}}
+\newcommand{\chieq}{{\chi}_{\text{eq}}}
+\newcommand{\xm}{\chi^{\text{M}}}
+\newcommand{\xw}{\chi^{\text{W}}}
+\newcommand{\degN}{^{o}\text{N}}
+\newcommand{\degS}{^{o}\text{S}}
+\newcommand{\kgmsq}{\text{kgm}^{2}}
+\newcommand{\dlodw}{\Delta \text{LOD}^{\text{W}}}
+\newcommand{\dlodm}{\Delta \text{LOD}^{\text{M}}}
+
+\begin{document}
+
+%-----subseasonal variations------------------------------------
+\bibliographystyle{plainnat}
+
+\maketitle
+
+DART is based on the Ensemble square-root filter (EnSRF), a variant of the standard Ensemble Kalman Filter (EnKF) that is more amenable to parallel computation.  
+DART also allows for several modifications to the standard EnSRF algorithm.  
+In this note, we test whether these modifications improve or worsen the assimilation of Earth Rotation observations.
+This is done by running a set of perfect-model experiments, where synthetic observations are generated using CAM, which is also used in the assimilation.
+Each assimilation run is then evaluated by comparing the absolute value of the difference between the analysis state and the truth.
+
+The four algorithm modifications considered here are:
+
+\begin{description}
+%
+\item [Spread Restoration] is based on the principle that ensemble sampling error generates spurious correlations in the covariance matrix, following the insertion of an observation, which reduces the spread of the ensemble more than it should.  Spread Restoration examines the magnitude assimilation increments (i.e. the ''step'' from the prior to posterior estimate) and retrieves an estimate of the concomitant loss of ensemble spread using offline tables, and then adds that spread back to the individual ensemble members.
+%
+\item [Sorting Increments]  is aimed at minimizing the effects of linearizing a nonlinear observation operator.  Normally, the assimilation step adjusts all ensemble members based on each members distance from the truth.  Sorting increments results in the same final ensemble, but applies the increments such that each member has the smallest possible adjustment.
+%
+\item [Adaptive inflation in state-space] compares the difference between the prior estimate (i.e. the ensemble mean) and the observation, to the expected distance,which is $\sqrt{\sigma_b^2 + \sigma_{obs}^2}$).  If this actual distance exceeds what is expected, the ensemble is inflated by multiplying variables with a factor $\lambda$.  $\lambda$ is initialized with a value of one and then adjusted using a Bayesian comparison to the incoming observations and an estimate of the standard deviation of this factor, $\sigma_{\lambda}$.  In the experiments shown here, we have set $\sigma_{\lambda} = 0.1$, but other factors should probably be tested.
+%
+\item [Adaptive inflation in observation-space] works the same was as state-space adaptive inflation, except that the multiplicative factor is applied to the observations implied by each ensemble member. \textcolor{red}{[...Is this correct?  Not sure.]}
+%
+\end{description}
+
+
+
+\begin{figure}
+  \noindent
+  \includegraphics[width=\textwidth]{../../Plots/ERP_DA/compare_filter_mods_U300.png} \\
+  \includegraphics[width=\textwidth]{../../Plots/ERP_DA/compare_filter_mods_V300.png} \\
+  \includegraphics[width=\textwidth]{../../Plots/ERP_DA/compare_filter_mods_PS0.png} 
+   \caption{Globally-averaged distance between the posterior analysis and the true state, as a function of time.  Each panel compares the 64-member control run with four modified runs: spread restoration, sorting increments, adaptive state-space inflation, and adaptive observation-space inflation.}
+   \label{fig:comp_mods_U300}
+ \end{figure}
+
+
+\begin{figure}
+  \noindent
+  \includegraphics[width=0.6\textwidth]{../../Plots/ERP_DA/ERPALL_2001_N64_U300_none_ABSPo-Tr_mean_lat_time_y2001.png} \\
+  \includegraphics[width=0.6\textwidth]{../../Plots/ERP_DA/ERPALL_2001_N64_SR_U300_none_ABSPo-Tr_mean_lat_time_y2001.png} \\
+  \includegraphics[width=0.6\textwidth]{../../Plots/ERP_DA/ERPALL_2001_N64_sortinc_U300_none_ABSPo-Tr_mean_lat_time_y2001.png} \\
+  \includegraphics[width=0.6\textwidth]{../../Plots/ERP_DA/ERPALL_2001_N64_obsinfl_adap_sd0p1_U300_none_ABSPo-Tr_mean_lat_time_y2001.png} \\
+  \includegraphics[width=0.6\textwidth]{../../Plots/ERP_DA/ERPALL_2001_N64_stinfl_adap_sd0p1_U300_none_ABSPo-Tr_mean_lat_time_y2001.png} \\
+   \caption{Comparison of the absolute distance between the posterior analysis and the truth, for zonal-mean zonal wind at 300 hPa.  Panels show: (a) the N96 experiment, (b) adding Sampling Error Reduction, (c) sorting increments,}
+   \label{fig:U300}
+ \end{figure}
+
+
+\newpage
+
+
+\begin{figure}
+  \noindent
+  \includegraphics[width=0.6\textwidth]{../../Plots/ERP_DA/ERPALL_2001_N64_V300_none_ABSPo-Tr_mean_lat_time_y2001.png} \\
+  \includegraphics[width=0.6\textwidth]{../../Plots/ERP_DA/ERPALL_2001_N64_SR_V300_none_ABSPo-Tr_mean_lat_time_y2001.png} \\
+  \includegraphics[width=0.6\textwidth]{../../Plots/ERP_DA/ERPALL_2001_N64_sortinc_V300_none_ABSPo-Tr_mean_lat_time_y2001.png} \\
+  \includegraphics[width=0.6\textwidth]{../../Plots/ERP_DA/ERPALL_2001_N64_obsinfl_adap_sd0p1_V300_none_ABSPo-Tr_mean_lat_time_y2001.png} \\
+  \includegraphics[width=0.6\textwidth]{../../Plots/ERP_DA/ERPALL_2001_N64_stinfl_adap_sd0p1_V300_none_ABSPo-Tr_mean_lat_time_y2001.png} \\
+   \caption{Comparison of the absolute distance between the posterior analysis and the truth, for zonal-mean meridional wind at 300 hPa.  Panels show: (a) the N96 experiment, (b) adding Sampling Error Reduction, (c) sorting increments, }
+   \label{fig:V300}
+ \end{figure}
+
+\newpage
+
+\begin{figure}
+  \noindent
+  \includegraphics[width=0.6\textwidth]{../../Plots/ERP_DA/ERPALL_2001_N64_PS0_none_ABSPo-Tr_mean_lat_time_y2001.png} \\
+  \includegraphics[width=0.6\textwidth]{../../Plots/ERP_DA/ERPALL_2001_N64_SR_PS0_none_ABSPo-Tr_mean_lat_time_y2001.png} \\
+  \includegraphics[width=0.6\textwidth]{../../Plots/ERP_DA/ERPALL_2001_N64_sortinc_PS0_none_ABSPo-Tr_mean_lat_time_y2001.png} \\
+  \includegraphics[width=0.6\textwidth]{../../Plots/ERP_DA/ERPALL_2001_N64_obsinfl_adap_sd0p1_PS0_none_ABSPo-Tr_mean_lat_time_y2001.png} \\
+  \includegraphics[width=0.6\textwidth]{../../Plots/ERP_DA/ERPALL_2001_N64_stinfl_adap_sd0p1_PS0_none_ABSPo-Tr_mean_lat_time_y2001.png} \\
+   \caption{Comparison of the absolute distance between the posterior analysis and the truth, for zonal-mean surface pressyre at 300 hPa.  Panels show: (a) the N96 experiment, (b)  adding Sampling Error Reduction, (c) sorting increments, }
+   \label{fig:PS}
+ \end{figure}
+
+
+\bibliography{nathan}
+
+
+\end{document}  

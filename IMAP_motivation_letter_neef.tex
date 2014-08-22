@@ -1,0 +1,73 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Full Size Formal Letter
+% LaTeX Template
+% Version 1.2 (8/2/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Micha Elmueller (http://micha.elmueller.net/)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+	pagenumber=false, % Removes page numbers from page 2 onwards
+	parskip=half, % Separates paragraphs with some whitespace, use parskip=full for more space or comment out to return to default
+	fromalign=right, % Aligns the from address to the right
+	foldmarks=true, % Prints small fold marks on the left of the page
+	addrfield=true % Set to false to hide the addressee section - you will then want to adjust the height of the body of the letter on the page by adding the following in this section: \makeatletter \@setplength{refvpos}{\useplength{toaddrvpos}} \makeatletter
+	]{scrlttr2}
+
+\usepackage[english]{babel} % Explicitly load the babel package to stop an error occurring on some LaTeX installations
+
+\renewcommand*{\raggedsignature}{\raggedright} % Stop the signature from indenting
+
+%----------------------------------------------------------------------------------------
+%	YOUR INFORMATION AND LETTER DATE
+%----------------------------------------------------------------------------------------
+
+\setkomavar{fromname}{Lisa Neef} % Your name used in the from address
+\setkomavar{fromaddress}{GEOMAR Helmholtz Centre for Ocean Research Kiel \\ D\"usternbrooker Weg 20 \\ 24105 Kiel} % Your address
+\setkomavar{signature}{Lisa Neef} % Your name used in the signature
+
+\date{\today} % Date of the letter
+
+%----------------------------------------------------------------------------------------
+ 
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	ADDRESSEE
+%----------------------------------------------------------------------------------------
+ 
+\begin{letter}{Office of the Cluster of Excellence \\ Christian-Albrechts-Universit\"at zu Kiel \\ Olshausenstr. 40 \\ 24098 Kiel} % Addressee name and address
+
+%----------------------------------------------------------------------------------------
+%	LETTER CONTENT
+%----------------------------------------------------------------------------------------
+
+\opening{To whom it may concern,}
+
+I would hereby like to apply for associated membership in the Cluster of Excellence, ``The Future Ocean''.  I am especially interested in becoming a member  and participating in the many offerings of the Integrated Marine Post-doc Network (IMAP).
+
+I have been a postdoctoral researcher at GEOMAR since July 2013.  
+I am employed in the research group of Dr. Katja Matthes (FB1, Ozean Circulation and Climate Dynamics), where I work on the assimilation of geodetic monitoring data in the Community Earth System Model (CESM).  More details can be found in my CV, which also includes a list of my publications.
+
+\closing{Sincerely,}
+
+\setkomavar*{enclseparator}{Attached} % Change the default "encl:" to "Attached:"
+\encl{$^1$CV of the applicant} % Attached documents
+
+%----------------------------------------------------------------------------------------
+
+\end{letter}
+ 
+\end{document}

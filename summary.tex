@@ -1,0 +1,32 @@
+\section{Summary}  
+
+In this study we tested the efficacy of assimilating Earth rotation parameters, which represent changes in the atmospheric angular momntum and therefore integrals of the atmospheric wind and pressure fields.  
+This was done by performing perfect model assimilation experiments wherein the three components of the global atmospheric angular momentum were assimilate, with and without complementary meteorological observations. 
+
+It may be assumed that the assimilation integral quantities can lead to an overall improvement of a modeled atmosphere or ocean state.
+Indeed, this was done by \citet{Saynisch2010,Saynisch2011,Saynisch2012} for Earth rotation parameters and by \textcolor{alert}{[CITE other examples of integral constraints]}.
+However, we found that an improved state estimate is difficult to achieve when integral-type observations are assimilated, \textcolor{unsure}{because the assimilation decreases ensemble spread without improving the accuracy of the ensemble.}
+
+
+It was found that the assimilation of the three components of AAM is able to decrease state error in an ensemble of simulations, but only during the initial spin-up period when both  the spread of the ensemble and the true error are quite small
+As both the error and spread grow, it becomes too easy to fit the observed AAM without actually bringing the ensemble closer together.
+
+In Kalman filter-based data assimilation, the state is adjusted most strongly in regions where the covariance between the state components and each observation is highest, which means that it depends both on the model spread at each point in the state vector, as well as the correlation of that point to the observation.  
+Thus points with a large ensemble spread recieve a stronger adjustment than points with a smaller spread, which may not always reflect the true situation (i.e. points with a large true error are not adjusted enough), but as long as the correlation is estimated correctly, the adjustment will be made in the right direction.  
+
+\textcolor{unsure}{The correlations should be estimated accurately if the model and observation operator are perfect and the ensemble is large enough (three conditions that are guaranteed in our experiments).  
+However, our experiments showed that the modeled correlations between state components and the AAM observations become less and less accurate as the assimiliation progresses. 
+This means that the ensemble becomes less and less represenative of the true error in time, i.e. that the truth and the forecast ensemble are no longer members of the same probability distribution. 
+ }
+
+
+These results lead to the possible conclusion that angular momentum oscillations might better constrain the state when assimilated in conjunction with local state observations that keep the spread in the ensemble small. 
+However, we found that in this case, the additional assimilation of angular momentum degrades the analysis.    
+\textcolor{alert}{Fill in the reason for this when I really understand it.}
+
+There exists a potential way to assimilate integral observations, based on the study of \citet{Dirren2005}, but applying this method is doubtful to offer improvements upon the assimilation of other available observations, such as GPS-RO measurements.  
+\textcolor{alert}{Need to explain why I think so.}
+
+
+We have found that the real usefulness of Earth rotation observations is that they can measure the 
+fidelity of a data assimilation system because they offer a  way to quantify the global state error in terms of three simple components that all reflect different things.  

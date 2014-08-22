@@ -1,0 +1,714 @@
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.2.22)  14 FEB 2012 17:14
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**ensemble_size.tex
+(./ensemble_size.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2009-06-19, ngerman-x-2009-06-19, ancientgreek, ibycus, arabic, armenian
+, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danish, dutch, u
+kenglish, usenglishmax, esperanto, estonian, farsi, finnish, french, galician, 
+german, ngerman, swissgerman, monogreek, greek, hungarian, icelandic, assamese,
+ bengali, gujarati, hindi, kannada, malayalam, marathi, oriya, panjabi, tamil, 
+telugu, indonesian, interlingua, irish, italian, kurmanji, lao, latin, latvian,
+ lithuanian, mongolian, mongolianlmc, bokmal, nynorsk, polish, portuguese, roma
+nian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, turkish,
+ turkmen, ukrainian, uppersorbian, welsh, loaded.
+(/usr/share/texmf/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size11.clo
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/geometry/geometry.sty
+Package: geometry 2010/07/13 v5.5 Page Geometry
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2010/01/28 v2.1 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in pdf mode detected.
+)
+(/usr/share/texmf/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Switches for detecting VTeX and its modes (HO)
+Package ifvtex Info: VTeX not detected.
+)
+\Gm@cnth=\count88
+\Gm@cntv=\count89
+\c@Gm@tempcnt=\count90
+\Gm@bindingoffset=\dimen103
+\Gm@wd@mp=\dimen104
+\Gm@odd@mp=\dimen105
+\Gm@even@mp=\dimen106
+\Gm@layoutwidth=\dimen107
+\Gm@layoutheight=\dimen108
+\Gm@layouthoffset=\dimen109
+\Gm@layoutvoffset=\dimen110
+\Gm@dimlist=\toks15
+)
+(/usr/share/texmf/tex/latex/ltxmisc/parskip.sty
+Package: parskip 2001/04/09 non-zero parskip adjustments
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texmf/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2010/02/14 v0.04n Graphics/color for pdfTeX
+\Gread@gobject=\count91
+))
+\Gin@req@height=\dimen111
+\Gin@req@width=\dimen112
+)
+(/usr/share/texmf/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+
+(/usr/share/texmf/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\@emptytoks=\toks16
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+))
+(/usr/share/texmf/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texmf/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks17
+\ex@=\dimen113
+))
+(/usr/share/texmf/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen114
+)
+(/usr/share/texmf/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count92
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count93
+\leftroot@=\count94
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count95
+\DOTSCASE@=\count96
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen115
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count97
+\c@MaxMatrixCols=\count98
+\dotsspace@=\muskip10
+\c@parentequation=\count99
+\dspbrk@lvl=\count100
+\tag@help=\toks18
+\row@=\count101
+\column@=\count102
+\maxfields@=\count103
+\andhelp@=\toks19
+\eqnshift@=\dimen116
+\alignsep@=\dimen117
+\tagshift@=\dimen118
+\tagwidth@=\dimen119
+\totwidth@=\dimen120
+\lineht@=\dimen121
+\@envbody=\toks20
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(/usr/share/texmf/tex/latex/oberdiek/epstopdf.sty
+Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
+
+(/usr/share/texmf/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texmf/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+)
+(/usr/share/texmf/tex/latex/oberdiek/grfext.sty
+Package: grfext 2007/09/30 v1.0 Managing graphics extensions (HO)
+)
+(/usr/share/texmf/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2010/02/22 v3.7 Keyval support for LaTeX options (HO)
+
+(/usr/share/texmf/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2010/03/01 v1.9 Key value parser (HO)
+
+(/usr/share/texmf/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2010/01/28 v1.3 Prefix for e-TeX command names (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/share/texmf/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2010/04/01 v0.9 Utility functions of pdfTeX for LuaTeX (HO)
+
+
+(/usr/share/texmf/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texmf/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2010/04/26 v1.7 LaTeX kernel commands for general use (HO)
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 436.
+
+(/usr/share/texmf/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+)))
+(/usr/share/texmf/tex/latex/natbib/natbib.sty
+Package: natbib 2009/11/07 8.31a (PWD, AO)
+\bibhang=\skip46
+\bibsep=\skip47
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count104
+)
+(/usr/share/texmf/tex/latex/oberdiek/pdflscape.sty
+Package: pdflscape 2008/08/11 v0.10 Landscape pages in PDF (HO)
+
+(/usr/share/texmf/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 77.
+
+(/usr/share/texmf/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2009/01/23 v0.5 Provides ifxetex conditional
+)) (./ensemble_size.aux
+
+LaTeX Warning: Label `fig:U300_trueinc' multiply defined.
+
+)
+\openout1 = `ensemble_size.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(28.90755pt, 539.69278pt, 28.90755pt)
+* v-part:(T,H,B)=(28.90755pt, 787.23175pt, 28.90755pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=539.69278pt
+* \textheight=787.23175pt
+* \oddsidemargin=-43.36244pt
+* \evensidemargin=-43.36244pt
+* \topmargin=-80.36244pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=59.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/share/texmf/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count105
+\scratchdimen=\dimen122
+\scratchbox=\box28
+\nofMPsegments=\count106
+\nofMParguments=\count107
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count108
+\MPscratchDim=\dimen123
+\MPnumerator=\count109
+\everyMPtoPDFconversion=\toks23
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 37.
+ (/usr/share/texmf/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 37.
+
+(/usr/share/texmf/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+
+LaTeX Warning: No \author given.
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_obs_ERP_PM1_Pri_Po_Tr.png
+, id=8, 868.09024pt x 289.08pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_obs_ERP_PM1_Pri_Po_T
+r.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_obs_ERP_PM1_Pri_Po_Tr
+.png>
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_obs_ERP_PM1_Pri_Po_Tr.png
+, id=9, 868.09024pt x 289.08pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_obs_ERP_PM1_Pri_Po_T
+r.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_obs_ERP_PM1_Pri_Po_Tr
+.png>
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_obs_ERP_PM1_Pri_Po_Tr.png
+, id=10, 868.09024pt x 289.08pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_obs_ERP_PM1_Pri_Po_T
+r.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_obs_ERP_PM1_Pri_Po_Tr
+.png>
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N96_obs_ERP_PM1_Pri_Po_Tr.png
+, id=11, 868.09024pt x 289.08pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N96_obs_ERP_PM1_Pri_Po_T
+r.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N96_obs_ERP_PM1_Pri_Po_Tr
+.png>
+Underfull \hbox (badness 10000) in paragraph at lines 40--45
+
+ []
+
+
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_obs_ERP_PM2_Pri_Po_Tr.png
+, id=12, 868.09024pt x 289.08pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_obs_ERP_PM2_Pri_Po_T
+r.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_obs_ERP_PM2_Pri_Po_Tr
+.png>
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_obs_ERP_PM2_Pri_Po_Tr.png
+, id=13, 868.09024pt x 289.08pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_obs_ERP_PM2_Pri_Po_T
+r.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_obs_ERP_PM2_Pri_Po_Tr
+.png>
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_obs_ERP_PM2_Pri_Po_Tr.png
+, id=14, 868.09024pt x 289.08pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_obs_ERP_PM2_Pri_Po_T
+r.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_obs_ERP_PM2_Pri_Po_Tr
+.png>
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N96_obs_ERP_PM2_Pri_Po_Tr.png
+, id=15, 868.09024pt x 289.08pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N96_obs_ERP_PM2_Pri_Po_T
+r.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N96_obs_ERP_PM2_Pri_Po_Tr
+.png>
+Underfull \hbox (badness 10000) in paragraph at lines 50--55
+
+ []
+
+
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_obs_ERP_LOD_Pri_Po_Tr.png
+, id=16, 868.09024pt x 289.08pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_obs_ERP_LOD_Pri_Po_T
+r.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_obs_ERP_LOD_Pri_Po_Tr
+.png>
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_obs_ERP_LOD_Pri_Po_Tr.png
+, id=17, 868.09024pt x 289.08pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_obs_ERP_LOD_Pri_Po_T
+r.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_obs_ERP_LOD_Pri_Po_Tr
+.png>
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_obs_ERP_LOD_Pri_Po_Tr.png
+, id=18, 868.09024pt x 289.08pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_obs_ERP_LOD_Pri_Po_T
+r.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_obs_ERP_LOD_Pri_Po_Tr
+.png>
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N96_obs_ERP_LOD_Pri_Po_Tr.png
+, id=19, 868.09024pt x 289.08pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N96_obs_ERP_LOD_Pri_Po_T
+r.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N96_obs_ERP_LOD_Pri_Po_Tr
+.png>
+Underfull \hbox (badness 10000) in paragraph at lines 60--65
+
+ []
+
+
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_U300_none_Prior_spread_la
+t_time_y2001.png, id=20, 1228.59pt x 433.62pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_U300_none_Prior_spre
+ad_lat_time_y2001.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_U300_none_Prior_sprea
+d_lat_time_y2001.png>
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_U300_none_Prior_spread_la
+t_time_y2001.png, id=21, 1228.59pt x 433.62pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_U300_none_Prior_spre
+ad_lat_time_y2001.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_U300_none_Prior_sprea
+d_lat_time_y2001.png>
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_U300_none_Prior_spread_la
+t_time_y2001.png, id=22, 1228.59pt x 433.62pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_U300_none_Prior_spre
+ad_lat_time_y2001.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_U300_none_Prior_sprea
+d_lat_time_y2001.png>
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N96_U300_none_Prior_spread_la
+t_time_y2001.png, id=23, 1228.59pt x 433.62pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N96_U300_none_Prior_spre
+ad_lat_time_y2001.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N96_U300_none_Prior_sprea
+d_lat_time_y2001.png>
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 71--76
+[] []
+ []
+
+
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 71--76
+[] [] 
+ []
+
+
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_V300_none_Prior_spread_la
+t_time_y2001.png, id=24, 1228.59pt x 433.62pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_V300_none_Prior_spre
+ad_lat_time_y2001.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_V300_none_Prior_sprea
+d_lat_time_y2001.png>
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_V300_none_Prior_spread_la
+t_time_y2001.png, id=25, 1228.59pt x 433.62pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_V300_none_Prior_spre
+ad_lat_time_y2001.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_V300_none_Prior_sprea
+d_lat_time_y2001.png>
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_V300_none_Prior_spread_la
+t_time_y2001.png, id=26, 1228.59pt x 433.62pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_V300_none_Prior_spre
+ad_lat_time_y2001.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_V300_none_Prior_sprea
+d_lat_time_y2001.png>
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 81--86
+[] []
+ []
+
+
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_PS0_none_Prior_spread_lat
+_time_y2001.png, id=27, 1228.59pt x 433.62pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_PS0_none_Prior_sprea
+d_lat_time_y2001.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_PS0_none_Prior_spread
+_lat_time_y2001.png>
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_PS0_none_Prior_spread_lat
+_time_y2001.png, id=28, 1228.59pt x 433.62pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_PS0_none_Prior_sprea
+d_lat_time_y2001.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_PS0_none_Prior_spread
+_lat_time_y2001.png>
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_PS0_none_Prior_spread_lat
+_time_y2001.png, id=29, 1228.59pt x 433.62pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_PS0_none_Prior_sprea
+d_lat_time_y2001.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_PS0_none_Prior_spread
+_lat_time_y2001.png>
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N96_PS0_none_Prior_spread_lat
+_time_y2001.png, id=30, 1228.59pt x 433.62pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N96_PS0_none_Prior_sprea
+d_lat_time_y2001.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N96_PS0_none_Prior_spread
+_lat_time_y2001.png>
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 91--96
+[] []
+ []
+
+
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 91--96
+[] [] 
+ []
+
+
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_U300_none_ABSPo-Tr_mean_l
+at_time_y2001.png, id=31, 1228.59pt x 433.62pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_U300_none_ABSPo-Tr_m
+ean_lat_time_y2001.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_U300_none_ABSPo-Tr_me
+an_lat_time_y2001.png>
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_U300_none_ABSPo-Tr_mean_l
+at_time_y2001.png, id=32, 1228.59pt x 433.62pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_U300_none_ABSPo-Tr_m
+ean_lat_time_y2001.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_U300_none_ABSPo-Tr_me
+an_lat_time_y2001.png>
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_U300_none_ABSPo-Tr_mean_l
+at_time_y2001.png, id=33, 1228.59pt x 433.62pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_U300_none_ABSPo-Tr_m
+ean_lat_time_y2001.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_U300_none_ABSPo-Tr_me
+an_lat_time_y2001.png>
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N96_U300_none_ABSPo-Tr_mean_l
+at_time_y2001.png, id=34, 1228.59pt x 433.62pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N96_U300_none_ABSPo-Tr_m
+ean_lat_time_y2001.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N96_U300_none_ABSPo-Tr_me
+an_lat_time_y2001.png>
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 135--140
+[] []
+ []
+
+
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 135--140
+[] [] 
+ []
+
+
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_V300_none_ABSPo-Tr_mean_l
+at_time_y2001.png, id=35, 1228.59pt x 433.62pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_V300_none_ABSPo-Tr_m
+ean_lat_time_y2001.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_V300_none_ABSPo-Tr_me
+an_lat_time_y2001.png>
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_V300_none_ABSPo-Tr_mean_l
+at_time_y2001.png, id=36, 1228.59pt x 433.62pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_V300_none_ABSPo-Tr_m
+ean_lat_time_y2001.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_V300_none_ABSPo-Tr_me
+an_lat_time_y2001.png>
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_V300_none_ABSPo-Tr_mean_l
+at_time_y2001.png, id=37, 1228.59pt x 433.62pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_V300_none_ABSPo-Tr_m
+ean_lat_time_y2001.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_V300_none_ABSPo-Tr_me
+an_lat_time_y2001.png>
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N96_V300_none_ABSPo-Tr_mean_l
+at_time_y2001.png, id=38, 1228.59pt x 433.62pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N96_V300_none_ABSPo-Tr_m
+ean_lat_time_y2001.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N96_V300_none_ABSPo-Tr_me
+an_lat_time_y2001.png>
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 146--151
+[] []
+ []
+
+
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 146--151
+[] [] 
+ []
+
+
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_PS0_none_ABSPo-Tr_mean_la
+t_time_y2001.png, id=39, 1228.59pt x 433.62pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_PS0_none_ABSPo-Tr_me
+an_lat_time_y2001.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_PS0_none_ABSPo-Tr_mea
+n_lat_time_y2001.png>
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_PS0_none_ABSPo-Tr_mean_la
+t_time_y2001.png, id=40, 1228.59pt x 433.62pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_PS0_none_ABSPo-Tr_me
+an_lat_time_y2001.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_PS0_none_ABSPo-Tr_mea
+n_lat_time_y2001.png>
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_PS0_none_ABSPo-Tr_mean_la
+t_time_y2001.png, id=41, 1228.59pt x 433.62pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_PS0_none_ABSPo-Tr_me
+an_lat_time_y2001.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_PS0_none_ABSPo-Tr_mea
+n_lat_time_y2001.png>
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N96_PS0_none_ABSPo-Tr_mean_la
+t_time_y2001.png, id=42, 1228.59pt x 433.62pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N96_PS0_none_ABSPo-Tr_me
+an_lat_time_y2001.png Graphic file (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N96_PS0_none_ABSPo-Tr_mea
+n_lat_time_y2001.png>
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 159--164
+[] []
+ []
+
+
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 159--164
+[] [] 
+ []
+
+
+</home/ig/neef/Documents/Plots/ERP_DA/compare_ens_size_U300.png, id=43, 1228.59
+pt x 433.62pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/compare_ens_size_U300.png Graphic fi
+le (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/compare_ens_size_U300.png>
+</home/ig/neef/Documents/Plots/ERP_DA/compare_ens_size_V300.png, id=44, 1228.59
+pt x 433.62pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/compare_ens_size_V300.png Graphic fi
+le (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/compare_ens_size_V300.png>
+</home/ig/neef/Documents/Plots/ERP_DA/compare_ens_size_PS0.png, id=45, 1228.59p
+t x 433.62pt>
+File: /home/ig/neef/Documents/Plots/ERP_DA/compare_ens_size_PS0.png Graphic fil
+e (type png)
+
+<use /home/ig/neef/Documents/Plots/ERP_DA/compare_ens_size_PS0.png>
+Underfull \hbox (badness 10000) in paragraph at lines 170--174
+
+ []
+
+No file ensemble_size.bbl.
+[1 </home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_obs_ERP_PM1_Pri_Po_Tr.
+png (PNG copy)> </home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_obs_ERP_P
+M1_Pri_Po_Tr.png (PNG copy)> </home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_
+N64_obs_ERP_PM1_Pri_Po_Tr.png (PNG copy)> </home/ig/neef/Documents/Plots/ERP_DA
+/ERPALL_2001_N96_obs_ERP_PM1_Pri_Po_Tr.png (PNG copy)>] [2 </home/ig/neef/Docum
+ents/Plots/ERP_DA/ERPALL_2001_N16_obs_ERP_PM2_Pri_Po_Tr.png (PNG copy)> </home/
+ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_obs_ERP_PM2_Pri_Po_Tr.png (PNG c
+opy)> </home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_obs_ERP_PM2_Pri_Po_
+Tr.png (PNG copy)> </home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N96_obs_ER
+P_PM2_Pri_Po_Tr.png (PNG copy)>] [3 </home/ig/neef/Documents/Plots/ERP_DA/ERPAL
+L_2001_N16_obs_ERP_LOD_Pri_Po_Tr.png (PNG copy)> </home/ig/neef/Documents/Plots
+/ERP_DA/ERPALL_2001_N32_obs_ERP_LOD_Pri_Po_Tr.png (PNG copy)> </home/ig/neef/Do
+cuments/Plots/ERP_DA/ERPALL_2001_N64_obs_ERP_LOD_Pri_Po_Tr.png (PNG copy)> </ho
+me/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N96_obs_ERP_LOD_Pri_Po_Tr.png (PN
+G copy)>] [4 </home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_U300_none_Pr
+ior_spread_lat_time_y2001.png (PNG copy)> </home/ig/neef/Documents/Plots/ERP_DA
+/ERPALL_2001_N32_U300_none_Prior_spread_lat_time_y2001.png (PNG copy)> </home/i
+g/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_U300_none_Prior_spread_lat_time_y
+2001.png (PNG copy)> </home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N96_U300
+_none_Prior_spread_lat_time_y2001.png (PNG copy)> </home/ig/neef/Documents/Plot
+s/ERP_DA/ERPALL_2001_N16_V300_none_Prior_spread_lat_time_y2001.png (PNG copy)> 
+</home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_V300_none_Prior_spread_la
+t_time_y2001.png (PNG copy)> </home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_
+N64_V300_none_Prior_spread_lat_time_y2001.png (PNG copy)> </home/ig/neef/Docume
+nts/Plots/ERP_DA/ERPALL_2001_N16_PS0_none_Prior_spread_lat_time_y2001.png (PNG 
+copy)> </home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_PS0_none_Prior_spr
+ead_lat_time_y2001.png (PNG copy)> </home/ig/neef/Documents/Plots/ERP_DA/ERPALL
+_2001_N64_PS0_none_Prior_spread_lat_time_y2001.png (PNG copy)> </home/ig/neef/D
+ocuments/Plots/ERP_DA/ERPALL_2001_N96_PS0_none_Prior_spread_lat_time_y2001.png 
+(PNG copy)>] [5 </home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_U300_none
+_ABSPo-Tr_mean_lat_time_y2001.png (PNG copy)> </home/ig/neef/Documents/Plots/ER
+P_DA/ERPALL_2001_N32_U300_none_ABSPo-Tr_mean_lat_time_y2001.png (PNG copy)> </h
+ome/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_U300_none_ABSPo-Tr_mean_lat_
+time_y2001.png (PNG copy)> </home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N9
+6_U300_none_ABSPo-Tr_mean_lat_time_y2001.png (PNG copy)> </home/ig/neef/Documen
+ts/Plots/ERP_DA/ERPALL_2001_N16_V300_none_ABSPo-Tr_mean_lat_time_y2001.png (PNG
+ copy)> </home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N32_V300_none_ABSPo-T
+r_mean_lat_time_y2001.png (PNG copy)> </home/ig/neef/Documents/Plots/ERP_DA/ERP
+ALL_2001_N64_V300_none_ABSPo-Tr_mean_lat_time_y2001.png (PNG copy)> </home/ig/n
+eef/Documents/Plots/ERP_DA/ERPALL_2001_N96_V300_none_ABSPo-Tr_mean_lat_time_y20
+01.png (PNG copy)> </home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N16_PS0_no
+ne_ABSPo-Tr_mean_lat_time_y2001.png (PNG copy)> </home/ig/neef/Documents/Plots/
+ERP_DA/ERPALL_2001_N32_PS0_none_ABSPo-Tr_mean_lat_time_y2001.png (PNG copy)> </
+home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N64_PS0_none_ABSPo-Tr_mean_lat_
+time_y2001.png (PNG copy)> </home/ig/neef/Documents/Plots/ERP_DA/ERPALL_2001_N9
+6_PS0_none_ABSPo-Tr_mean_lat_time_y2001.png (PNG copy)>] [6 </home/ig/neef/Docu
+ments/Plots/ERP_DA/compare_ens_size_U300.png (PNG copy)> </home/ig/neef/Documen
+ts/Plots/ERP_DA/compare_ens_size_V300.png (PNG copy)> </home/ig/neef/Documents/
+Plots/ERP_DA/compare_ens_size_PS0.png (PNG copy)>] (./ensemble_size.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 3268 strings out of 493747
+ 55230 string characters out of 3148626
+ 106775 words of memory out of 3500000
+ 6473 multiletter control sequences out of 15000+200000
+ 10132 words of font info for 39 fonts, out of 3000000 for 9000
+ 714 hyphenation exceptions out of 8191
+ 41i,6n,32p,301b,209s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texmf/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf
+/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf/fonts/type1/public/
+amsfonts/cm/cmr12.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr17.pf
+b></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr8.pfb>
+Output written on ensemble_size.pdf (7 pages, 808540 bytes).
+PDF statistics:
+ 86 PDF objects out of 1000 (max. 8388607)
+ 33 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 191 words of extra memory for PDF output out of 10000 (max. 10000000)
+

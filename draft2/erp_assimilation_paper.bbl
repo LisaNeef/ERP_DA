@@ -1,0 +1,60 @@
+\begin{thebibliography}{9}
+\providecommand{\natexlab}[1]{#1}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem[{\textit{Anderson et~al.}(2009)\textit{Anderson, Hoar, Raeder, Lui,
+  Collins, Torn, and Avellano}}]{andersonetal2009}
+Anderson, J., T.~Hoar, K.~Raeder, H.~Lui, N.~Collins, R.~Torn, and A.~Avellano
+  (2009), The data assimilation research testbed: {A} community facility,
+  \textit{Bull. Am. Met. Soc.}, pp. 1283--1296, \doi{10.1175/2009BAMS2816.1}.
+
+\bibitem[{\textit{Barnes et~al.}(1983)\textit{Barnes, Hide, F.R.S., White, and
+  Wilson}}]{barnesetal1983}
+Barnes, R., R.~Hide, F.R.S., A.~White, and C.~Wilson (1983), Atmospheric
+  angular momentum fluctuations, length-of-day changes and polar motion,
+  \textit{Proc. Roy. Soc. London}, \textit{387}, 31--73.
+
+\bibitem[{\textit{Gross}(2009)}]{gross2009}
+Gross, R.~S. (2009), Earth rotation variations - long period, in
+  \textit{Geodesy, Treatise on Geophysics}, edited by T.~Herring, pp. 239--294,
+  Elsevier.
+
+\bibitem[{\textit{Neale et~al.}(2011)\textit{Neale, Chen, Lauritzen,
+  Williamson, Conley, Smith, Mills, and Morrison}}]{nealeetal2011}
+Neale, R.~B., C.-c. Chen, P.~H. Lauritzen, D.~L. Williamson, A.~J. Conley,
+  A.~K. Smith, M.~Mills, and H.~Morrison (2011), {Description of the NCAR
+  Community Atmosphere Model (CAM 5.0)}, \textit{National Center for
+  Atmospheric Research Tech. Rep.}, (NCAR/TN-486+STR.), 268.
+
+\bibitem[{\textit{Neef and Matthes}()}]{neefmatthes2013sub}
+Neef, L.~J., and K.~Matthes (), Sudden stratospheric warmings excited {Earth}
+  rotation variations, \textit{J. Geophys. Res.}, submitted.
+
+\bibitem[{\textit{Raeder et~al.}(2012)\textit{Raeder, Anderson, Collins, Hoar,
+  Kay, Lauritzen, and Pincus}}]{raederetal2012}
+Raeder, K., J.~L. Anderson, N.~Collins, T.~J. Hoar, J.~E. Kay, P.~H. Lauritzen,
+  and R.~Pincus (2012), {DART/CAM}: An ensemble data assimilation system for
+  {CESM} atmospheric models, \textit{J. Clim.},
+  \doi{10.1175/JCLI-D-11-00395.1}, in press.
+
+\bibitem[{\textit{Saynisch and Thomas}(2012)}]{saynischthomas2012}
+Saynisch, J., and M.~Thomas (2012), {Ensemble Kalman-Filtering of Earth
+  rotation observations with a global ocean model}, \textit{Journal of
+  Geodynamics}, \textit{62}, 24--29, \doi{10.1016/j.jog.2011.10.003}.
+
+\bibitem[{\textit{Saynisch et~al.}(2011{\natexlab{a}})\textit{Saynisch, Wenzel,
+  and Schr{\"o}ter}}]{saynischetal2011a}
+Saynisch, J., M.~Wenzel, and J.~Schr{\"o}ter (2011{\natexlab{a}}), Assimilation
+  of earth rotation parameters into a global ocean model: excitation of polar
+  motion, \textit{Nonlin. Proc. Geophys.}, \textit{18}, 581--585.
+
+\bibitem[{\textit{Saynisch et~al.}(2011{\natexlab{b}})\textit{Saynisch, Wenzel,
+  and Schr{\"o}ter}}]{saynischetal2011b}
+Saynisch, J., M.~Wenzel, and J.~Schr{\"o}ter (2011{\natexlab{b}}), Assimilation
+  of earth rotation parameters into a global ocean model: length of day
+  excitation, \textit{J. Geodesy.}, \textit{85}, 67--73.
+
+\end{thebibliography}

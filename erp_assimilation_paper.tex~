@@ -1,0 +1,910 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AGUtmpl.tex: this template file is for articles formatted with LaTeX2e,
+% Modified March 2013
+%
+% This template includes commands and instructions
+% given in the order necessary to produce a final output that will
+% satisfy AGU requirements.
+%
+% PLEASE DO NOT USE YOUR OWN MACROS
+% DO NOT USE \newcommand, \renewcommand, or \def.
+%
+% FOR FIGURES, DO NOT USE \psfrag or \subfigure.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% All questions should be e-mailed to latex@agu.org.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Step 1: Set the \documentclass
+%
+% There are two options for article format: two column (default)
+% and draft.
+%
+% PLEASE USE THE DRAFT OPTION TO SUBMIT YOUR PAPERS.
+% The draft option produces double spaced output.
+%
+% Choose the journal abbreviation for the journal you are
+% submitting to:
+
+% jgrga JOURNAL OF GEOPHYSICAL RESEARCH
+% gbc   GLOBAL BIOCHEMICAL CYCLES
+% grl   GEOPHYSICAL RESEARCH LETTERS
+% pal   PALEOCEANOGRAPHY
+% ras   RADIO SCIENCE
+% rog   REVIEWS OF GEOPHYSICS
+% tec   TECTONICS
+% wrr   WATER RESOURCES RESEARCH
+% gc    GEOCHEMISTRY, GEOPHYSICS, GEOSYSTEMS
+% sw    SPACE WEATHER
+% ms    JAMES
+%
+%
+%
+% (If you are submitting to a journal other than jgrga,
+% substitute the initials of the journal for "jgrga" below.)
+
+%\documentclass[draft,jgrga]{agutex}
+\documentclass[jgrga]{agutex}
+
+% To create numbered lines:
+
+% If you don't already have lineno.sty, you can download it from
+% http://www.ctan.org/tex-archive/macros/latex/contrib/ednotes/
+% (or search the internet for lineno.sty ctan), available at TeX Archive Network (CTAN).
+% Take care that you always use the latest version.
+
+% To activate the commands, uncomment \usepackage{lineno}
+% and \linenumbers*[1]command, below:
+
+ \usepackage{lineno}
+ \linenumbers*[1]
+
+%  To add line numbers to lines with equations:
+%  \begin{linenomath*}
+%  \begin{equation}
+%  \end{equation}
+%  \end{linenomath*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Figures and Tables
+%
+%
+% DO NOT USE \psfrag or \subfigure commands.
+%
+%  Figures and tables should be placed AT THE END OF THE ARTICLE,
+%  after the references.
+%
+%  Uncomment the following command to include .eps files
+%  (comment out this line for draft format):
+  \usepackage[dvips]{graphicx}
+%
+%  Uncomment the following command to allow illustrations to print
+%   when using Draft:
+  \setkeys{Gin}{draft=false}
+%
+% Substitute one of the following for [dvips] above
+% if you are using a different driver program and want to
+% proof your illustrations on your machine:
+%
+% [xdvi], [dvipdf], [dvipsone], [dviwindo], [emtex], [dviwin],
+% [pctexps],  [pctexwin],  [pctexhp],  [pctex32], [truetex], [tcidvi],
+% [oztex], [textures]
+%
+% See how to enter figures and tables at the end of the article, after
+% references.
+%
+%  Other packages:
+\usepackage{amsmath}
+\usepackage[usenames]{color}
+\usepackage{ulem}
+\usepackage{url}
+\usepackage{lscape}
+%\usepackage[pdftex]{graphicx}
+%\usepackage{epstopdf}
+\usepackage{pgfplots}
+%
+%
+%% ------------------------------------------------------------------------ %%
+%
+%  ENTER PREAMBLE
+%
+%% ------------------------------------------------------------------------ %%
+
+% Author names in capital letters:
+\authorrunninghead{NEEF AND MATTHES}
+
+% Shorter version of title entered in capital letters:
+\titlerunninghead{ASSIMILATION OF INTEGRALS}
+
+%Corresponding author mailing address and e-mail address:
+\authoraddr{Corresponding author: L.J. Neef,
+%Helmholtz -Zentrum f{\"u}r Ozeanforschung (GEOMAR),
+D{\"u}sternbrooker Weg 20,
+D-24105 Kiel, Germany
+(neef@geomar.de)}
+
+\begin{document}
+\bibliographystyle{agu08}
+
+%% ------------------------------------------------------------------------ %%
+%
+%  TITLE
+%
+%% ------------------------------------------------------------------------ %%
+
+
+\title{Successes and Failures of Assimilating Global Integrals with an Ensemble Filter}
+%
+% e.g., \title{Terrestrial ring current:
+% Origin, formation, and decay $\alpha\beta\Gamma\Delta$}
+%
+
+%% ------------------------------------------------------------------------ %%
+%
+%  AUTHORS AND AFFILIATIONS
+%
+%% ------------------------------------------------------------------------ %%
+
+
+%Use \author{\altaffilmark{}} and \altaffiltext{}
+
+% \altaffilmark will produce footnote;
+% matching \altaffiltext will appear at bottom of page.
+
+ \authors{Lisa Neef\altaffilmark{1} and
+Katja Matthes \altaffilmark{1}}
+
+\altaffiltext{1}{Ocean Circulation and Climate Dynamics - Marine Meteorology,
+   Helmholtz Centre for Ocean Research Kiel (GEOMAR), Kiel, Germany.}
+
+
+%% ------------------------------------------------------------------------ %%
+%
+%  ABSTRACT
+%
+%% ------------------------------------------------------------------------ %%
+
+% >> Do NOT include any \begin...\end commands withinA
+% >> the body of the abstract.
+
+\begin{abstract}
+(Type abstract here)
+\end{abstract}
+
+%% ------------------------------------------------------------------------ %%
+%
+%  BEGIN ARTICLE
+%
+%% ------------------------------------------------------------------------ %%
+
+% The body of the article must start with a \begin{article} command
+%
+% \end{article} must follow the references section, before the figures
+%  and tables.
+
+\begin{article}
+
+%% ------------------------------------------------------------------------ %%
+%
+%  MATH ABBREVIATSIONS
+%
+%% ------------------------------------------------------------------------ %%
+\newcommand{\degree}{\ensuremath{^\circ}}
+
+
+%% ------------------------------------------------------------------------ %%
+%
+%  TEXT
+%
+%% ------------------------------------------------------------------------ %%
+
+\section{Introduction}
+
+% \textbf{General Issue }
+
+Variations and trends in the climate of Earth can be studied by observations of the climate, by climate simulations, or by a merging of the two such that the model-simulated variables are constrained by observed information. 
+This latter approach is generally known as data assimilation.
+Though data assimilation originated in the context of numerical weather forecasting, is now frequently applied to climate simulations, and in fact is now accessible non-experts via out-of-the-box assimilation toos tools such as the Data Assimilation Research Testbed \citep[DART]{andersonetal2009} or the Parallel Data Assimilation Framework \citep[PDAF]{Nerger2013}.
+
+%\textbf{Scientific context and state of the art}
+
+It is not immediately clear, however, what observations should be used to constrain a given simulation.
+A relatively new source of information about the Earth system exists in the form of space geodesy, i.e. the measurement of the figure, position, and geoid of the Earth from satellites, very long baseline interferometry, and satellite and lunar laser ranging.  
+Here we explore the potential for a certain kind of geodetic monitoring data, namely the so-called Earth Rotation Parameters, or ERPs, for data assimilation.
+
+The ERPs represent global measures of the Earth's angular momentum, and therefore the exchange of angular momentum between the solid Earth and its fluid shell. On timescales shorter than a few years, these angular momentum exchanges are dominated by the atmosphere and ocean. 
+Consequently, ERP measurements reflect a variety of atmospheric phenomena.
+For example, \citet{Neef2014} showed that sudden stratospheric warmings are typically preceded by a circa 60 milli-arcsecond wobble in the polar orientation, 3-4 weeks before the warming onset.
+It is therefore desirable to use such observations to improve the prediction and modeling of events like stratospheric warmings, e.g. by assimilating these observations into prediction models.
+
+%% uncomment if we do end up showing something about gpsro
+%GPS-RO measurements have been shown to add a high amount of information to numerical weather forecasts (Bonavita, 2013), due to their low systematic errors and high vertical resolution. It was shown by (Wang et al., 2013) that GPS-RO data give an unprecedented look into the vertical structure of the atmosphere because of their high vertical resolution, in this case showing a warming trend in the tropopause inversion layer that would not have been observed otherwise.
+
+%\textbf{Specific problem / question}
+
+
+While the prospect of assimilating non-gridpoint observations like ERPs is an exciting possibility, these observations represent integrals of the model state and their assimilation with standard algorithms is therefore not straightforward.
+\cite{Saynisch2011,Saynisch2010,Saynisch2012} assimilated ERPs into ocean model simulations, and showed that large adjustments in the model's mass distribution and currents are are necessary in order to acheive a fit to observed ERPs.
+However, those studies did not show how much of this change was due to the addition of the integral observations, nor whether or not the ERP observations actually added information to gridpoint observations that were also assimilated.
+% GPS-RO measurements, on the other hand, appear to be an ideal observation type to constrain short climate simulations, but it is still unclear how well these observations may constrain an atmospheric model for the purpose of climate studies.
+
+It is usually difficult to judge whether the assimilation of a given set of observations has actually succeeded in bringing the estimated state closer to the truth. 
+\textcolor{blue}{It is not sufficient to evaluate the fit between the model and the observations, since the assimilation algorithm is designed to fit the observations. In so-called Observing System Simulation Experiments (OSSEs) a model is used to simulate a "true" state, from which observations are generated and assimilated back into either the same or another model. OSSEs make it possible to evaluate an observation configuration and/or an assimilation technique because the true state is known, and can be directly compared to the analysis model state. In experiments with real observations, it is necessary to compare the assimilated state with independent observations. However, these are often difficult to obtain because different observing systems often don't overlap sufficiently in time and space.}
+
+%
+% \textbf{Solution}
+In this study we demonstrate the limitations of  using Earth rotation data as a model constraint.
+We also demonstrate how the modeled excitation of Earh rotation variations by the angular momentum of the atmosphere can be used as a measure of the assimilation quality, by implementing ERPs as an observation type in the  community data assimilation facility DART.
+\textcolor{blue}{We then use the ERPs in idealized experiments to evaluate the potential of GPS-RO observations as a data constraint, and to estimate how much information such observations offer.}
+
+This study is concerned mainly with data assimilation for climate studies, as opposed to data assimilation for numerical weather prediction (NWP). In NWP, observing systems are generally evaluated in terms of forecast skill, i.e. some measure of how the forecast, fol lowing the assimilation, deviates from the true state. Here, we instead focus on assimilation efficacy and fidelity. Efficacy refers to the ability of an assimilation system to effect a positive improvement in a modeled state. Fidelity refers to the ability of the system to return error statistics that are as close as possible to the true error statistics.
+
+%
+% \textbf{Costs / benefits}: 
+% FILL IN some costs and benefits
+%
+
+%-------------------------------------METHODS-----------------------------------------------------------------
+
+\section{Data Assimilation System}
+Assimilation experiments are performed using the Ensemble Adjustment Kalman Filter \citep[EAKF]{anderson2001} and the Community Atmosphere Model 5 \citep[CAM5]{nealeetal2011}, using the Data Assimilation Research Testbed \citep[DART]{andersonetal2009, raederetal2012}.
+
+
+\subsection{Atmospheric Model}
+CAM5 is run with the finite-volume dynamical core with a $1.9x2.5$ degree lat/lon horizontal resolution, and  30 hybrid-coordinate vertical levels, with a top near 3 hPa.
+\textcolor{red}{How is CAM damped at the top?}
+CAM5 forms the atmospheric component of the Community Earth System Model (CESM).
+
+\subsection{Data Assimilation}
+DART is an open-source, community facility that makes ensemble data assimilation available for any model, using any observations.
+It is available online at \url{www.image.ucar.edu/DAReS/DART}.
+
+The EAKF algorithm sequentially updates an ensemble of model simulations based on a spread of the ensemble about its mean, and the distance between the observed value and the observation that would be predicted by that ensemble member.
+Here "model state" refers to the full fields of whatever model variables are chosen to be updated; in the case of our experiments, the model state is given by the meridional and zonal winds, the surface pressure, the temperature, and the relative humidity.
+The entire state has a dimension of $n = **$ values.
+
+The update is made by estimating the \textit{background} error  covariance matrix for the model state at each observation time, which is simply a function of the spread of the ensemble about its mean.
+\begin{eqnarray}
+{\bf P}^{\text{b}} = 
+\left<
+\left(	{\bf x}^{\text{b}}_i - \left<{\bf x}^{\text{b}}\right> \right)
+\left(	{\bf x}^{\text{b}}_i - \left<{\bf x}^{\text{b}}\right> \right)^{\text{T}}
+\right> 
+,
+\end{eqnarray}
+where the brackets $\left< \cdot \right>$ represent the ensemble average.
+
+When an observation is made, the so-called \textit{analysis} error covariance matrix, ${\bf P}^{\text{a}}$, is reduced proportional to the uncertainty of the observations:
+\begin{eqnarray}
+ {\bf P}^{\text{a}} =
+  %\left[
+  %{\bf P^{\text{b}}} + 
+  %{\bf H}^{\text{T}}{\bf R}^{-1}{\bf H}
+  %\right]^{-1},
+  {\bf P}^{\text{b}}
+  \left[
+  {\bf I} - {\bf K}{\bf H}
+  \right],
+\label{eq:Pa}
+\end{eqnarray}
+where \textbf{R} represents the $m \times m$ error covariance matrix of the observations,  ${\bf H}$ represents the operation mapping the state to the observations, and ${\bf I}$ is the $n \times n$ identity matrix.
+The so-called gain matrix \textbf{K} is a function of the relative magnitudes of the background and observation errors at each point in the observation space:
+\begin{eqnarray}
+ {\bf K} = {\bf P}^{\text{f}}{\bf H}\left[	{\bf H}{\bf P}^{\text{f}}{\bf H}^{\text{T}} +{\bf R}	\right]^{-1},
+\end{eqnarray}
+where ${\bf R}$ represents the error covariance matrix of the observations.
+Note that $ {\bf K}$ includes the mapping from state-space to observation-space.  
+The individual entries of the gain matrix are close to 1 for small observation errors (in this case the observations are given maximal weight), and close to zero for large observation errors (in which case the observations are given very little weight).  
+
+Having computed (\ref{eq:Pa}), 
+The updated ensemble mean of a Gaussian distribution with covariance given by (\ref{eq:Pa}) is
+\begin{eqnarray}
+  \left< {\bf x}^{\text{a}} \right> = 
+  {\bf P}^{\text{a}}
+  \left[
+  \left({\bf P}^{\text{b}}\right)^{-1} \left< {\bf x}^{\text{b}} \right> + {\bf H}^{\text{T}}{\bf R}^{-1}{\bf y}^{\text{obs}}
+  \right].
+\label{eq:xa}
+\end{eqnarray}
+ 
+In practice we don't actually compute (\ref{eq:Pa}) or (\ref{eq:xa}), but rather the analysis ensemble that represents the analysis error covariance.  
+To find the ensemble perturbations that correspond to the posterior error covariance ${\bf P}^{\text{a}}$ (\ref{eq:Pa}), we make use of the fact that the covariance matrix can be written as  ${\bf P}^{\text{a}} = {\bf A}{\bf P}^{\text{b}}{\bf A}^{\text{T}}$,
+where the matrix ${\bf A}$ includes a singular-value decomposition of ${\bf P}^{\text{b}}$, which rotates it into a reference frame where it is diagonal, a normalization step, and the analysis update step (\ref{eq:Pa}).
+It can then be shown that the ensemble perturbations corresponding to the updated error covariance matrix are given by
+\begin{eqnarray}
+ {\bf x}_i^{\text{a}} - \left< {\bf x} \right>^{\text{a}} = 
+  {\bf A}^{\text{T}}
+  \left(
+{\bf x}_i^{\text{b}} - \left< {\bf x} \right>^{\text{b}}
+  \right).
+\end{eqnarray}
+
+\textcolor{red}{Add a statement of how we do the SVD in practice -- how we make all this computationally feasible.}
+
+
+The main advantage of using ensemble filter assimilation algorithms such as the EAKF is that covariances between components of the model state and the observations are estimated using an ensemble, which itself is updated with the observed information at each analysis time.
+This allows us to avoid making a prior estimate of covariances, which can lead to spurious analysis increments, especially at higher levels \citep{Polavarapu2005}.
+
+\subsection{Perfect-model experiments}
+\label{sec:experiments}
+% perfect model experiments
+In this study we  perform so-called perfect-model experiments, wherein the ``truth'' is actually a model simulations, and observations are generated from this simulation with known error statistics, then assimilated back into the model.
+Perfect model experiments are designed to show how much information can truly be recovered by assimilation; this is impossible to do with the assimilation of real observations, where the true state is not known.
+
+Experiments are performed with an 80-member ensemble, which  is generated from one full year of assimilation of the uniform grid of radiosonde observations described in Section \ref{sec:radiosondes}.
+
+% observation generation
+Two types of observations are generated from the simulated true state: (a) the ERPs, described in Section \ref{sec:AAM}, and (b) an idealized grid of radiosonde observations, described in Section \ref{sec:radiosondes}, as a simple representation of the current grid of conventional observations.
+
+% output diagnostics
+Our main evaluation diagnostic is root mean square error (RMSE) between the simulated true state and the ensemble mean.
+To evaluate how much information is actually gained from assimilation in each case, the RMSE for each case will be shown relative to a case where the 80-member initial ensemble is evolved forward in time without assimilation, hereafter known as the``No-DA'' run.
+
+
+\subsection{Atmospheric Angular Momentum Observations}
+\label{sec:AAM}
+We generate synthetic observations of ERPs by computing the atmospheric angular momentum (AAM) of the model state at each observation time.
+The AAM is computed using the following non-dimensional equations derived by \citet{barnesetal1983}:
+\begin{eqnarray}
+{\bf \chi}_{1}(t) &=& \frac{1.608}{\Omega \left( C-A' \right)}
+  \left[ 0.684 \Omega \Delta {\bf I}_{13}(t) + \Delta h_1(t)  \right] \label{eq:X1} \\
+{\bf \chi}_{2}(t) &=& \frac{1.608}{\Omega \left( C-A' \right)}
+  \left[ 0.684 \Omega \Delta {\bf I}_{23}(t) + \Delta h_2(t)  \right] \label{eq:X2}\\
+{\bf \chi}_{3}(t) &=& \frac{0.997}{\Omega C_m}
+  \left[ 0.750 \Omega \Delta {\bf I}_{33}(t) + \Delta h_{3}(t) \label{eq:X3} \right].
+\end{eqnarray}
+Here the ${\bf I}_{ij}$ terms represent components of the atmospheric inertia tensor:
+\begin{eqnarray}
+  I_{13} &=& -\int R^2 \cos \phi \sin \phi \cos \lambda dM 
+  \label{eq:I1}\\
+  I_{23} &=& -\int R^2 \cos \phi \sin \phi \sin \lambda dM 
+  \label{eq:I2}\\
+  I_{33} &=&  \int R^2 \cos^2 \phi dM ,
+  \label{eq:I3}
+\end{eqnarray}
+and the $h_i$ terms he relative angular momentum (due to winds) in each direction:
+\begin{eqnarray}
+  h_{1}  &=& -\int R \left[u \sin \phi \cos \lambda - v \sin \lambda \right] dM 
+    \label{eq:h1}\\
+  h_{2}  &=& -\int R \left[u \sin \phi \sin \lambda + v \cos \lambda \right] dM 
+    \label{eq:h2}\\
+  h_{3}  &=&  \int R u \cos \phi dM.
+    \label{eq:h3}
+\end{eqnarray}
+%
+$R = 6371.0$ km is the radius of the Earth, $\Omega = 7.292115\times 10^{-5} \text{rad}/\text{s}$ the average rotation rate, and $g = 9.81 \text{m}/\text{s}^2$ is the acceleration due to gravity.
+ $C = 8.0365 \times 10^{37} \text{kg} \text{m}^2$ and $A = 8.0101 \times 10^{37} \text{kg} \text{m}^2$ are the  axial and next-largest principal moments of inertia of the solid Earth, and $C_m = 7.1236 \times 10^{37} \text{kg} \text{m}^2$ is the principal inertia tensor component of the Earth's mantle \citep{gross2009}.
+
+In reality, of course, we don't measure the atmospheric angular momentum but rather the variations in the ERPs that are excited by the above angular momentum functions.
+The non-dimensional representation of AAM in (\ref{eq:X1})-(\ref{eq:X3}) makes it easy to map angular momentum changes to equivalent changes in the polar orientation (or polar motion) and the rate of Earth's rotation. 
+Polar motion is defined by two angular anomalies in the orientation of the rotational pole, $p_1$, defined along the Greenwich meridian, and $p_2$,  defined along 90$\degree$E.  
+Their variation is related to variations in the equatorial AAM functions (\ref{eq:X1})-(\ref{eq:X2})  by a rotation of the reference frame:
+\begin{eqnarray}
+  p_1 + \frac{\dot{p_2}}{\sigma_0} &=& \chi_1 \\
+  -p_2 + \frac{\dot{p_1}}{\sigma_0} &=& \chi_2,
+\label{eq:X12_to_PM}
+\end{eqnarray}
+where $\sigma_0 = 433$d represents the Chandler frequency, a free nutation of the solid Earth that is due the fact that the Earth is not a perfect sphere, which causes a difference between the Earth's polar axis and its figure axis \citep{Gross2000}.
+
+The axial AAM function $\chi_3$ corresponds to unit changes in the rate of rotation of the Earth, and therefore also unit anomalies in the length of a day ($\Delta$LOD):
+\begin{eqnarray}
+\frac{\Delta \text{LOD}}{ \text{LOD}_0 } &=& \Delta \chi_3,
+\label{eq:X3_to_LOD}
+\end{eqnarray}
+where $\text{LOD}_0$ denotes the sidereal length-of-day (86164s).  The length-of-day anomalies are observed as $\Delta \text{LOD}  \equiv \text{UT1} - \text{IAT}$ where UT1 denotes the universal time measured by geodetic techniques and IAT is a reference time based on atomic clock measurements.
+
+The relations(\ref{eq:X12_to_PM}) and (\ref{eq:X3_to_LOD}) give the equivalent Earth rotation variations due to AAM changes. 
+In this study, we will assume for the sake of simplicity that measured ERP variations are completely due to the atmosphere. 
+For $\Delta$LOD, this is a valid assumption on the subseasonal timescale.  
+For polar motion, the contributions from oceanic angular momentum are of a similar order of magnitude as that of AAM \citep{Neef2012}. 
+
+Note that the zonal integration in the axial AAM terms [(\ref{eq:I3}) and (\ref{eq:h3})] weights all longitudes equally.
+In practice, this means that mass anomalies tend to cancel one another out in the zonal integral, with the result that the axial mass excitation (\ref{eq:I3}) is usually several orders of magnitude smaller than the axial wind excitation (\ref{eq:h3}) \citep{barnesetal1983}.
+
+Nearly the opposite is true for the equatorial AAM terms [(\ref{eq:I1})-(\ref{eq:I2}) and (\ref{eq:h1})-(\ref{eq:h2})], where stronger zonal asymmetry in the wind and mass fields leads to a larger global integral.
+For these functions, the mass terms [(\ref{eq:I1}) and (\ref{eq:I2})] typically outweigh the wind terms [(\ref{eq:h1}) and (\ref{eq:h2})] by a few factors \citep{barnesetal1983}.
+
+
+Of the polar motion angles, $p_1$ largely reflects surface pressure variations over the oceans, and $p_2$ over the continents.
+Thus $p_2$ has a pronounced annual cycle due to the yearly appearance of the Siberian High \citep{dobslawetal2010}, and tends to show strong negative anomalies in the two months preceding sudden stratospheric warmings \citep[submitted]{neefmatthes2013sub}.
+The relative effects of AAM on the two polar motion components on the subseasonal timescale is less clear on the subseasonal timescale, where the effect of surface pressure variations over the ocean tend to be evened out by corresponding displacements of the ocean surface (the so-called ``inverse barometer'' effect), though the extent to which this is really true is unclear \citep{salsteinrosen1989}.
+
+For our experiments, observations of $\chi_1$, $\chi_2$, and $\chi_3$ are generated every 24 hours, reflecting the observation frequency of the real ERP series released by Earth rotation services.  
+
+
+\subsection{Idealized Conventional Observations}
+\label{sec:radiosondes}
+
+In order to evaluate  the assimilation of ERPs, we need to compare it to the assimilation of conventional, spatially-distributed observations such as are normally assimilated in the generation of atmospheric reanalysis \citep{deeetal2005} or weather prediction models (\textcolor{red}{CITE}).
+Since compiling all the available observations is a complicated task in itself, we simulate the conventional observation grid using an idealized, global grid of radiosonde-like observations.  
+
+The horizontal grid of the radiosonde observations is shown in Figure **.
+
+\textcolor{red}{What is the horizontal distribution of our radiosonde observations?}
+
+%---first things first: what hole does assimilation fill?  What does a simulation show when we don't assimilate?
+\section{Error growth without assimilation}
+
+It is instructive to examine spread of a large ensemble of simulations when no assimilation is performed, because it shows us what can be gained from assimilating in the first place.
+Figure \ref{fig:NODA}(a) shows the RMSE (ensemble mean minus true state), as a function of vertical level and time, in the zonal-mean and meridional-mean zonal wind. 
+The zonal wind error spreads most rapidly around 300 hPa, i.e. at the altitudes of the extratropical jets.
+After about a month, the error also grows strongly at the highest model levels.
+  
+Comparing the RMSE to the spread in the ensemble over this time [Fig. \ref{fig:NODA}(b)], we see that the ensemble spread is largely commensurate with the growth of error between the ensemble mean and the truth state, which is to be expected since in our experiments the "truth" is a realization of the same model that produced the ensemble.
+This is also evident when comparing the globally-average ensemble spread and RMSE  [Fig. \ref{fig:NODA}].
+
+If we now assimilate observations, the state will be adjusted most strongly where the ensemble spread is largest, which in this case is also where the true error is largest.
+
+\textcolor{red}{Also say what it looks like for surface pressure!}
+
+
+
+%-------------------------------------RESULTS 1- integral obs suck------------------------------------------------------
+\section{Can we constrain the model using global integral observations?}
+
+\subsection{Observation-space Diagnostics}
+Figure \ref{fig:fit_to_erps} shows the ensemble estimates of the three ERPs, with and without the assimilation of ERPs. 
+The case of no assimilation (Fig. \ref{fig:fit_to_erps}, Column A) starts out with the ensemble clustered closely around each of the true ERPs.
+The ensemble spreads noticeably after about a week, and by the end of January, the ensemble mean lacks any of the short-timescale features of the true ERPs.
+%\textcolor{red}{Can we say anything to the differences between the three ERPs?}
+
+When ERPs are assimilated (Fig. \ref{fig:fit_to_erps}, Column B), the ensemble members naturally agree much more in their predicted ERPs.  
+Thus the assimilation of ERPs is ``successful'' in the sense that the wind and surface pressure fields in each ensemble member are nudged enough to give each ensemble member an AAM vector that is close to what is observed.
+However, success in fitting the assimilated variables does not automatically imply that the state variables themselves are closer to the true state.  
+This will be investigated in the following section.
+
+\subsection{Error reduction in Wind and Pressure Fields}
+
+Figure \ref{fig:ERPDA} shows the RMSE of (a) the surface pressure and (b) the 300hPa zonal-mean zonal wind, and (c) the meridional-mean zonal-mean zonal wind, relative to their respective errors in the NODA experiment.
+Negative values indicate a reduction in error relative to no assimilation.  
+
+In all fields shown, error is reduced in most regions during the first month of assimilation.
+In general, the most error reduction happens in the regions where the ensemble spread is the greatest: at high latitudes for surface pressure,  in the extratropical jet regions for zonal wind, and near the model top.
+Thus the fitting of the state to the observed ERPs [Fig. \ref{fig:fit_to_erps}] also results in an overall correction to the model state for the first month or so.
+
+Figure \ref{fig:global} shows the globally-averaged RMSE in surface pressure, the 10hPa zonal wind, and the 300hPa zonal wind as a function of time, comparing the ERPALL and NODA experiments.
+\textcolor{red}{Do we see an overall improvement for the first month, at least in U300?}
+\textcolor{red}{What can we say about the large increments at the highest levels?}
+
+However, regions where error is increased relative to no assimilation (yellow in Fig. \ref{fig:ERPDA}) appear more and more in the second month of assimilation, which means that fitting the model to the observed ERPs makes the ensemble state estimate worse.  
+
+
+
+
+\subsection{Evolution of the Ensemble-Estimated Covariance Field}
+
+The degree to which each variable field is changed as the assimilation progresses depends on the covariances between local wind or surface pressure, and the global AAM functions.
+The evolution of these covariances in time is estimated by the ensemble. 
+It is easiest to examine the ensemble covariances by looking at the analysis increment, i.e. EQUATION, where DEFINITIONS.
+The difference between the observed and predicted ERPs (FILL IN) is mapped to the state by the gain matrix \textbf{K}, which is given by EQUATION.
+
+In the case of ERP assimilation, \textbf{K} has three rows (one for each ERP), and as many columns as there are state variables.
+\textcolor{red}{How many state variables do we have?}
+Each term has the following structure: \textcolor{red}{EQUATION}, i.e. each term is proportional to the covariance between that particular state variable and the global AAM exictation function, normalized by the total prior variance of the global AAM and its corresponding ERP observation.  
+Note that the inverse part of (**) is simply a $3 \times 3$ matrix, and that 
+the same normalization is applied to the gain that is applied to every state vector element.
+Thus the innovation are a sort of proxy for the local-to-global covariances.
+
+Figure  \ref{fig:innovations} shows the innovation (Prior-Posterior) in the same fields shown in Fig. \ref{fig:ERPDA}.
+
+
+\subsection{Can Earth rotation observations add value?}
+
+Though it was seen in Section ** that the assimilation of ERP observations can reduce error in the modeled wind and pressure fields, it is not yet clear whether or not this error reduction complements the information given by more conventional observations, such as radiosonde winds and temperatures, and GPS-RO refractivities.  
+
+Figure \ref{fig:global} shows the global RMSE in the four experiments introduced in Section **.  
+
+%-------------------------------------RESULTS 2- integral obs are useful in a different way------------------------------------------------------
+\section{Integral observations as an evaluation tool}
+
+
+\subsection{Dynamical implications of each ERP component} 
+\textcolor{red}{In this section, write about how the different ERP components reflect different aspects of the model state.  How can we illustrate this with a figure?}
+
+
+\subsection{Evaluation by the three ERPs}
+
+
+
+%------------------------------------summary and conclusions-------------------------
+\section{Summary}  
+
+\begin{itemize}
+ \item The assimilation of Earth Rotation Parameters is able to constrain an ensemble simulation of the atmosphere, but the error reduction that these observations bring does not last beyond the first few days of assimilation.  The reason for this is that the constraint offered by these observations, which represent integrals of the wind and mass fields, is too weak.
+%
+ \item There exists a potential way to assimilate integral observations, based on the study of \citet{Dirren2005}, but applying this method is doubtful to offer improvements upon the assimilation of other available observations, such as GPS-RO measurements.  
+%
+ \item The real usefulness of Earth rotation observations is that they can measure the efficacy and fidelity of a data assimilation system, allowing us to evauluate a wide range of global-scale phenomena, including the MJO, ENSO, and the precursors to SSWs, within three independently-observed numbers.
+%
+ \item In particular \textcolor{red}{fill in the individual results for the three excitation functions.}
+\end{itemize}
+
+
+
+%%% End of body of article:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Optional Appendix goes here
+%
+% \appendix resets counters and redefines section heads
+% but doesn't print anything.
+% After typing  \appendix
+%
+% \section{Here Is Appendix Title}
+% will show
+% Appendix A: Here Is Appendix Title
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Optional Glossary or Notation section, goes here
+%
+%%%%%%%%%%%%%%
+% Glossary is only allowed in Reviews of Geophysics
+% \section*{Glossary}
+% \paragraph{Term}
+% Term Definition here
+%
+%%%%%%%%%%%%%%
+% Notation -- End each entry with a period.
+% \begin{notation}
+% Term & definition.\\
+% Second term & second definition.\\
+% \end{notation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  ACKNOWLEDGMENTS
+
+\begin{acknowledgments}
+(Text here)
+\end{acknowledgments}
+
+%% ------------------------------------------------------------------------ %%
+%%  REFERENCE LIST AND TEXT CITATIONS
+%
+%----temporary bibliography
+\bibliography{nathan,datass,my_publications}
+%----temporary bibliography
+
+% Either type in your references using
+% \begin{thebibliography}{}
+% \bibitem{}
+% Text
+% \end{thebibliography}
+%
+% Or,
+%
+% If you use BiBTeX for your references, please use the agufull08.bst file (available at % ftp://ftp.agu.org/journals/latex/journals/Manuscript-Preparation/) to produce your .bbl
+% file and copy the contents into your paper here.
+%
+% Follow these steps:
+% 1. Run LaTeX on your LaTeX file.
+%
+% 2. Make sure the bibliography style appears as \bibliographystyle{agufull08}. Run BiBTeX on your LaTeX
+% file.
+%
+% 3. Open the new .bbl file containing the reference list and
+%   copy all the contents into your LaTeX file here.
+%
+% 4. Comment out the old \bibliographystyle and \bibliography commands.
+%
+% 5. Run LaTeX on your new file before submitting.
+%
+% AGU does not want a .bib or a .bbl file. Please copy in the contents of your .bbl file here.
+
+\begin{thebibliography}{}
+
+%\providecommand{\natexlab}[1]{#1}
+%\expandafter\ifx\csname urlstyle\endcsname\relax
+%  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+%  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+%  \urlstyle{rm}\Url}\fi
+%
+%\bibitem[{\textit{Atkinson and Sloan}(1991)}]{AtkinsonSloan}
+%Atkinson, K., and I.~Sloan (1991), The numerical solution of first-kind
+%  logarithmic-kernel integral equations on smooth open arcs, \textit{Math.
+%  Comp.}, \textit{56}(193), 119--139.
+%
+%\bibitem[{\textit{Colton and Kress}(1983)}]{ColtonKress1}
+%Colton, D., and R.~Kress (1983), \textit{Integral Equation Methods in
+%  Scattering Theory}, John Wiley, New York.
+%
+%\bibitem[{\textit{Hsiao et~al.}(1991)\textit{Hsiao, Stephan, and
+%  Wendland}}]{StephanHsiao}
+%Hsiao, G.~C., E.~P. Stephan, and W.~L. Wendland (1991), On the {D}irichlet
+%  problem in elasticity for a domain exterior to an arc, \textit{J. Comput.
+%  Appl. Math.}, \textit{34}(1), 1--19.
+%
+%\bibitem[{\textit{Lu and Ando}(2012)}]{LuAndo}
+%Lu, P., and M.~Ando (2012), Difference of scattering geometrical optics
+%  components and line integrals of currents in modified edge representation,
+%  \textit{Radio Sci.}, \textit{47},  RS3007, \doi{10.1029/2011RS004899}.
+
+\end{thebibliography}
+
+%Reference citation examples:
+
+%...as shown by \textit{Kilby} [2008].
+%...as shown by {\textit  {Lewin}} [1976], {\textit  {Carson}} [1986], {\textit  {Bartholdy and Billi}} [2002], and {\textit  {Rinaldi}} [2003].
+%...has been shown [\textit{Kilby et al.}, 2008].
+%...has been shown [{\textit  {Lewin}}, 1976; {\textit  {Carson}}, 1986; {\textit  {Bartholdy and Billi}}, 2002; {\textit  {Rinaldi}}, 2003].
+%...has been shown [e.g., {\textit  {Lewin}}, 1976; {\textit  {Carson}}, 1986; {\textit  {Bartholdy and Billi}}, 2002; {\textit  {Rinaldi}}, 2003].
+
+%...as shown by \citet{jskilby}.
+%...as shown by \citet{lewin76}, \citet{carson86}, \citet{bartoldy02}, and \citet{rinaldi03}.
+%...has been shown \citep{jskilbye}.
+%...has been shown \citep{lewin76,carson86,bartoldy02,rinaldi03}.
+%...has been shown \citep [e.g.,][]{lewin76,carson86,bartoldy02,rinaldi03}.
+%
+% Please use ONLY \citet and \citep for reference citations.
+% DO NOT use other cite commands (e.g., \cite, \citeyear, \nocite, \citealp, etc.).
+
+%% ------------------------------------------------------------------------ %%
+%
+%  END ARTICLE
+%
+%% ------------------------------------------------------------------------ %%
+\end{article}
+\newpage
+%
+%
+%% Enter Figures and Tables here:
+%
+
+ \begin{figure}
+\includegraphics[width=0.4\textwidth]{../../Plots/ERP_DA/NoDA_error_growthUlev.eps} 
+\includegraphics[width=0.4\textwidth]{../../Plots/ERP_DA/NoDA_error_growthPS.eps} 
+ \caption{(a) Evolution of the RMS of the error (ensemble mean minus forecast) growth in zonal-mean zonal wind at 300 hPa.  (b) Evolution of the ensemble spread in the same field.  (c) Evolution of the global-mean RMSE and ensemble spread of zonal wind.  }
+ \label{fig:NODA}
+\end{figure}
+
+
+ \begin{figure}
+\includegraphics[width=0.9\textwidth]{../../Plots/ERP_DA/compare_ERPsERPDA_vs_NODA.eps} 
+ \caption{Ensemble fit to the ERPs with and without assimilation -- we see that steps are taken in the assimilaton to rectify prior disagreement with the ERPs.}
+ \label{fig:fit_to_erps}
+\end{figure}
+
+
+ \begin{figure}
+\includegraphics[width=0.9\textwidth]{../../Plots/ERP_DA/error_red_in_space_and_time.eps} \\
+ \caption{Error reduction in the surface pressure and zonal wind fields, along with the increment, as the ERP assimilation progresses in time.  We see that both ensemble spread and error are reduced somewhat, but mostly at the model top.}
+ \label{fig:ERPDA}
+\end{figure}
+
+ \begin{figure}
+\includegraphics[width=0.9\textwidth]{../../Plots/ERP_DA/global_ERPDA_rmse.eps} \\
+ \caption{Global RMSE in the zonal wind at 10hPa and 300hPa (a), as well as the surface pressure (b), comparing ensembles with and without assimilation of ERPs.}
+ \label{fig:global1}
+\end{figure}
+
+
+
+ \begin{figure}
+\includegraphics[width=0.9\textwidth]{../../Plots/ERP_DA/increments_comparison.eps} \\
+ \caption{Innovations in the zonal wind and surface pressure fields.  We see that it takes a while to rev up, and then most of the innovations are concentrated up high (why?)}
+ \label{fig:innovations}
+\end{figure}
+
+% \begin{figure}
+%\includegraphics[width=0.9\textwidth]{../../Plots/ERP_DA/ } \\
+% \caption{Comparison of the ensemble in  in terms of NAO index, comparing NODA, ERPDA, RSDA, and ERPRSDA.  Here is the take-home message: ERPs have potential to be a constraint, but they don't add anything to conventional observations.}
+% \label{fig:NAOi}
+%\end{figure}
+
+\newpage
+
+ \begin{figure}
+\includegraphics[width=\textwidth]{../../Plots/ERP_DA/compare_ERPscompare_constraintsERP_PM1.eps} 
+\includegraphics[width=\textwidth]{../../Plots/ERP_DA/compare_ERPscompare_constraintsERP_PM2.eps} 
+\includegraphics[width=\textwidth]{../../Plots/ERP_DA/compare_ERPscompare_constraintsERP_LOD.eps} 
+\caption{\textcolor{red}{Showing the fit to ERPs for different radiosonde constraint experiments.  This is a placeholder to remind me to put in a picture looking at the added value of observing ERPs when we have RS temperatures.}}
+ \label{fig:misc}
+\end{figure}
+
+
+% DO NOT USE \psfrag or \subfigure commands.
+%
+% Figure captions go below the figure.
+% Table titles go above tables; all other caption information
+%  should be placed in footnotes below the table.
+%
+%----------------
+% EXAMPLE FIGURE
+%
+% \begin{figure}
+% \noindent\includegraphics[width=20pc]{samplefigure.eps}
+% \caption{Caption text here}
+% \label{figure_label}
+% \end{figure}
+%
+% ---------------
+% EXAMPLE TABLE
+%
+%\begin{table}
+%\caption{Time of the Transition Between Phase 1 and Phase 2\tablenotemark{a}}
+%\centering
+%\begin{tabular}{l c}
+%\hline
+% Run  & Time (min)  \\
+%\hline
+%  $l1$  & 260   \\
+%  $l2$  & 300   \\
+%  $l3$  & 340   \\
+%  $h1$  & 270   \\
+%  $h2$  & 250   \\
+%  $h3$  & 380   \\
+%  $r1$  & 370   \\
+%  $r2$  & 390   \\
+%\hline
+%\end{tabular}
+%\tablenotetext{a}{Footnote text here.}
+%\end{table}
+
+% See below for how to make sideways figures or tables.
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+More Information and Advice:
+
+%% ------------------------------------------------------------------------ %%
+%
+%  SECTION HEADS
+%
+%% ------------------------------------------------------------------------ %%
+
+% Capitalize the first letter of each word (except for
+% prepositions, conjunctions, and articles that are
+% three or fewer letters).
+
+% AGU follows standard outline style; therefore, there cannot be a section 1 without
+% a section 2, or a section 2.3.1 without a section 2.3.2.
+% Please make sure your section numbers are balanced.
+% ---------------
+% Level 1 head
+%
+% Use the \section{} command to identify level 1 heads;
+% type the appropriate head wording between the curly
+% brackets, as shown below.
+%
+%An example:
+%\section{Level 1 Head: Introduction}
+%
+% ---------------
+% Level 2 head
+%
+% Use the \subsection{} command to identify level 2 heads.
+%An example:
+%\subsection{Level 2 Head}
+%
+% ---------------
+% Level 3 head
+%
+% Use the \subsubsection{} command to identify level 3 heads
+%An example:
+%\subsubsection{Level 3 Head}
+%
+%---------------
+% Level 4 head
+%
+% Use the \subsubsubsection{} command to identify level 3 heads
+% An example:
+%\subsubsubsection{Level 4 Head} An example.
+%
+%% ------------------------------------------------------------------------ %%
+%
+%  IN-TEXT LISTS
+%
+%% ------------------------------------------------------------------------ %%
+%
+% Do not use bulleted lists; enumerated lists are okay.
+% \begin{enumerate}
+% \item
+% \item
+% \item
+% \end{enumerate}
+%
+%% ------------------------------------------------------------------------ %%
+%
+%  EQUATIONS
+%
+%% ------------------------------------------------------------------------ %%
+
+% Single-line equations are centered.
+% Equation arrays will appear left-aligned.
+
+Math coded inside display math mode \[ ...\]
+ will not be numbered, e.g.,:
+ \[ x^2=y^2 + z^2\]
+
+ Math coded inside \begin{equation} and \end{equation} will
+ be automatically numbered, e.g.,:
+ \begin{equation}
+ x^2=y^2 + z^2
+ \end{equation}
+
+% IF YOU HAVE MULTI-LINE EQUATIONS, PLEASE
+% BREAK THE EQUATIONS INTO TWO OR MORE LINES
+% OF SINGLE COLUMN WIDTH (20 pc, 8.3 cm)
+% using double backslashes (\\).
+
+% To create multiline equations, use the
+% \begin{eqnarray} and \end{eqnarray} environment
+% as demonstrated below.
+\begin{eqnarray}
+  x_{1} & = & (x - x_{0}) \cos \Theta \nonumber \\
+        && + (y - y_{0}) \sin \Theta  \nonumber \\
+  y_{1} & = & -(x - x_{0}) \sin \Theta \nonumber \\
+        && + (y - y_{0}) \cos \Theta.
+\end{eqnarray}
+
+%If you don't want an equation number, use the star form:
+%\begin{eqnarray*}...\end{eqnarray*}
+
+% Break each line at a sign of operation
+% (+, -, etc.) if possible, with the sign of operation
+% on the new line.
+
+% Indent second and subsequent lines to align with
+% the first character following the equal sign on the
+% first line.
+
+% Use an \hspace{} command to insert horizontal space
+% into your equation if necessary. Place an appropriate
+% unit of measure between the curly braces, e.g.
+% \hspace{1in}; you may have to experiment to achieve
+% the correct amount of space.
+
+
+%% ------------------------------------------------------------------------ %%
+%
+%  EQUATION NUMBERING: COUNTER
+%
+%% ------------------------------------------------------------------------ %%
+
+% You may change equation numbering by resetting
+% the equation counter or by explicitly numbering
+% an equation.
+
+% To explicitly number an equation, type \eqnum{}
+% (with the desired number between the brackets)
+% after the \begin{equation} or \begin{eqnarray}
+% command.  The \eqnum{} command will affect only
+% the equation it appears with; LaTeX will number
+% any equations appearing later in the manuscript
+% according to the equation counter.
+%
+
+% If you have a multiline equation that needs only
+% one equation number, use a \nonumber command in
+% front of the double backslashes (\\) as shown in
+% the multiline equation above.
+
+%% ------------------------------------------------------------------------ %%
+%
+%  SIDEWAYS FIGURE AND TABLE EXAMPLES
+%
+%% ------------------------------------------------------------------------ %%
+%
+% For tables and figures, add \usepackage{rotating} to the paper and add the rotating.sty file to the folder.
+% AGU prefers the use of {sidewaystable} over {landscapetable} as it causes fewer problems.
+%
+% \begin{sidewaysfigure}
+% \includegraphics[width=20pc]{samplefigure.eps}
+% \caption{caption here}
+% \label{label_here}
+% \end{sidewaysfigure}
+%
+%
+%
+% \begin{sidewaystable}
+% \caption{}
+% \begin{tabular}
+% Table layout here.
+% \end{tabular}
+% \end{sidewaystable}
+%
+%
+

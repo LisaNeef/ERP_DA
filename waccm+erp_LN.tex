@@ -1,0 +1,72 @@
+%
+%  $Id: cam_se-fv.tex 6635 2013-12-04 23:16:42Z thoar $
+%
+
+Unconventional observations of the earth system can
+be used in data assimilation research.
+Changes in atmospheric angular momentum are reflected in observations
+of earth rotation parameters (ERP),
+which are highly accurate, but are an integration over the whole earth system.
+The vector components of angular momentum of the CAM atmosphere 
+can be defined as state variables,
+which can be compared against observations of angular momentum.
+
+The first test is a series of ''perfect model'' assimilations,
+in which observations are taken from a free CAM run,
+rather than from nature.
+So the truth is known exactly, 
+and can be matched by each member of the ensemble of CAM runs.
+%Here no observational error is added to each observation to make them realistic.
+these assimilations use combinations of (synthetic) observations 
+of ERPs and radiosonde temperature and winds
+at the locations of actual radiosondes from Jan 1-16, 2009.
+
+% ERP_PM2_NoDA.eps                ERP_PM2_Radiosondes.eps
+% ERP_PM2_RadiosondesTempOnly.eps ERP_PM2_RadiosondeTempERPs.eps  
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[height=0.90\columnwidth]{./WACCM_ERP_pmo.pdf}
+\caption{
+Equatorial angular momentum component along the vector 
+from the center of the earth to ($0^\circ$N,$0^\circ$E)
+as a function of time for an ensemble of 80 CAM model states (light gray curves).
+The units are given in terms of equivalent polar motion angle in milliseconds of arc (''mas'').
+The observational error on the ERP observations (red circles) is 0 mas, 
+so they lie on the true state (blue line).
+%which comes from a ''perfect model'' free run of CAM.
+The ensemble mean is shown by the dart gray line
+These are ''prior'' values, which are derived from the model states 
+at the end of each 24 hour forecast, but before the assimilation.  
+a) Ensemble is not constrained by observations.
+b) Assimilation of all temperature and wind observations, but no ERP.
+c) Assimilation of only T
+d) Assimilation of T and ERP, but no winds.
+}
+\end{center}
+\label{fig:ang_mom}
+\end{figure}
+
+The initial ensemble starts with climatological spread (in $\chi_2$)
+and in Fig.~\ref{fig:ang_mom}a it grows steadily because no observations are assimilated.
+The ensemble mean happens to stay close to the truth,
+but the confidence in this mean is low.
+In Fig.~\ref{fig:ang_mom}b thousands of radiosonde observations constrain the ensemble 
+to lie much closer to the truth,
+even for this quantity which is not assimilated.
+Fig.~\ref{fig:ang_mom}c shows that removing the wind observations from the assimilation
+degrades the ensemble representation of the state.
+Fig.~\ref{fig:ang_mom}d shows that introducing ERP observations to Fig. c restores
+some of the accuracy (shown by the mean) and confidence (shown by the spread)
+of the ensemble.
+
+We can conclude that in the perfect model context
+several ERP observations can provide 
+%a large fraction of the
+information about the true state of the atmosphere,
+that is complementary to the wind and temperature observations. 
+%as can be provided by thousands of wind observations.
+% <lisa:>  I changed this text around a bit because the ERP observations don't really make up entirely for the missing wind observations -- they decrease the overall error in the state somewhat, but because the ERPs represent integrals, they wont constrain the wind/temp fields like the radiosonde obs will.  
+
+
+Further development of this work is in preparation for publication: lneef@geomar.de.

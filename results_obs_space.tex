@@ -1,0 +1,24 @@
+
+\subsection{Error reduction in observation space}
+
+Our first comparison of the experiments in Table \ref{tab:expts} is in terms of the three components of AAM [(\ref{eq:X1})-(\ref{eq:X3})].
+Figure \ref{fig:fit_to_ERPs} compares the prior ensemble to the true state for each of the three AAM components, and for experiments NODA, AAM, RST, and RST+AAM.
+With no assimilation (first column), the three AAM values of the ensemble spread rapidly about the truth, saturating after about a month.  
+As the different observational constraints are applied (columns 2-4), we can see that the constraint on the modeled AAM components increases.
+
+Assimilating the three global AAM components (second column) brings the ensemble of all three AAM functions close to their true values.
+This indicates that the EAKF is able to adjust the dynamical state of each ensemble member such that the observed AAM is satisfied. 
+This suggests that the assimilation of the AAM components offers a useful constraint, but  it does not yet tell us whether or not the error in these variables (i.e. column 1 of Fig. \ref{fig:NODA}) is indeed reduced.
+This will be investigated more closely in Section \ref{sec:erpda}.
+
+%%% PICK UP HERE!
+
+The reduction in the spread of the ensemble around the truth is almost as good as when local radiosonde temperatures with global coverage are assimilated (experiment RST, third colum).  
+The fit to the true AAM functions is best when both local temperatures and AAM are assimilated (experiment RST+AAM, fourth column).
+In the space of the AAM functions, then, it looks as though the assimilation of AAM is able to constrain the state similarly to the constraint offered by the local observations, and adds value when these two observation types are combined (Fig. \ref{fig:fit_to_LOD}(d)).
+
+However, success in fitting the assimilated variables is not sufficient for the success of an assimilation system, because it does not guarantee that the state variables themselves are closer to the true state.  
+This will be investigated in the next section.
+
+\textcolor{alert}{Thought: this might not be the best way to present things. Don't really want to lead the reader down the bunny trail of thinking that the fit to obs is sufficient, when it isn't.  What is a better way to write this section?}
+

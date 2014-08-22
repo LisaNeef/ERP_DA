@@ -1,0 +1,59 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/TeX Live for SUSE Linux)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: erp_assimilation_paper.aux
+The style file: agu08.bst
+Database file #1: everything.bib
+Repeated entry---line 437 of file everything.bib
+ : @article{andersoncollins2006
+ :                             ,
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 2649 of file everything.bib
+ :  
+ :  author = {Pedatella, N. M. and Raeder, K. and Anderson, J. L. and Liu, H.-L.},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "burgers"
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Warning--there's a number but no volume in nealeetal2010
+You've used 20 entries,
+            3145 wiz_defined-function locations,
+            1249 strings with 13336 characters,
+and the built_in function-call counts, 20013 in all, are:
+= -- 2308
+> -- 653
+< -- 14
++ -- 377
+- -- 156
+* -- 1152
+:= -- 1807
+add.period$ -- 20
+call.type$ -- 20
+change.case$ -- 88
+chr.to.int$ -- 21
+cite$ -- 21
+duplicate$ -- 2158
+empty$ -- 1109
+format.name$ -- 215
+if$ -- 4085
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 196
+newline$ -- 67
+num.names$ -- 81
+pop$ -- 890
+preamble$ -- 1
+purify$ -- 66
+quote$ -- 0
+skip$ -- 1261
+stack$ -- 0
+substring$ -- 876
+swap$ -- 1845
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 180
+warning$ -- 1
+while$ -- 105
+width$ -- 0
+write$ -- 236
+(There were 2 error messages)
