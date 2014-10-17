@@ -175,17 +175,7 @@ Katja Matthes \altaffilmark{1}}
 % >> the body of the abstract.
 
 \begin{abstract}
-Variability in the Earth's rate of rotation and the orientation of its rotational pole is primarily driven by changes in atmospheric angular momentum on timescales shorter than a few years.
-This implies that observations of Earth rotation parameters contain information about the dynamics of the atmosphere.
-It has therefore been proposed to assimilate these parameters into atmosphere and ocean models, as an additional observable constraint for prediction and model evaluation.
-In this study we test this idea by performing perfect model experiments, assimilating Earth rotation parameters into the Community Atmosphere Model using an Ensemble Adjustment Kalman Filter.
-This is tantamount to assimilating the global integrals of the wind and surface pressure fields. 
-We show that the assimilation of Earth rotation parameters is only able to reduce error in a model ensemble \textcolor{unsure}{under very limited conditions}.
-\textcolor{unsure}{Generally, the assimilation of Earth rotation paramters causes the ensemble filter to diverge because the constraint imposed by the observations is too weak to stop the growth of nonlinearities.}
-It is also found that the  assimilation of Earth rotation parameters does not add value to the assimilation of more conventional, localized observations, but actually causes the filter to diverge from the true state because \textcolor{alert}{FILL IN REASON}.
-However, including atmospheric angular momentum in an assimilation experiment as evaluated variables can provide a useful measure for the fidelity of an assimilation system where the true state is not known.  
-The results found here could be extended to other cases where integral or averaged observations are assimilated.
-
+\input{abstract.tex}
 \end{abstract}
 
 %% ------------------------------------------------------------------------ %%
@@ -216,64 +206,24 @@ The results found here could be extended to other cases where integral or averag
 %% ------------------------------------------------------------------------ %%
 
 \section{Introduction}
-
-% common ground -- DA is now accessible for climate models and enables us to use a variety of osbservations to evaluate and constrain models
-The assimilation of data into numerical models of the atmosphere and ocean has now evolved from its original purpose in numerical weather prediction, to the application in climate modeling. 
-Data assimilatiom methods and codes are now accessible non-experts, in the form of out-of-the-box assimilation toos tools such as the Data Assimilation Research Testbed \citep[DART]{Anderson2009} or the Parallel Data Assimilation Framework \citep[PDAF]{Nerger2013}.
-
-% CG zoomed in: earth rotation observations in particular have been found to deliver unique information about the atmosphere [examples...] -- it seems natural to use formal DA to really figure out what these obs have to say about our models, and in fact Saynisch et al have done this.
-The evolution of data assimilation algorithms and tools enables us to use various observations of the Earth system to constrain and evaluate climate models.
-Space geodesy, i.e. the measurement of the figure, position, and geoid of the Earth from satellites, very long baseline interferometry, and satellite and lunar laser ranging, offers a unique source of information about the Earth system.  
-
-In particular, it has been found that the angular momenta of the atmosphere and ocean can be observed in terms of anomalies in the Earth's polar orientation and rotation rate, the so-called Earth Rotation Parameters (ERPs).
-For example, \citet{Neef2014} showed that sudden stratospheric warmings are typically preceded by a circa 60 milli-arcsecond wobble in the polar orientation, 3-4 weeks before the warming onset.
-\textcolor{alert}{[Insert another example of how the atmosphere has footprints in the ERPs.]}
-
-It makes sense to ask whether more clear connections between observed Earth rotation variations and atmosphere/ocean models can be drawn by formally assimilating these parameters into models. 
-This was done by \cite{Saynisch2011,Saynisch2010,Saynisch2012}, who assimilated the observed ERP timeseris into various ocean model simulations, found that the observations implied that large adjustments in the model's mass distribution and currents are are necessary in order for the modeled ocean angular momentum to agree with observations.
-However, those studies did not show how much of this change was due to the addition of the integral observations, nor whether or not the ERP observations actually added information to gridpoint observations that were also assimilated.
-
-
-% DC1: it's unclear whether integral observations can be useful constraints in the first place.
-It is not clear whether observations like the ERPs can indeed usefully constrain the modeled state, because the ERPs represent integrals of the modeled wind (or current) and mass fields, rather than local quantities.
-While the prospect of assimilating non-gridpoint observations like ERPs is an exciting possibility, these observations represent integrals of the model state and their assimilation with standard algorithms is therefore not straightforward.
-
-
-An assimilation algorithm looks for an adjustment to a model that brings it closer to the observations being assimilated. 
-However, even though the resulting model adjustment may improve the fit to the assimilated observations, it will not necessarily bring the modeled state closer to the truth.
-
-
-%% PP1: in this paper we evaluate whether ERPs are suited for data assimilation and show some of the difficulties associated with assimilating an integral quantity
-It is not sufficient to evaluate the fit between the model and the observations, since the assimilation algorithm is designed to fit the observations. In so-called Observing System Simulation Experiments (OSSEs) a model is used to simulate a "true" state, from which observations are generated and assimilated back into either the same or another model. OSSEs make it possible to evaluate an observation configuration and/or an assimilation technique because the true state is known, and can be directly compared to the analysis model state.
-In this study we perform OSSEs, using the community data assimilation facility DART, to evaluate whether ERPs are suited for data assimilation and show some of the difficulties associated with assimilating an integral quantity as a model constraint.
-
-
-%% DC2: In realstic experiments where we don't know the truth, we need to evaluate using indepenent variables, which can be hard to find.
-
-In non-idealized assimilation experiments, it is difficult to judge whether the assimilation of a given set of observations has actually succeeded in bringing the estimated state closer to the truth. 
-Here it is important to compare the assimilated state with independent observations. However, these are often difficult to obtain because different observing systems often don't overlap sufficiently in time and space.
-
-%% PP2: ERPs are actually really well suited for this, because they represent 3 easy numbers that capture the entire model state.
-In Section ** we demonstrate how the modeled excitation of Earth rotation variations by the angular momentum of the atmosphere can be used as a measure of the assimilation efficacy, by implementing atmospheric angular momentum as an evaluated but unassimilated observation in  DART.
-
+\input{introduction.tex}
 
 
 %-------------------------------------METHODS-----------------------------------------------------------------
 
-\section{Methodology}
+\section{Methods}
 \input{methodology.tex}
 
 %-------------------------------------RESULTS 1- integral obs suck------------------------------------------------------
 \section{AAM as an Assimilation Variable}
-
- 
 \input{results_obs_space.tex}
 \input{results_erpda.tex}
 \input{results_addedvalue.tex}
 
 
 
-\input{aam_as_evaluation_variable.tex}
+\section{AAM as an Evaluation Variable}
+\input{results_evaluation_variable.tex}
 
 
 

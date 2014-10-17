@@ -17,55 +17,48 @@ RST+AAM	 &  Radiosonde temperatures, $\chi_1$, $\chi_2$, $\Delta$LOD	& 17\\
 \end{table}
 
  \begin{figure}
-\includegraphics[width=\textwidth]{../../Plots/ERP_DA/radiosonde_locations.pdf} 
+\includegraphics[width=\textwidth]{../../Documents/Plots/ERP_DA/radiosonde_locations.pdf} 
  \caption{  }
  \label{fig:RS}
 \end{figure}
 
  \begin{figure}
-\includegraphics[width=\textwidth]{../../Plots/ERP_DA/paper/fit_to_ERPs.pdf} 
+\includegraphics[width=\textwidth]{../../Documents/Plots/ERP_DA/paper/fit_to_ERPs.pdf} 
  \caption{ The DART prior ensemble (gray) compared to the true state (orange) in terms of assimilation time and each of the three angular momentum functions [(\ref{eq:X1})-(\ref{eq:X3}), (\ref{eq:X3_to_LOD})].  The columns compare the four experiments summarized in Table \ref{tab:expts}.  }
  \label{fig:fit_to_ERPs}
 \end{figure}
 
  \begin{figure}
-\includegraphics[width=\textwidth]{../../Plots/ERP_DA/paper/NODA_error_growth.pdf} 
- \caption{Top row: The mean square error in the ensemble mean zonal wind field as a function of vertical level and time (left), compared to the corresponding scaled ensemble spread (as in (\ref{eq:EvsS}), center), for the NoDA experiment.  Bottom row: as in the first row, but for surface pressure, and plotting over latitude and time. \textcolor{alert}{Changes: add letter labels.} }
- \label{fig:NODA}
+ \includegraphics[width=\textwidth]{/home/lneef/Dropbox/NATHAN/Projects/ERP_DA/Plots/paper_NODAvsERPALL_MSEprofiles_Ulev_time.pdf}
+ \caption{First column: mean square error in zonal wind as function of vertical level and time, for the NODA experiment (top), the AAMDA experiment (center), and the difference between the two (bottom). Second column: as in the first column but showing scaled ensemble variance. All quantities are averaged zonally and meridionally.} 
+ \label{fig:MSEprofiles}
 \end{figure}
-%BINK
+
+ \begin{figure}
+ \includegraphics[width=\textwidth]{/home/lneef/Dropbox/NATHAN/Projects/ERP_DA/Plots/paper_NODAvsERPALL_MSEprofiles_Ulat_time.pdf}
+ \caption{First column: mean square error in zonal wind as function of latitude and time, for the NODA experiment (top), the AAMDA experiment (center), and the difference between the two (bottom). Second column: as in the first column but showing scaled ensemble variance. All quantities are averaged vertically between 200 and 500 hPa, and meridionally.} 
+ \label{fig:MSEsurface}
+\end{figure}
+
 
 
 
  \begin{figure}
-\includegraphics[width=\textwidth]{../../Plots/ERP_DA/paper/ERPALL_error_growth.pdf} 
- \caption{ Top row: The mean square error in the ensemble mean surface pressure field, and a function of latitude and time (left), compared to the corresponding scaled ensemble spread (as in (\ref{eq:EvsS}), center), for experiment AAM.  Bottom row: The difference between the surface pressure mean square error and ensemble spread fields in the AAM experiment, relative to the NoDA experiment.  \textcolor{alert}{To do: add letter labels here to make it easier to compare panels. }  }
- \label{fig:ERPDA_error_growth}
-\end{figure}
-
-
-
-\begin{figure}
-\includegraphics[width=\textwidth]{../../Plots/ERP_DA/paper/rank_histogram_basic.pdf} 
- \caption{\textcolor{alert}{Rank histograms for surface pressure, counting over assimilation days 10-20 for (a) the NODA experiment, and (b) the AAM experiment.}}
- \label{fig:compare_divergence_basic}
+ \includegraphics[width=\textwidth]{/home/lneef/Dropbox/NATHAN/Projects/ERP_DA/Plots/paper_RSTvsERPRST_MSEprofiles_Ulev_time.pdf}
+ \caption{As in Fig. \ref{fig:MSEprofiles}, but not now comparing experiments RST and AAMRST.}
+ \label{fig:MSEprofiles2}
 \end{figure}
 
  \begin{figure}
-\includegraphics[width=\textwidth]{../../Plots/ERP_DA/paper/RST_error_growth.pdf} 
- \caption{As in Figs. \ref{fig:NODA} and \ref{fig:ERPDA_error_growth}, but for experiment RST (assimilating radiosonde temperatures only).}
- \label{fig:RST}
-\end{figure}
-
- \begin{figure}
-\includegraphics[width=\textwidth]{../../Plots/ERP_DA/paper/REDUCTION2_error_growth.pdf} 
- \caption{As in Fig. \ref{fig:ERPDA_diff}, but now showing the differences between experiments AAM+RST and RST (positive values mean larger error or spread in experiment AAM+RST relative to RST).}
- \label{fig:ERPRST_diff}
+ \includegraphics[width=\textwidth]{/home/lneef/Dropbox/NATHAN/Projects/ERP_DA/Plots/paper_RSTvsERPRST_MSEprofiles_Ulat_time.pdf}
+ \caption{As in Fig. \ref{fig:MSEsurface}, not now comparing experiments RST and AAMRST.}
+ \label{fig:MSEsurface2}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=\textwidth]{../../Plots/ERP_DA/paper/rank_histogram_added_value.pdf} 
- \caption{\textcolor{alert}{Replace this with rank histograms.}}
- \label{fig:compare_divergence_added_value}
+	\includegraphics[width=0.8\textwidth]{/home/lneef/Dropbox/NATHAN/Projects/ERP_DA/Plots/paper_RH.pdf}
+ \caption{Rank histograms for the zonal wind for the four main experiments, computed at 3-day integrals over the first 17 days of assimilation.}
+ \label{fig:RHprogression}
 \end{figure}
+
 
