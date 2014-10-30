@@ -1,12 +1,8 @@
-In order to evaluate Earth rotation parameters as an assimilation variable, we perform idealized assimilation experiments with the Community Atmosphere Model 5 \citep[CAM5]{nealeetal2010} , using the Data Assimilation Research Testbed (DART), an open-source, community facility for ensemble data assimilation  \citep{Anderson2009, Raeder2012}.
-The data assimilation system, assimilated observations, and experiments are described below. 
-
 %-------------------MODEL-------------------------
 \subsection{Atmospheric Model}
 \label{sec:CAM}
-CAM5 forms the atmospheric component of the Community Earth System Model (CESM).
-CAM5 is run here with the finite-volume dynamical core at $1.9^{\text{o}} \times 2.5^{\text{o}}$ horizontal resolution, and  30 hybrid-coordinate vertical levels.
-The highest model level is near 3 hPa.
+To evaluate Earth rotation data as an assimilation variable, we assimilate synthetic observations into the Community Atmosphere Model 5 \citep[CAM5]{nealeetal2010}, which forms the atmospheric component of the Community Earth System Model. 
+We have run CAM with a finite-volume dynamical core, $1.9^{\text{o}} \times 2.5^{\text{o}}$ horizontal resolution, and  30 hybrid-coordinate vertical levels, the highest of which is near 3 hPa.
 The top three model levels (starting at about 14 hPa) constitute a ``sponge'' layer, where horizontal diffusion is applied to temperature, vorticity, and divergence in order to absorb vertically propagating planetary waves.  
 The diffusion has been tuned in order to give a reasonable strength of the stratospheric polar night jets \citep{nealeetal2010}.
 
@@ -15,13 +11,14 @@ The diffusion has been tuned in order to give a reasonable strength of the strat
 
 \subsection{Data Assimilation System}
 \label{sec:DAS}
-Observations are assimilated using an Ensemble Adjustment Kalman Filter (EAKF) \citep{anderson2001}, which is one of several ensemble assimilation algorithms available within DART.
-The DART code is freely available online at \url{www.image.ucar.edu/DAReS/DART}.
+The Data Assimilation Research Testbed  \citep[DART]{Anderson2009, Raeder2012} provides an ensemble-based data assimilation interface for CAM (among many other atmosphere and ocean models). 
+Our experiments use the Ensemble Adjustment Kalman Filter (EAKF) \citep{anderson2001}, which is one of several ensemble assimilation algorithms available within DART.
+The following section outlines the basic algorithm of this ensemble filter.
 
-When an observation is made, we have a prior estimate of the observation predicted by the ensemble ($y_{b,i}$, where $b$ denotes the \textit{background} estimate and $i$ denotes an individual ensemble member), and the observation itself, $y_{\text{obs}}$.
-Bayes' theorem states that the conditional probability distribution function (PDF) of the estimated observation value, given the prior ensemble estimate on the one hand and the actual measurement on the other, is the product of their respective PDFs.
-The resulting joint PDF has an updated variance $\sigma_a^2$  (where $a$ denotes the update or \textit{analysis})
-given by:
+To assimilate observations, the filter requires an ensemble of $N$ simulations to be advanced forward to the time at which a given observation becomes available. 
+At this time, the filter unites two basic quantities: the observation itself, $y_{\text{obs}}$, and $N$ values of the observation that are predicted by the ensemble ($y_{b}^{n}$, where $b$ denotes the \textit{background} estimate and $n$ denotes an individual ensemble member).
+Bayes' theorem states that the conditional probability distribution of the observation, given the prior ensemble estimate on the one handm, and the physical measurement on the other, is the product of their respective probability distributions.
+The resulting joint probability distribution has an updated variance $\sigma_a^2$  (where $a$ denotes the update or \textit{analysis}):
 \begin{eqnarray}
  \sigma_a^2 = 
 \left[
@@ -31,65 +28,63 @@ given by:
 \label{eq:sigma_a}
 \end{eqnarray}
 where $\sigma_b^2$ is  the prior error variance of the observation implied by the ensemble, and $\sigma_{\text{obs}}^2$ is the error variance of the observation itself (i.e. the measurement error).
-
-The updated ensemble mean of the joint probability distribution is then given by
+The ensemble mean of this joint probability distribution is given by
 \begin{eqnarray}
 \left< y_a \right> = \sigma_a^2 
 \left(
 \frac{\left< y_b \right>}{\sigma_b^2} +
 \frac{y_{\text{obs}} }{\sigma_{\text{obs}}^2} 
-\right),
+\right).
 \end{eqnarray}
-and the updated observation-space value of each ensemble member is given by 
+This means that the observation value of each ensemble member should be updated to the following:
 \begin{eqnarray}
- y_{a,n} = 
+ y_{a}^n = 
 \left( \frac{\sigma_a^2}{\sigma_b^2}  \right)
 \left(
-y_{b.n} - \left< y_b  \right> \right)
+y_{b}^n - \left< y_b  \right> \right)
 + \left< y_a \right>,
 \end{eqnarray}
 i.e. a linear transformation of the ensemble members about the updated mean such that (\ref{eq:sigma_a}) is satisfied by the ensemble \citep{andersoncollins2006}.
 
-
-Practically, of course, we don't update the observations implied by the ensemble, but rather the \textit{state} of each ensemble member, i.e. the wind, surface pressure, and temperature fields. 
-The state vector of each ensemble member, ${\bf x}_n$, is updated simply by projecting the observation space update $\Delta y_n = y_{n,a}-y_{n,b}$ onto the individual state components $x_i$ via linear regression:
+Practically, of course, we don't update the \textit{observation} implied by the ensemble, but rather the \textit{state} of each ensemble member (in our case the wind, surface pressure, and temperature fields). 
+To update the state vector of each ensemble member, ${\bf x}^n$ with the information from the observation, we simply project the observation space update for each ensemble member ($\Delta y^n = y_{a}^n-y_{b}^n$) onto the individual state components $x_i$ via linear regression:
 \begin{eqnarray}
- \Delta x_{i,n} = 
+ \Delta x_{i}^n = 
 \left(
 \frac{c_{x_iy}}{\sigma_b^2}
 \right)
-\Delta y_n,
+\Delta y^n,
 \end{eqnarray}
 where $c_{x_iy}$ represents the prior covariance between the state component $x_i$ and the observation $y$.
 
-Because the EAKF adjusts the ensemble based on the expected error reduction, it is called a stochastic ensemble filter.
-In contrast, so-called stochastic filters, such as the well-known Ensemble Kalman Filter \citep{evensen2003}, adjust the forecast ensemble first with perturbed upservations, and then compute the resulting error distribution from the ensemble.
+%---cut---(it's not really relevant)
+%Because the EAKF adjusts the ensemble based on the expected error reduction, it is called a stochastic ensemble filter.
+%In contrast, so-called stochastic filters, such as the well-known Ensemble Kalman Filter \citep{evensen2003}, adjust the forecast ensemble first with perturbed upservations, and then compute the resulting error distribution from the ensemble.
 
-The novelty of ensemble assimilation algorithms is that the covariance $c_{x_iy}$ and the prior and posterior variances $\sigma_b^2$ and $\sigma_a^2$ are computed dynamically, using the ensemble of model states:
-\begin{eqnarray}
-c_{x_iy} &=& 
-\left<
-\left( x_i - \left< x_i \right>   \right)
-\left( y - \left< y \right>   \right)
-\right> 
-\label{eq:covariance} \\
+Ensemble assimilation algorithms are novel because they estimate the covariance and variance terms in the above equations using an ensemble of model simulations, which means that these quantities can vary in time and space (according to the physical relationships simulated in the model), and are updated with new information whenever a new observation comes in.  
+%\begin{eqnarray}
+%c_{x_iy} &=& 
+%\left<
+%\left( x_i - \left< x_i \right>   \right)
+%\left( y - \left< y \right>   \right)
+%\right> 
+%\label{eq:covariance} \\
 %
-\sigma_b^2 &=& 
-\left<
-\left( y_{b,n} - \left< y_b \right>   \right)^2
-\right>  
-\label{eq:sigma_b} \\
+%\sigma_b^2 &=& 
+%\left<
+%\left( y_{b,n} - \left< y_b \right>   \right)^2
+%\right>  
+%\label{eq:sigma_b} \\
 %
-\sigma_a^2 &=& 
-\left<
-\left( y_{a,n} - \left< y_a \right>   \right)^2
-\right>,  
-\label{eq:sigma_a} 
-\end{eqnarray}
+%\sigma_a^2 &=& 
+%\left<
+%\left( y_{a,n} - \left< y_a \right>   \right)^2
+%\right>,  
+%\label{eq:sigma_a} 
+%\end{eqnarray}
 %
-which means that they change in time and are updated at the observation times.
-In a successful ensemble assimilation system, these continually-updated covariances should reflect the true error statistics of the model system.
-If this is not the case, the ensemble filter will most likely diverge, a condition where the uncertainty predicted by the ensemble underestimates the true error.
+In a successful ensemble assimilation system, these terms should reflect the true error statistics of the model system.
+If this is not the case, the ensemble filter will diverge, a condition where the uncertainty predicted by the ensemble underestimates the true error, which eventually leads to the regection of new observations.
 
 
 %
@@ -98,13 +93,11 @@ If this is not the case, the ensemble filter will most likely diverge, a conditi
 
 \subsection{Synthetic Observations}
 
-We perform so-called observing system simulation experiments, wherein synthetic obsrservations are generated from a model simulation that is considered to be the true state of the atmosphere, and then assimilated back into an ensemble of model simulations whose initial mean state is different from the truth. 
-This approach makes it possible to evaluate the error between the ensemble mean (i.e. the analysis) and the true state, which is known.  
+To evaluate the impact of Earth rotation observations relative to more conventional (localized) observations in a data assimilation system, we generate synthetic observations from a reference model simulation that we call the "truth", then assimilate these observations into a an ensemble of model simulations spread around the truth.  
 
-\textcolor{red}{Here describe how the true state is generated.}
+The truth run comes from a reference CAM simulation that starts on 1 Jan 2008 and uses observed sea surface temperatures as a boundary condition. 
+We generate observations of this run from 1 January to 28 February 2009 of this simulation. 
 
-To simulate the assimilation of Earth rotation parameters, we generate synthetic observations of the three components of the atmospheric angular momentum (section \ref{sec:AAM}).
-We also generate a set of "local" observations from radiosondes (section \ref{sec:radiosondes}).
 
 \subsubsection{Atmospheric Angular Momentum Observations}
 \label{sec:AAM}
@@ -128,8 +121,8 @@ $k_2 = 0.295$,
 $k_s = 0.938$, and 
 $k_l = -0.301$
 represent the rotational, secular and load Love numbers, which quantify the rotational deformation of the Earth.
-$\Omega = 7.292115\times 10^{-5} \text{rad}/\text{s}$ the average rotation rate  of the Earth. 
-$C = 8.0365 \times 10^{37} \text{kg} \text{m}^2$ and $A = 8.0101 \times 10^{37} \text{kg} \text{m}^2$ represent the (3,3) and (1,1) components of the moment of inertia of the solid Earth, and $C_m = 7.1237\times 10^{37}  \text{kg} \text{m}^2$ and $A_m = 7.0999\times 10^{37} \text{kg} \text{m}^2$ are the corresponding moments of inertia of the mantle and crust only (this is done to decouple the core and mean mantle motion).  
+$\Omega = 7.292115\times 10^{-5} \text{rad}/\text{s}$ is the average rotation rate  of the Earth. 
+$C = 8.0365 \times 10^{37} \text{kg} \text{m}^2$ and $A = 8.0101 \times 10^{37} \text{kg} \text{m}^2$ represent the (3,3) and (1,1) components of the moment of inertia of the solid Earth, and $C_m = 7.1237\times 10^{37}  \text{kg} \text{m}^2$ and $A_m = 7.0999\times 10^{37} \text{kg} \text{m}^2$ are the corresponding moments of inertia of the mantle and crust only (they are used in the above equations to decouple the core and mean mantle motion).  
 
 
 
@@ -142,7 +135,7 @@ The ${\bf I}_{ij}$ terms represent the components of the atmospheric inertia ten
   I_{33} &=&  \int R^2 \cos^2 \phi dM ,
   \label{eq:I3}
 \end{eqnarray}
-and the $h_i$ terms the relative angular momentum (due to winds) in each direction:
+and the $h_i$ terms the relative angular momentum (due to wind) in each direction:
 \begin{eqnarray}
   h_{1}  &=& -\int R \left[u \sin \phi \cos \lambda - v \sin \lambda \right] dM 
     \label{eq:h1}\\
@@ -155,18 +148,18 @@ and the $h_i$ terms the relative angular momentum (due to winds) in each directi
 $R = 6371.0$ km is the radius of the Earth, $\Omega = 7.292115\times 10^{-5} \text{rad}/\text{s}$ the average rotation rate, and $g = 9.81 \text{m}/\text{s}^2$ is the acceleration due to gravity.
 
 Note that the axial terms [(\ref{eq:I3}) and (\ref{eq:h3})] weight all longitudes equally in the integration.
-This means that mass anomalies usually cancel each other out in the global integral, which means that the axial mass excitation function $I_3$ is usually very small and the axial wind excitation function $h_3$ dominates the axial angular momentum  \citep{barnesetal1983}.
+This means that mass anomalies usually cancel each other out in the global integral, which means that the axial wind excitation function $h_3$ dominates the axial angular momentum  \citep{barnesetal1983}.
 %
-Nearly the opposite is true for the equatorial AAM terms [(\ref{eq:I1})-(\ref{eq:I2}) and (\ref{eq:h1})-(\ref{eq:h2})], where stronger zonal asymmetry in the wind and mass fields leads to a larger global integral.
+Nearly the opposite is true for the equatorial AAM terms [(\ref{eq:I1})-(\ref{eq:I2}) and (\ref{eq:h1})-(\ref{eq:h2})], where zonally-asymmetric fields add up to a larger global integral.
 For these functions, the mass terms ($I_1$ and $I_2$) are typically several factors larger than the wind terms ($h_1$ and $h_2$)  \citep{barnesetal1983}.
 
 The longitudinal terms in the equatorial mass integrals [(\ref{eq:I1}) and (\ref{eq:I2})] means that $\chi_2$ is weighted more strongly over the continents while $\chi_1$ is weighted more strongly over the oceans.
 Consequently, $\chi_2$ has a pronounced annual cycle due to the yearly appearance of the Siberian High \citep{dobslawetal2010}, and tends to show strong negative anomalies in the month preceding a sudden stratospheric warming \citep{Neef2014}.
-$\chi_1$ has much weaker subseasonal to annual variations because surface pressure variations over the ocean tend to be evened out by corresponding displacements of the ocean surface (the so-called ``inversted barometer'' effect, e.g. \citet{salsteinrosen1989}).
+$\chi_1$ has much weaker subseasonal to annual variations because surface pressure variations cause corresponding displacements of the ocean surface, which even out the angular momentum changes (the so-called ``inversted barometer'' effect, e.g. \citet{salsteinrosen1989}).
 
-In reality, of course, we don't measure the atmospheric angular momentum but rather the variations in the Earth rotation parameters that are excited by the above angular momentum functions.
-Therefore in practice one would have to rotate the observed polar motion parameters into equivalent equatorial angular momentum components, convert observed length-of-day anomalies into corresponding axial angular momentum, and subtract out the excitation of each parameter that is due to other components of the Earth system.
-For the purposes of this study, it is sufficient to assimilate the three AAM components directly, since we are performing perfect model experiments and therefore know the true state.
+In reality, of course, we don't measure the atmospheric angular momentum but rather the variations in the Earth rotation parameters that variations in the angular momentum excite. 
+To map these to equivalent angular momentum variations, one would rotate the inertial reference frame, convert observed length-of-day anomalies into corresponding axial angular momentum, and subtract out the excitation of each parameter that is due to other components of the Earth system.
+For the purposes of this study, however, it is sufficient to assimilate the three AAM components directly, since we are performing perfect model experiments and therefore know the true state.
 %---cut this part: since we assimilate the X's, we don't need to talk about polar motion
 %The non-dimensional representation of AAM in (\ref{eq:X1})-(\ref{eq:X3}) makes it easy to map angular momentum changes to equivalent changes in the polar orientation (or polar motion) and the rate of Earth's rotation. 
 %Polar motion is measured in terms of two angles, $p_1$ and $p_2$, that represent the location of the Earth's rotational axis in an inertial, celestial reference frame that is fixed in space and defined relative to a group of stars (the so-called celestial ephemeris pole).
@@ -187,44 +180,39 @@ Nevertheless, it is conceptually helpful to transform the axial AAM function $\c
 where $\text{LOD}_0$ denotes the nominal length-of-day (86400s).  
 %----cut----The length-of-day anomalies are observed as $\Delta \text{LOD}  \equiv \text{UT1} - \text{IAT}$ where UT1 denotes the universal time measured by geodetic techniques and IAT is a reference time based on atomic clock measurements.
 
-
-
-For our experiments, observations of $\chi_1$, $\chi_2$, and $\chi_3$ are generated every 24 hours, reflecting the observation frequency of the real ERP series released by Earth rotation services.  
+For our experiments, observations of $\chi_1$, $\chi_2$, and $\chi_3$ are generated every 24 hours, reflecting the observation frequency of the real ERP series published by the International Earth Rotation Services \citep{iers}.  
 
 
 \subsubsection{Idealized Radiosonde Observations}
 \label{sec:radiosondes}
 
-In order to evaluate  the assimilation of Earth rotation variations, we need to compare it to the assimilation of conventional, spatially-distributed observations such as are normally assimilated in the generation of atmospheric reanalysis \citep{Dee2005} or weather prediction models (\textcolor{red}{CITE}).
-Since compiling all the available observations is a complicated task in itself, we simulate the conventional observation grid using an idealized, global grid of radiosonde-like observations.  
-
-The horizontal grid of the radiosonde observations is shown in Figure \ref{fig:RS}.
-
-\textcolor{red}{How many RS observations per day?}
+We compare the angular momentum observations described above to spatially localized observations that are similar to the types of observations used in  reanalysis \citep{Dee2005}.
+We simulate the "conventional" observation grid simply using an idealized global grid (Fig. \ref{fig:RS}) of radiosonde measurements of temperature, which amounts to about 27000 observations per day.  
 
 
-\subsubsection{Synthetic GPS-RO Observations}
-\label{sec:gpsro}
-
-In Section \ref{sec:aam_as_evaluation_variable} we investigate the usefulness of AAM observations as an evaluated variable when spatially-localized observations are assimilated.  
-
-BINK
 
 %-------------------experiments-------------------------
 
 
-\subsection{Perfect-model experiments}
+\subsection{Assimilation Experiments}
 \label{sec:experiments}
 
-We perform so-called Observing System Simulation Experiments (OSSEs), wherein a model is used to generate a "true state", and observations are generated from this simulation with known error statistics, then assimilated back into the model.
-OSSEs are designed to show how much information can truly be recovered by assimilation when all model and observation errors are known and controlled. 
 
-\subsubsection{True State and Ensemble Generation}
+\subsubsection{Ensemble Generation}
 
 \textcolor{alert}{[Insert description of how we generated the true state.]}
 All assimilation runs were performed with an 80-member ensemble.
 The ensemble is generated by selecting the 1 January restart files from an 80-year simulation of CAM5, and then running a year of assimilation of the synthetic radiosonde observations (Section \ref{sec:radiosondes}).
 
+\subsubsection{Experiment Overview}
+% experiment types
+Four assimilation experiments are performed, summarized in Table \ref{tab:expts}: In the first (NoDA), the 80-member ensemble is allowed to evolve without any assimilation. 
+Only the three  AAM components are assimilated (12-hourly) in experiment AAM.  
+In experiment RST, the temperature observations from the idealized radiosonde grid are assimilated 6-hourly.
+In experiment RST+AAM, both the radiosonde temperatures and the AAM components are assimilated. 
+Experiments NoDA and AAM were integrated for two months, 1 January to 28 February 2009.  
+Experiments RST and RST+AAM were only integrated for the first 31 and 17 days of this period, respectively, because this amount of integration time was found to be sufficient to give the results presented in this study.
+\textcolor{red}{Here (or maybe elsewhere) add a note about the vertical increment cutoff -- if applicable in our experiments.}
 
 \subsubsection{Output Diagnostics}
 Our main evaluation diagnostics are the square error between the simulated true state and the ensemble mean
@@ -260,12 +248,3 @@ If the truth comes from the same PDF as the ensemble, the rank histogram should 
 If the truth is a frequent outlier of the PDF represented by the ensemble, the rank histogram will by concave.
 A convex rank histogram indicates an ensemble whose spread is so large that the truth is usually the central rank. 
 
-\subsubsection{Experiment Overview}
-% experiment types
-Four assimilation experiments are performed, summarized in Table \ref{tab:expts}: In the first (NoDA), the 80-member ensemble is allowed to evolve without any assimilation. 
-Only the three  AAM components are assimilated (12-hourly) in experiment AAM.  
-In experiment RST, the temperature observations from the idealized radiosonde grid are assimilated 6-hourly.
-In experiment RST+AAM, both the radiosonde temperatures and the AAM components are assimilated. 
-Experiments NoDA and AAM were integrated for two months, 1 January to 28 February 2009.  
-Experiments RST and RST+AAM were only integrated for the first 31 and 17 days of this period, respectively, because this amount of integration time was found to be sufficient to give the results presented in this study.
-\textcolor{red}{Here (or maybe elsewhere) add a note about the vertical increment cutoff -- if applicable in our experiments.}
