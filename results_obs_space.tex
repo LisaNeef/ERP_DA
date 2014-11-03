@@ -1,12 +1,11 @@
 
 \subsection{Error reduction in observation space}
+Of the experiments outlined in the previous section, two include the three atmospheric angular momentum functions [(\ref{eq:X1})-(\ref{eq:X3})] as an assimilation variable. 
+To compare the constraint imposed by assimilating this variable, Figure \ref{fig:fit_to_ERPs} shows the prior ensemble estimate of the three angular momentum components as a function of time, compared the the "true" values, for each of the four experiments.
 
-Let us first compare the experiments in Table \ref{tab:expts} in terms of the observed AAM components [(\ref{eq:X1})-(\ref{eq:X3})].
-Figure \ref{fig:fit_to_ERPs} compares the prior ensemble of each AAM excitation function to the true state for each of the four experiments. 
-With no assimilation (first column), the three AAM values of the ensemble spread rapidly about the truth, saturating after about a month.  
-
-As the different observational constraints are applied (columns 2-4), the ensemble estimate of each AAM component comes closer to the truth. 
-Assimilating the three global AAM components (E-AAM second column) constrains the ensemble almost as much as when local temperatures are assimilated (E-RST, third column), and assimilating both observation types together (E-ERPRST, fourth column) offers the strongest constraint.
-This indicates that the EAKF is indeed able to adjust individual variable fields of each ensemble member in such a way that the global AAM agrees with observations. 
-This suggests that the assimilation of the AAM components offers a useful constraint. 
-Whether the error in the state variables (i.e. column 1 of Fig. \ref{fig:NODA}) is actually reduced will be investigated in Section \ref{sec:erpda}.
+With no assimilation (first column), the ensemble estimates of the three angular momentum components spread rapidly about the; the ensemble spread for each component saturates after about 30 days.
+Applying the three different observational constraints (columns 2-4), the ensemble clusters closely around the truth.
+Assimilating the three angular momentum components only (second column) constrains the ensemble almost as much as whenwe assimilate the global grid of radiosonde temperature measurements (third column).
+Assimilating both observation types together (fourth column) constrains the global angular momentum even more than assimilating the radiosonde grid alone. 
+Both results suggest that rectifying the misfit between the observed and predicted angular momentum holds a great deal of information about the modeled atmosphere. 
+However, Figure \ref{fig:fit_to_ERPs} does not show whether adding the angular momentumm components to the assimilation actually reduces the error in the model state -- this is the subject of the next section.
