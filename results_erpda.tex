@@ -1,7 +1,70 @@
-\subsection{State-space diagnostics}
+\subsection{State Update from Angular Momentum Observations}
 \label{sec:erpda}
 
-To evaluate how the assimilation of the three angular momentum components changes the analysis (i.e. the ensemble mean state), we compare the unassimilated 80-member ensemble simulation to the experiment assimilating the three angular momentum components only. 
+When an angular momentum observation is assimilated, the update on the state variables (\ref{eq:state_update}) is proportional to the covariance between each state component (i.e. the wind, temperature, or surface pressure at some point) and the angular momentum component in question. 
+The filter computes these covariances using the ensemble using (\ref{eq:covariance}).
+
+%--------covariance analysis---------------------
+
+To see what the covariance $c_{x_i y_j}$ looks like when $y_j$ is one of the three components of the global angular momentum, we can abbreviate the angular momentum integrals [(\ref{eq:I1})-(\ref{eq:h3})] as
+%
+\begin{eqnarray}
+y_j = \sum_{i=1}^M f_{i,j} x_i,
+\end{eqnarray}
+%
+where $f_{i,j}$ represents the spatial weighting that is applied to a particular state component for the angular momentum component in question, times the latitude, longitude, and mass increments in the integrals, and $M$ represents the number of variables in the model state.
+Then the observation error terms in (\ref{eq:covariance}) become
+\begin{eqnarray}
+	e_{y_j}^n = y_j^n - \left< y_j^n \right>
+	= \sum_{k=1}^{M}f_{k,j}e_{x_k}^n.
+\end{eqnarray}
+Thus the state-to-observation covariance term becomes
+\begin{eqnarray}
+	c_{x_i y_j} = \frac{1}{N-1}
+	\sum_{n=1}^{N}
+	\left[
+	e_{x_i}^n
+	\sum_{k=1}^{M} f_{k,j}e_{x_k}^n
+	\right].
+	\label{eq:state_to_obs_covariance}
+\end{eqnarray}
+%--------covariance analysis---------------------
+For a given point in the model state, this term is proportional to the ensemble spread times the weighting function at that point, plus the covariance between the point in question and all other other points in the model state, multiplied by their respective weighting functions. 
+In other words, a point will be updated by an angular momentum observation if it is located in a region that is weighted strongly for that particular angular momentum component, or it can also be updated if it happens to covary strongly with other points that are.
+
+% covariance figure-----------------------------------
+Figure \ref{fig:covariances} shows as an example the covariance between the zonal wind field and the axial angular momentum component ($\chi_3$), computed from the ensemble in experiment 2, i.e. assimilating only the three components of angular momentum.
+Covariances are shown for at 5-day intervals between 24 January and 18 February, \textcolor{unsure}{separating between the troposphere (top row) and stratosphere (bottom row)}. 
+
+While we see that broad swaths of the zonal wind field are strongly covariant with the observation, the pattern varies strongly in time and doesn't clearly resemble the weighting function of the axial wind integral (\ref{eq:h3}), which is maximal in the tropics.
+This means that the covariances between the different state-space components are important for determining which points are updated when an angular momentum observation is assimilated. 
+Though not shown here, we also found that the covariance fields between the other state variables the other angular momentum components are similar in the sense that none of them simply reflect the intregral transfer functions and generally have a large-scale structure.  
+
+% increments versus error figure-----------------------------------
+The covariances shown in Figure \ref{fig:covariances} determine how the observation space increments in Figure \ref{fig:fit_to_ERPs}(*) are mapped onto the zonal wind field. 
+The second row of Figure \ref{fig:error_increments} shows the resulting increments (i.e. posterior-prior) in the zonal wind field at the same time samples as the previous figure. 
+These increments should ideally match the true error in the zonal wind field, which is shown in the top row of Figure \ref{fig:error_increments}.  
+\textcolor{unsure}{Comparing the top and bottom rows of plots overall, the true error and the analysis increments do, generally, look similar.} 
+Note that the color scale of the increments (second row) is much finer than that of the true errors; it is not surprising that the increments are much smaller than the true error, since the information from a single observation has to be spread over the entire state. 
+A closer look at Figure  \ref{fig:error_increments} also reveals several instances where the increment is very different from the true error, and even opposed it. 
+For example, by 8 February,  the zonal wind is too low in the mid-north Atlantic, but the assimilation lowers it futher, while it is too high in the north Pacific, and the assimilation increases it further. 
+\textcolor{alert}{Probably this problem gets worse as the DA progresses, but does my revised plot show that?}
+
+% error reduction figure-----------------------------------------------
+The previous figures showed that the covariance model developed by the ensemble filter may be physical, but may not necessarily lead to the correct analysis increments. 
+This leads to the question of whether the overall effect of assimilating global angular momentum improves the modeled fields or not. 
+Figure \ref{fig:ER} shows the difference in the true error (again in the zonal wind fields), between experiment 2 (assimilating the three angular momentum components) and the reference experiment with no assimilation.
+\textcolor{alert}{Add the periods and region over which the ER is shown.}
+Red values indicate a reduction of error when assimilating angular momentum.
+\textcolor{unsure}{Error reduction is most evident in the first few days when the ensemble spread is still quite small, but after about 3 weeks of assimilation, assimilation increases the error in just as many places as it decreases the error.}
+\textcolor{alert}{Also add a note about the ensemble spread here -- we are moving away from the truth but we think we're doing better.}
 
 
+% point checks figure-------------------------------------------------------
+Figure \ref{fig:ER} illustrates the overall effect of the underconstrained covariance model in these experiments, which is that the model states in the ensemble are moved closer together as the assimilation progresses, but are in many areas moved farther away from the truth.
+To illustrate this result on a local level, Figure \ref{fig:point_checks} compares the zonal wind in the ensemble and its mean to the true state, in two regions: the tropospheric subtropical jet (averaging between 30N-40N, between 300hPa-200hPa, and all longitudes), and the Northern Hemisphere stratospheric polar vortex (averaging between 60N-90N, between 70hPa-40hPa, and all longitudes).
+\textcolor{alert}{Need to check whether these are approproate definitions and then rerun the figure and possible change the text here.}
+The two columns of the figure compare the reference experiment with no assimilation to the assimilation of the three angular momentum components. 
+For both measures, assimilating the angular momentum decreases the ensemble's spread about the mean, and gives the ensemble mean a bit more of the temporal variation that we see in the truth (whereas, for no assimilation, day-to-day variations average out in the ensemble mean). 
+However, by both measures the agreement between the ensemble mean and the truth is only increased until roughly the third week of January --after that, no clear improvement is seen.
 
