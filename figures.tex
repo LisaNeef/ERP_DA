@@ -2,30 +2,28 @@
 \begin{table}
 \caption{Overview of assimilation experiments performed.}
 \centering
-\begin{tabular}{p{2cm}p{5cm}p{4cm}}
-Experiment number &  Assimilated Quantities  & Run dates \\
+\begin{tabular}{p{2cm}p{2cm}p{6cm}p{4cm}}
+	Experiment& Model &  Assimilated Quantities  & Run dates \\
 \hline
-1 &  none	& 1 Jan - 28 Feb 2009 \\
-2 &  $\chi_1$, $\chi_2$, $\Delta$LOD		& 1 Jan - 28 Feb 2009 \\
-3 &  Radiosonde temperatures	& 1 Jan -31 Jan 2009	\\
-4 &  Radiosonde temperatures, $\chi_1$, $\chi_2$, $\Delta$LOD	& 1 Jan - 17 Jan 2009\\
-5 & \textcolor{unsure}{CHAMP-like GPS-RO refractivities} & \textcolor{alert}{FILL IN}	\\
+1 & CAM	&	none &  1 Jan - 28 Feb 2009 \\
+2 & CAM &	$\chi_1$, $\chi_2$, $\Delta$LOD	& 1 Jan - 28 Feb 2009 \\
+3 & CAM &	Radiosonde temperatures	& 1 Jan -31 Jan 2009	\\
+4 & CAM &	Radiosonde temperatures, $\chi_1$, $\chi_2$, $\Delta$LOD	& 1 Jan - 17 Jan 2009\\
+5$^a$ & WACCM &	none   & 6-25 Nov 2008	\\
+6 & WACCM &	GPS-RO  & 7-27 Oct 2009	\\
+7$^a$ & WACCM &	GPS-RO + NNRA$^b$  & 6-25 Nov 2008	\\
+8$^a$ & WACCM &	GPS-RO + NNRA$^b$ +SABER & 6-25 Nov 2008\\	
 \hline
 \end{tabular}
-%\tablenotetext{a}{Footnote text here.}
+\tablenotetext{a}{Experiments performed by \citep{Pedatella2013}}
+\tablenotetext{b}{Observations used in the NCEP/NCAR Reanalysis project \citep{Saha2010}, which include radiosonde and aircraft winds and temperatures, plus satellite drift winds.}
 \label{tab:expts}
 \end{table}
 
-%-----the synthetic radiosonde obs grid
- \begin{figure}
-%\includegraphics[width=\textwidth]{../../Documents/Plots/ERP_DA/radiosonde_locations.pdf} 
- \caption{  }
- \label{fig:RS}
-\end{figure}
 
 %------comparison of the DA runs in the observation space
  \begin{figure}
-%\includegraphics[width=\textwidth]{../../Documents/Plots/ERP_DA/paper/fit_to_ERPs.pdf} 
+\includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_erpda_obs_space.pdf} 
  \caption{ The DART prior ensemble (gray) compared to the true state (orange) in terms of assimilation time and each of the three angular momentum functions [(\ref{eq:X1})-(\ref{eq:X3}), (\ref{eq:X3_to_LOD})].  The columns compare the four experiments summarized in Table \ref{tab:expts}.  }
  \label{fig:fit_to_ERPs}
 \end{figure}
@@ -33,21 +31,21 @@ Experiment number &  Assimilated Quantities  & Run dates \\
 %-----evolution of the covariances between local variables and the AAM observations
  \begin{figure}
 	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_U_to_LOD_covariances.pdf}
-	 \caption{Evolution of the covariance between zonal wind and the axial angular momentum component ($\chi_3$), at 5-day intervals, assimilating observations of the three angular momentum components.}
+	 \caption{Evolution of the covariance (top row) and correlation (bottom row) between zonal wind and the axial angular momentum component ($\chi_3$), at 7-day intervals, assimilating observations of the three angular momentum components.}
  \label{fig:covariances}
 \end{figure}
 
 %-----evolution of the prior error and corresponding increments 
  \begin{figure}
 	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_U_priorerror_vs_increment.pdf}
-	 \caption{Top row: evolution of the prior error (Truth-Prior) in the zonal wind, at 5-day intervals, assimilating observations of the three angular momentum components. Bottom row: the analysis increment (Posterior-Prior) in the zonal wind for the same times.} 
+	 \caption{Top row: evolution of the prior error (Truth-Prior) in the zonal wind, at 7-day intervals, assimilating observations of the three angular momentum components. Bottom row: the analysis increment (Posterior-Prior) in the zonal wind for the same times.} 
  \label{fig:error_increments}
 \end{figure}
 
-%-----error reduction in time  - stratosphere and tropopsphere  
+%-----error reduction in time  - NODA-ERPALL (blue is good bc it means error is larger in NODA)
  \begin{figure}
 	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_U_error_reduction.pdf}
-	 \caption{Evolution of the difference in true error (Truth-Prior) when the three angular momentum components are assimilated, relative to no assimilation. Pink indicates a reduction in error relative to no assimilation. The first row shows error reduction in the troposphere (averaging between 100 and 500 hPa) and the second row shows error reduction in the stratosphere (averaging between 30hPa and the model top).}
+	 \caption{Evolution of the difference in mean square error between no assimilation and assimilating the three angular momentum components (i.e. blue indicates that error is less when angular momentum is assimilated). The first row shows error reduction in the upper atmosphere (averaging between 100 and 0 hPa) and the second row shows error reduction in the lower atmosphere (averaging between the surface and 100 hPa).}
 	 \label{fig:ER}
 \end{figure}
 
@@ -59,9 +57,39 @@ Experiment number &  Assimilated Quantities  & Run dates \\
 \end{figure}
 
 
-%-----evolution of rank histograms to show filter divergence
-% \begin{figure}
-%	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_U_rank_histograms.pdf}
-%	 \caption{Evolution of the rank histogram of the zonal wind field at 10-day intervals, for the run with no assimilation (top row) and assimilating the three components of angular momentum (bottom row).}
-%	 \label{fig:RH}
-%\end{figure}
+
+
+%------difference in MSE for RST - ERPRST (blue is good)
+ \begin{figure}
+	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_U_error_RST_vs_ERPRST.pdf}
+	 \caption{Snapshots of the difference in mean square error (top) and scaled ensemble variance (see eqn \ref{eq:EvsS}) (bottom) between the assimilation of radiosonde temperatures and the assimilation of both radiosonde temperatures and the global angular momentum, averaging between the surface and 100 hPa. Blue indicates that adding the angular momentum to the assimilation reduces error / ensemble variance. }
+	 \label{fig:added_value_MSE}
+\end{figure}
+
+%-----evolution of rank histograms to show filter divergence when you add ERPs to RST  
+ \begin{figure}
+	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_added_value_RH.pdf}
+	 \caption{Evolution of the rank histogram of the zonal wind field over the first week of assimilation of (top) radiosonde temperatures and (bottom) radiosonde temperatures with angular momentum.}
+	 \label{fig:added_value_RH}
+\end{figure}
+
+%-------comparison of the WACCM experiments in terms of true error ----
+ \begin{figure}
+	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_evalvariable_state_space.pdf}
+	 \caption{Profiles of the \textcolor{unsure}{true error} in the zonal wind as a function of time, for four DART-WACCM simulations with increasing observational constraints (see text)}
+	 \label{fig:evalvariable_state}
+\end{figure}
+
+
+
+%-------comparison of the WACCM experiments in terms of aam ----
+\begin{figure}
+	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_evalvariable_aam_space.pdf}
+	 \caption{Comparison of the ensemble (gray) and its mean (red) to the truth (blue) for each of the three global angular momentum components (rows) and four DART-WACCM simuilations with increasing observational constraints (see text).}
+	 \label{fig:evalvariable_aam}
+\end{figure}
+
+
+
+
+

@@ -1,7 +1,19 @@
-In non-idealized assimilation experiments, it is difficult to judge whether the assimilation of a given set of observations has actually succeeded in bringing the estimated state closer to the truth.
+In this section we propose a better use for Earth rotation observations in data-constrained simulations, which is to use them as evaluated variables to validate the assimilation of more conventional observations.  
+In the assimilation of real observations, it is difficult to judge whether the assimilation has actually succeeded in bringing the estimated state closer to the truth --simply because we don't know the true state of the atmosphere.
 We can validate such an assimilation experiment by comparing to independent observations, but these can be difficult to obtain because observing systems often don't overlap sufficiently in time and space.
+Here the atmospheric angular momentum may make a useful evaluation parameter, since it is easy to compute from the modeled wind and pressure fields, and is observed in the form of three simple parameters that are freely available at 12-hourly resolution.  
 
+The four DART-WACCM simulations in Table \ref{tab:expts} illustrate this idea in Figures \ref{fig:evalvariable_state}-\ref{fig:evalvariable_aam}. 
+The four experiments together represent a stepwise increase of the constraint imposed by observations (Section \ref{sec:expts}).  
+Figure \ref{fig:evalvariable_state} compares Northern Hemisphere maps of the mean square error in the zonal wind at 320 hPa on day 14 of assimilation for each of the four experiments shown.
+It is easy to see that mean square error goes down as more observations are added, although adding SABER observations does increase the error slightly at this tropospheric level. 
 
-%---uncomment if needed
-%GPS-RO measurements have been shown to add a high amount of information to numerical weather forecasts (Bonavita, 2013), due to their low systematic errors and high vertical resolution. It was shown by (Wang et al., 2013) that GPS-RO data give an unprecedented look into the vertical structure of the atmosphere because of their high vertical resolution, in this case showing a warming trend in the tropopause inversion layer that would not have been observed otherwise.
+It would be difficult to identify the differences between these four levels of constraint in realistic simulations where we don't know the true state. 
+Figure \ref{fig:evalvariable_aam} shows how the four simulations instead compare in terms of their three global components of angular momentum, in each case compared to the truth.  
+In a realistic case, we could replace the ``true'' values with the observed Earth rotation parameter corresponding to each angular momentum component (polar motion for the equatorial terms, and length-of-day anomalies for the axial term), possibly adjusting for the angular momentum of the oceans, though that contribution should be small on these short timescales.  
 
+Figure  \ref{fig:evalvariable_aam} makes it easy to see the increasing constraint as the number of observations increases.
+We can see, for example, that the SABER observations seem to shock the state towards the beginning of the assimilation period, an effect that doesn't go away until about a week later.  
+
+The angular momentum has one shortcoming as an assimlation variable in that it mostly reflects on the lower atmosphere, which of course has most of the atmosphere's mass.
+Thus, for example, the angular momentum diagnostic does not capture the added benefit of the SABER observations, which is that they reduce the error in the upper atmosphere. 

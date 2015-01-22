@@ -1,6 +1,24 @@
 
-\section{Can Earth rotation observations add value?}
 
-The previous sections showed that the assimilation of angular momentum observations can reduce error in the modeled wind and pressure fields, as long as the ensemble spread has not reached its saturation level. 
-Thus it makes sense to test whether the assimilation of angular momentum is more successful if the angular momentum functions are assimilated together with (more conventional) spatially localized observations to keep the ensemble spread from growing.
+The previous section showed that the assimilation of global angular momentum can reduce bias in the model state while the ensemble spread is still relatively small.
+This suggests that global integral observations like the anglar momentum might better constrain the state in the presence of other observations that keep the ensemble spread small, such that an ensemble that is already clustered around the true state could be pushed even closer to the truth by adding the additional requirement that the global angular momentum should match observations. 
+
+In this section, we compare DART-CAM simulations 3 and 4 in Table \ref{tab:expts}, i.e. assimilating radiosonde temperatures alone, and with additional angular momentum observations.
+Comparing these two experiments in terms of the fit to the angular momentum components (Fig. \ref{fig:fit_to_ERPs} columns 3-4), we see that the radiosonde observations alone already achieve a good fit to the true angular momentum, and that 
+then adding observations of the angular momentum components further improves the fit.  
+This means that the angular momentum observations add information to the ensemble, but the question remains as to whether the information is interpreted correctly by the model.
+
+Figure \ref{fig:added_value_MSE} shows time snapshots of the mean square error and scaled ensemble spread (\ref{eq:EvsS}) when assimilating radiosonde temperatures alone, minus the mean squared error when angular momentum observations are additionally assimilated, at four-day intervals starting on 5 January 2009, now focusing only on atmospheric levels below 100hPa, and showing the corresponding ensemble spread in the second row of plots. 
+As in Fig. \ref{fig:ER}, which showed the error reduction / increase from assimilation angular momentum observations alone,blue again indicates that adding the angular momentum observations reduces the mean square error. 
+Unlike Fig. \ref{fig:ER}, here we see that adding the angular momentum observations to the conventional observations almost always increases the mean square error, save for a few occasional and weak blips of error reduction.  
+At the same time, adding the angular momentum observations very slightly decreases the ensemble spread in all cases.
+This indicates that the ensemble filter, in correcting the state to fit the observed angular momentum, is now even more likely to find an ensemble mean model state that satisfies the observations, but is not closer to the truth. 
+In other words, it is simply too easy to nudge the ensemble into a wrong state that has the right angular momentum. 
+
+Figure \ref{fig:added_value_RH} compares the same two experiments in terms of daily rank histograms, for the first six days of assimilation.  
+Assimilating radiosonde temperatures alone (Fig. \ref{fig:added_value_RH} top row) gives a consistently convex rank histogram, which means that the true state is most frequently at the center of the ensemble, whose spread is larger than the actual uncertainty in the analysis.  
+Adding angular momentum observations (Fig. \ref{fig:added_value_RH} bottom row) turns the rank histogram concave within about four days of assimilation, meaning that at virtually all points in the model state, the truth is considered an outlier of the ensemble. 
+Rank histograms computed at later times (not shown) look similar to the last panel of Fig. \ref{fig:added_value_RH}.  
+
+Thus even when the initial ensemble is spread very closely around the truth, it is still very difficult to satisfy the observed angular momentum with the correct state adjustment -- even in this case, it is far more likely that the ensemble clusters around a mean state that is farther from the truth than the spread of the ensemble.  
 

@@ -104,11 +104,13 @@
 %\usepackage{epstopdf}
 %\usepackage{pgfplots}
 \usepackage{stmaryrd}
+\usepackage{soul}		% this package allows  highlighting -- useful in the text
 
 % define some colors
 \definecolor{unsure}{RGB}{27,158,119}
 \definecolor{alert}{RGB}{217,95,2}
 \definecolor{reviewer}{RGB}{117,112,179}
+
 %
 %
 %% ------------------------------------------------------------------------ %%
@@ -166,7 +168,7 @@ Jeffrey Anderson \altaffilmark{2}}
 \altaffiltext{1}{Ocean Circulation and Climate Dynamics - Marine Meteorology,
    Helmholtz Centre for Ocean Research Kiel (GEOMAR), Kiel, Germany.}
 \altaffiltext{2}{Institute for Mathematics Applied to Geosciences, 
-National Center for Atmospheric Research, Bouder, Colorado, USA.}
+National Center for Atmospheric Research, Boulder, Colorado, USA.}
 
 
 %% ------------------------------------------------------------------------ %%
@@ -217,13 +219,46 @@ National Center for Atmospheric Research, Bouder, Colorado, USA.}
 
 \section{Methods}
 \label{sec:methods}
-\input{methodology.tex}
+This study relies on eight idealized data assimilation experiments, four using the Community Atmosphere Model (CAM) and four using the Whole Atmosphere Community Climate Model (WACCM), and all run within the Data Assimilation Research Testbed \citep[DART]{Anderson2009} from the National Center for Atmospheric Research. 
+Table \ref{tab:expts} summarizes the experiments. 
+This section describes our study's special focus on observations of the atmospheric angular  momentum (section \ref{sec:obs}), the atmospheric models (section \ref{sec:models}), and the assimilation system (section \ref{sec:dart}).  
+The reader familiar with these subjects may skip directly to the description of the experiments in section \ref{sec:expts}, or the results in sections \ref{sec:obs_space}-\ref{sec:evaluation_variable}.
+
+
+\subsection{Atmospheric Angular Momentum Observations}
+\label{sec:obs}
+\input{methods_obs.tex}
+
+\subsection{Atmospheric Models CAM and WACCM}
+\label{sec:models}
+\input{methods_models.tex}
+
+\subsection{Data Assimilation System}
+\label{sec:dart}
+\input{methods_dart.tex}
+
+\subsection{Output Diagnostics}
+\label{sec:diagnostics}
+\input{methods_diagnostics.tex}
+
+\subsection{Assimilation Experiments}
+\label{sec:expts}
+\input{methods_expts.tex}
 
 %-------------------------------------RESULTS 1- integral obs suck------------------------------------------------------
 \section{Global Angular Momentum as an Assimilation Variable}
-\label{sec:results}
+\label{sec:assimilation_variable}
+
+\subsection{Observation-space diagnosis}
+\label{sec:obs_space}
 \input{results_obs_space.tex}
+
+\subsection{State Update from Angular Momentum Observations}
+\label{sec:erpda}
 \input{results_erpda.tex}
+
+\subsection{Assimilating AAM in the Presence of Conventional Observations}
+\label{sec:added_value}
 \input{results_addedvalue.tex}
 
 

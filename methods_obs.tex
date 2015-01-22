@@ -1,0 +1,84 @@
+%-------------------observations-------------------------
+
+\citet{barnesetal1983} derived three equations that describe variations in the three components of atmosphere angular momentum:  
+\begin{eqnarray}
+%X1
+{\bf \chi}_{1}(t) &=& \frac{1}{\Omega \left( C_m-A_m \right)\left(1-\frac{k_2}{k_s}  \right)}
+\left[ \left(1+k_l \right) \Omega \Delta {\bf I}_{13}(t) + \Delta h_1(t)  \right] \label{eq:X1} \\
+%X2	
+{\bf \chi}_{2}(t) &=& \frac{1}{\Omega \left( C_m-A_m \right)\left(1-\frac{k_2}{k_s}  \right)}
+\left[ \left(1+k_l \right) \Omega \Delta {\bf I}_{23}(t) + \Delta h_2(t)  \right] \label{eq:X2} \\
+%X3	
+{\bf \chi}_{3}(t) &=& \frac{1}{\Omega C_m \left(1+\frac{4k_2}{3k_s}\frac{C-A}{C} \right)}
+\left[ \left(1+k_l \right) \Omega \Delta {\bf I}_{33}(t) + \Delta h_{3}(t) \label{eq:X3} \right].
+\end{eqnarray}
+%
+$\chi_1$ and $\chi_2$ represent the two vector components of angular momentum defined by the intersection of the equator with the $180\degree$W and $0\degree$ meridians, respectively; $\chi_3$ reprents the axial component.
+%
+The constants 
+$k_2 = 0.295$, 
+$k_s = 0.938$, and 
+$k_l = -0.301$
+represent the rotational, secular and load Love numbers, respectively, which quantify the rotational deformation of the Earth.
+$\Omega = 7.292115\times 10^{-5} \text{rad}/\text{s}$ is the average rotation rate  of the Earth. 
+$C = 8.0365 \times 10^{37} \text{kg} \text{m}^2$ and $A = 8.0101 \times 10^{37} \text{kg} \text{m}^2$ represent the (3,3) and (1,1) components of the moment of inertia of the solid Earth, and $C_m = 7.1237\times 10^{37}  \text{kg} \text{m}^2$ and $A_m = 7.0999\times 10^{37} \text{kg} \text{m}^2$ are the corresponding moments of inertia of the mantle and crust only (they are used in the above equations to decouple the core and mean mantle motion).  
+
+
+
+The ${\bf I}_{ij}$ represent the components of the atmospheric inertia tensor:
+\begin{eqnarray}
+  I_{13} &=& -\int R^2 \cos \phi \sin \phi \cos \lambda dM 
+  \label{eq:I1}\\
+  I_{23} &=& -\int R^2 \cos \phi \sin \phi \sin \lambda dM 
+  \label{eq:I2}\\
+  I_{33} &=&  \int R^2 \cos^2 \phi dM ,
+  \label{eq:I3}
+\end{eqnarray}
+and the $h_i$ the relative angular momentum (due to wind) in each direction:
+\begin{eqnarray}
+  h_{1}  &=& -\int R \left[u \sin \phi \cos \lambda - v \sin \lambda \right] dM 
+    \label{eq:h1}\\
+  h_{2}  &=& -\int R \left[u \sin \phi \sin \lambda + v \cos \lambda \right] dM 
+    \label{eq:h2}\\
+  h_{3}  &=&  \int R u \cos \phi dM.
+    \label{eq:h3}
+\end{eqnarray}
+%
+$R = 6371.0$ km is the radius of the Earth, $\Omega = 7.292115\times 10^{-5} \text{rad}/\text{s}$ the average rotation rate, and $g = 9.81 \text{m}/\text{s}^2$ is the acceleration due to gravity.
+
+Note that the axial angular momentum terms [(\ref{eq:I3}) and (\ref{eq:h3})] weight all longitudes equally in their integrals, which means that mass anomalies usually cancel each other out in the axial angular momentum, which means that the wind excitation, $h_3$, dominates the axial angular momentum  \citep{barnesetal1983}.
+%
+Nearly the opposite is true for the equatorial angular momentum terms [(\ref{eq:I1})-(\ref{eq:I2}) and (\ref{eq:h1})-(\ref{eq:h2})], which are larger if the variable fields are hemispherically asymmetric.
+For these functions, the mass terms ($I_1$ and $I_2$) are typically several factors larger than the wind terms ($h_1$ and $h_2$)  \citep{barnesetal1983}.
+
+The longitudinal terms in the equatorial mass integrals [(\ref{eq:I1}) and (\ref{eq:I2})] also mean that $\chi_2$ weights mass and wind anomalies more strongly over the continents while $\chi_1$ weights them more strongly over the oceans.
+Consequently, $\chi_2$ has a pronounced annual cycle due to the yearly appearance of the Siberian High \citep{dobslawetal2010}, and tends to show strong negative anomalies in the month preceding a sudden stratospheric warming \citep{Neef2014}.
+$\chi_1$ has much weaker subseasonal to annual variations because surface pressure variations cause corresponding displacements of the ocean surface, which even out the angular momentum changes (the so-called ``inverted barometer'' effect, e.g. \citet{salsteinrosen1989}).
+
+In reality, of course, we don't measure the atmospheric angular momentum but rather the variations in the Earth rotation parameters that the angular momentum variations excite, namely the polar motion and anomalies in the length-of-day. 
+To map these observed parameters to equivalent angular momentum variations, one would rotate the inertial reference frame, convert observed length-of-day anomalies into corresponding axial angular momentum, and subtract out the excitation of each parameter that is due to other components of the Earth system.
+For the purpose of smplicity, however, we assimilate the three angular momentum components directly.
+%---cut this part: since we assimilate the X's, we don't need to talk about polar motion
+%The non-dimensional representation of the angular momentum in (\ref{eq:X1})-(\ref{eq:X3}) makes it easy to map angular momentum changes to equivalent changes in the polar orientation (or polar motion) and the rate of Earth's rotation. 
+%Polar motion is measured in terms of two angles, $p_1$ and $p_2$, that represent the location of the Earth's rotational axis in an inertial, celestial reference frame that is fixed in space and defined relative to a group of stars (the so-called celestial ephemeris pole).
+%\citet{barnesetal1983} and later \citet{Gross1992} showed that these vectors can be directly related to unit variations in the equatorial components of the Earth's angular momentum ($\chi_1$ and $\chi_2$) via a rotation into the inertial reference frame of the so-called Chandler wobble (a free nutation of the Earth of frequency 
+%$\sigma_0 = 2\pi/ 433\text{d}$, which results from the oblateness of the Earth's figure):
+%\begin{eqnarray}
+%  p_1 + \frac{\dot{p_2}}{\sigma_0} &=& \chi_1 \\
+%  -p_2 + \frac{\dot{p_1}}{\sigma_0} &=& \chi_2.
+%\label{eq:X12_to_PM}
+%\end{eqnarray}
+%where the overdots represent time derivatives, $\sigma_0 = 2\pi/ 433\text{d}$ denotes the Chandler frequency.
+
+Nevertheless, it is conceptually helpful to transform the axial angular momentum $\chi_3$ into corresponding anomalies in the length of a day ($\Delta$LOD), which is done using the following relationship:
+\begin{eqnarray}
+\Delta \text{LOD} &=& \Delta \chi_3 \times \text{LOD}_0 ,
+\label{eq:X3_to_LOD}
+\end{eqnarray}
+where $\text{LOD}_0$ denotes the nominal length-of-day (86400s).  
+%----cut----The length-of-day anomalies are observed as $\Delta \text{LOD}  \equiv \text{UT1} - \text{IAT}$ where UT1 denotes the universal time measured by geodetic techniques and IAT is a reference time based on atomic clock measurements.
+
+For our experiments, observations of $\chi_1$, $\chi_2$, and $\chi_3$ are generated every 24 hours, reflecting the observation frequency of the real Earth rotation data series published by the International Earth Rotation Services \citep{iers}.  
+
+
+
