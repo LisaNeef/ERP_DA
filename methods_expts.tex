@@ -1,28 +1,27 @@
 %-------------------experiments-------------------------
 DART \citep{Anderson2009} is an open-source, community tool that provides ensemble-based data assimilation that is independent of a particular model and observation set.
-Interfaces exist between DART and both CAM \citep{Raeder2012} and WACCM \citep{Pedatella2013}.
+Interfaces exist between DART and both CAM5 \citep{Raeder2012} and WACCM \citep{Pedatella2013}.
 
-%-----CAM experiments
-Experiments 1-4 (Table \ref{tab:expts} are performed using CAM.  
-A reference CAM simulation, run from January 2008 through February 2009 with observed sea surface temperatures as a boundary condition, constitutes the ``truth'' from which we generate a set of synthetic observations for assimilation. 
-We generated an 80-member CAM ensemble by selecting the 1 January 2009 restart files from an 80-year CAM simulation, and running a year of assimilation of 6-hourly observations of temperature and horizontal wind, made from a hypothetical, spatially-uniform grid of radiosondes, amounting to roughly 27000 observations per day. 
+%-----CAM5 experiments
+Experiments 1-4 (Table \ref{tab:expts} are performed using CAM5.  
+A reference CAM5 simulation, run from January 2008 through February 2009 with observed sea surface temperatures as a boundary condition, constitutes the ``truth'' from which we generate a set of synthetic observations for assimilation. 
+We generated an 80-member CAM5 ensemble by selecting the 1 January 2009 restart files from an 80-year CAM simulation, and assimilating 6-hourly synthetic temperature and wind ``radiosonde'' observations on a grid, amounting to roughly 27000 observations per day. 
 This yields a tightly-constrained starting ensemble for experiments 1-4, which all start on 1 January 2009.
 
-As a control experiment, the 80-member CAM ensemble is integrated forward over January and February 2009 without data assimilation. 
-In the second experiment, the ensemble is run forward as before, but assimilating the three angular momentum components observed in the ``truth'' every 12 hours.
-In Experiment 3, we continue to assimilate the grid of radiosonde observations, but not only observing temperature.
+As a control experiment, the 80-member CAM5 ensemble is integrated forward over January and February 2009 without data assimilation. 
+In the second experiment, the ensemble is run forward as before, but assimilating the synthetic angular momentum observations every 12 hours.
+In Experiment 3, we continue to assimilate the grid of radiosonde observations, but only observing temperature.
 In Experiment 4, we assimilate both the 6-hourly radiosonde temperatures and the three 12-hourly global angular momentum components.
-We only integrated these latter two experiments for 31 and 17 days, respectively, because this amount of integration time was found to be sufficient to give the results presented in this study.
-
+We only integrated these latter two experiments for 31 and 17 days, respectively, because this amount of integration time was found to be sufficient to \hl{compare the error reduction in the two experiments.} 
 
 
 %-----WACCM experiments
 In Section \ref{sec:evaluation_variable} we test whether angular momentum observations are useful as an evaluation (i.e. unassimilated) variable. 
-Here we compare four perfect model assimilation experiments with DART-WACCM, three of which were performed by \citet{Pedatella2013}.  
+Here we compare four synthetic-observation assimilations with DART-WACCM, three of which were performed by \citet{Pedatella2013}.  
 In Experiment 5, a 40-member DART-WACCM ensemble is run forward from 5-25 November, with no assimilation. 
 The same initial ensemble is used for experiments 7-8, but with assimilation of synthetic observations generated from a reference simulation. 
-Experiment 7 assimilates the observations that enter the NCEP/NCAR reanalysis project (i.e. winds and temperatures from radiosondes and aircraft \citep{Saha2010}), along with refractivity profiles from the COSMIC GPS Radio-Occultation instrument \citep{Anthes2008}.
-Experiment 8 is similar to experiment 7, but additionally assimilates temperature profiles from the Sounding of the Atmosphere Using Broadband Emission Radiometry experiment \citep[SABER]{Russell2009}, from 20-100k.
+Experiment 7 assimilates the synthetic versions of NCEP/NCAR reanalysis observation (i.e. winds and temperatures from radiosondes and aircraft \citep{Saha2010}), as well as refractivity profiles simulating observations by the COSMIC GPS Radio-Occultation instrument \citep{Anthes2008}.
+Experiment 8 is similar to experiment 7, but additionally assimilates simulated temperature profiles from the Sounding of the Atmosphere Using Broadband Emission Radiometry experiment \citep[SABER]{Russell2009}, from 20-100k.
 
 For this study we selected an additional simulation (experiment 6), performed for testing DART-WACCM at the GEOMAR Helmholtz Centre for Ocean Research Kiel, wherein 40 DART-WACCM ensemble members are run forward from 1-27 October 2009, assimilating only COSMIC refractivities.  
 Experiment 6 is not entirely comparable to experiments 5,7 and 8 because it uses both a different starting ensemble and a different truth state, but the experiment are still qualitatively comparable, and together Experiments 5-8 demonstrate a progressively-stronger constraint applied to a WACCM ensemble using DART.  

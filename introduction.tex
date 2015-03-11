@@ -5,9 +5,9 @@ Variations in the rotation and orientation of the Earth are measured regularly a
 These measurements contain information about the atmosphere, oceans, and continental hydrosphere, which all exchange angular momentum with the solid Earth, thereby causing both the Earth's rate of rotation and its polar orientation to fluctuate. 
 
 % P2: previous work and gaps in it: others have shown that certain model adjustments rectify diffs between observed ERPs and modeled AM, most notably Saynish -- but they did not show that this actually results in a better model
-The atmosphere and ocean dominate decadal and shorter Earth rotation variations. 
+The atmosphere and ocean dominate sub-decadal Earth rotation variations. 
 We can therefore potentially use the difference between the observed Earth rotation anomalies, and modeled atmospheric and oceanic angular momenta, to correct models of the atmosphere and oceans. 
-Indeed, many previous studies have used Earth rotation data to evaluate the accuracy of, 
+Indeed, previous studies have used Earth rotation data to evaluate the accuracy of, 
 and identify biases in, atmosphere models \citep{Boer1990, Rosen2000}, ocean 
 models \citep{Gross1996a} or reanalysis data \citep{Yu1999, Aoyama2000, 
 Paek2012a},
@@ -15,19 +15,22 @@ Paek2012a},
 %\citet{Paek2012} used LOD observations to evaluate the accuracy of and identify biases in various reanalysis sets.
 %\citet{Rosen2000} used observed LOD anomalies to evaluate the interannual variability simulated by AMIP models.
 %\citet{Gross2006a} used observed polar motion to identify discrepancies in ocean tide models: [FILL IN]
-In particular, \citet{Saynisch2010,Saynisch2011} and \citet{Saynisch2012} observations of the polar wobble and length-of-day anomalies to constrain mass fluxes and current fields in various ocean models by assimilating these variables.
+In particular, \citet{Saynisch2010,Saynisch2011} and \citet{Saynisch2012} used observations of the polar wobble and length-of-day anomalies to constrain mass fluxes and current fields in two ocean models by assimilating these variables.
 However, these studies were unable to show whether the implied corrections actually improved the models. 
-Since Earth rotation variations represent global atmospheric angular momentum, which is an integral of the mass and wind (or current) fields, it is likely that many corrections to a model could yield an angular momentum field that agrees with the observations. 
+\hl{Revisit Jan's papers to check whether this is really true. And if so, is there a gentler way to say it? Maybe give them SOME credit...(even though those papers suck).}
+Earth rotation parameter observations represent variations in the global atmospheric angular momentum, which is an integral of the mass and wind (or current) fields. 
+Assimilating these parameters means constraining a state of millions of variables to fit three global parameters, which poses several difficulties that we will outline below.  
+%It is likely that many corrections to a model could yield an angular momentum field that agrees with the observations. 
 
 % P3: how our study closes the gap: We show how a model state is updated using obseved ER information and identif the problems thereing, using (1) idealized experiments where the true error is known, and (2) a comparison to more conventional obs.
-This study examines the potential of observed Earth rotation variations to constrain a high-dimensional atmosphere modelk, by assimilating idealized observations of the atmospheric angular momentum into the model using an ensemble filter. 
+This study examines the potential of observed Earth rotation variations to constrain a high-dimensional atmosphere model, by assimilating idealized observations of the atmospheric angular momentum into the model using an ensemble filter. 
 The main differences between this study and \citet{Saynisch2010,Saynisch2011} and \citet{Saynisch2012} are that (1) we generate synthetic observations from a model simulation that serves as the "true state", which allows us to measure the true error in the constrained model state, and (2) we differentiate the model correction due to the assimilation of atmospheric angular momentum to that from the assimilation of conventional, spatially-localized observations. 
 
 
 % P4: Organization of the paper
 The paper is organized as follows.  
 Section \ref{sec:methods} describes the data assimilation experiments, observations assimilated, assimilation method, and models used.
-Section \ref{sec:assimilation_variable} examines how observations of the global atmospheric angular momentum, and by extension Earth rotation parameters, can and cannot constrain the modeled atmosphere. 
-In Section \ref{sec:evaluation_variable}, we examine the value of Earth rotation measurements to as evaluated, but not assimilated, variables.  
+Section \ref{sec:assimilation_variable} examines to what extend observations of the global atmospheric angular momentum, and by extension Earth rotation parameters, can constrain the modeled atmosphere. 
+In Section \ref{sec:evaluation_variable}, we examine the value of Earth rotation measurements as an evaluation tool.  
 The results are summarized and discussed in Section \ref{sec:discussion}.
 

@@ -1,14 +1,14 @@
 %-----------paper summary---------------------
 
 % answer the question asked by this study 
-The goal of this study was to evaluate whether observed variations in the Earth's rotation and polar orientation, which are, on subseasonal timescales, primarily functions of the atmospheric global angular momentum, can constrain atmospheric models using existing data assimilation methods. 
+The goal of this study was to evaluate whether observed variations in the Earth's rotation and polar orientation, which are, on subseasonal timescales, primarily functions of the atmospheric global angular momentum, can constrain atmospheric models using ensemble data assimilation. 
 
 % a high-level summary of what my data show:
 % (1) the covariance model doesn't work right because the constraint is too weak, so we only get improvement in some places, and it doesn't last  
 % (2) if we constrain the ensemble more using other obs, it still doesn't really work
 % (3) [MAYBE] a simple example showed that perhaps the best use for ER data is to evaluate the constraint offered by other obs types 
-Idealized assimilation experiments, using an ensemble filter and synthetic observations generated from a prescribed truth, showed that it is extremely difficult to constrain the model state with such observations.  
-While the ensemble filter generates a covariance model that is physically plausible and computes the statistically most likely update of each state space component, correlations between individual state components and the global angular momentum are simply much smaller than the sampling error associated with a finite ensemble. 
+Idealized assimilation experiments, using synthetic observations generated from a prescribed truth, showed that it is extremely difficult to constrain the model state with such observations.  
+While the ensemble filter generates a covariance model that is physically plausible and computes the statistically most likely update of each state space component, correlations between individual state components and the global angular momentum are simply much smaller than the sampling error of a finite ensemble. 
 Thus, numerical experiments showed that the ensemble is rarely updated globally in such a way as to bring it closer to the true state. 
 In many regions, the state update computed by the filter moves the ensemble and its mean farther away from the true state, while still increasing agreement between the global angular momentum in the model and in the observations. 
 The constraint imposed by global angular momentum observations is simply too weak to result in a reliable state correction. 
@@ -28,7 +28,10 @@ Even though this study focused on an atmosphere model, the results can likely be
 This work calls into question the results of \citet{Saynisch2010,Saynisch2011} and \citet{Saynisch2012}, who assimilated real Earth rotation observations to constrain an ocean model. 
 
 % the other point about the evaluation variable, contextualized in greater research
-A more useful application of Earth rotation data is as a set of simple variables against which to validate a simulation that is constrained by more conventional data.  
+A more useful application of Earth rotation data is as a set of three simple variables against which to validate a simulation that is constrained by more conventional data.  
+The observed Earth rotation parameters are freely available \citep{iers} and continuously updated in a timeseries starting in 1960. 
+Comparing the angular momentum of a model ensemble to these observations is computationally straightforward, and 
+gives a global view both of how well the modeled wind and mass fields approximate the truth, and allows us to compare the degree of constraint imposed by different observations. 
 
 % anticipation of any criticisms and caveats  
 
