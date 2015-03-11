@@ -10,13 +10,13 @@
 3 & CAM &	Radiosonde temperatures	& 1 Jan -31 Jan 2009	\\
 4 & CAM &	Radiosonde temperatures, $\chi_1$, $\chi_2$, $\Delta$LOD	& 1 Jan - 17 Jan 2009\\
 5$^a$ & WACCM &	none   & 6-25 Nov 2008	\\
-6 & WACCM &	GPS-RO  & 7-27 Oct 2009	\\
+6 & WACCM &	GPS-RO  & 1-27 Oct 2009	\\
 7$^a$ & WACCM &	GPS-RO + NNRA$^b$  & 6-25 Nov 2008	\\
 8$^a$ & WACCM &	GPS-RO + NNRA$^b$ +SABER & 6-25 Nov 2008\\	
 \hline
 \end{tabular}
-\tablenotetext{a}{Experiments performed by \citep{Pedatella2013}}
-\tablenotetext{b}{Observations used in the NCEP/NCAR Reanalysis project \citep{Saha2010}, which include radiosonde and aircraft winds and temperatures, plus satellite drift winds.}
+\tablenotetext{a}{Experiments performed by \citet{Pedatella2013}}
+\tablenotetext{b}{Observations used in the NCEP/NCAR Reanalysis project \citet{Saha2010}, which include radiosonde and aircraft winds and temperatures, plus satellite drift winds.}
 \label{tab:expts}
 \end{table}
 
@@ -24,28 +24,28 @@
 %------comparison of the DA runs in the observation space
  \begin{figure}
 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_erpda_obs_space.pdf} 
- \caption{ The DART prior ensemble (gray) compared to the true state (orange) in terms of assimilation time and each of the three angular momentum functions [(\ref{eq:X1})-(\ref{eq:X3}), (\ref{eq:X3_to_LOD})].  The columns compare the four experiments summarized in Table \ref{tab:expts}.  }
+ \caption{ The DART prior ensemble (gray) compared to the true state (green) in terms of assimilation time and each of the three angular momentum functions [(\ref{eq:X1})-(\ref{eq:X3}), (\ref{eq:X3_to_LOD})].  The columns compare the four experiments summarized in Table \ref{tab:expts}.  }
  \label{fig:fit_to_ERPs}
 \end{figure}
 
-%-----evolution of the covariances between local variables and the AAM observations
+%-----evolution of the covariances between local variables and the AAM observations 
  \begin{figure}
 	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_U_to_LOD_covariances.pdf}
-	 \caption{Evolution of the covariance (top row) and correlation (bottom row) between zonal wind and the axial angular momentum component ($\chi_3$), at 7-day intervals, assimilating observations of the three angular momentum components.}
+	 \caption{Evolution of the covariance zonal wind and the axial angular momentum component ($\chi_3$) on three dates in E2 (assimilating AAM). The top row shows values averaged over stratospheric levels, while the bottom row shows values averaged over tropospheric levels.}
  \label{fig:covariances}
 \end{figure}
 
 %-----evolution of the prior error and corresponding increments 
  \begin{figure}
 	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_U_priorerror_vs_increment.pdf}
-	 \caption{Top row: evolution of the prior error (Truth-Prior) in the zonal wind, at 7-day intervals, assimilating observations of the three angular momentum components. Bottom row: the analysis increment (Posterior-Prior) in the zonal wind for the same times.} 
+	 \caption{Top row: evolution of the prior error (Truth-Prior) in the zonal wind at three dates in Experiment 2, i.e. assimilating observations of the three angular momentum components. Bottom row: the analysis increment (Posterior-Prior) in the zonal wind for the same times.} 
  \label{fig:error_increments}
 \end{figure}
 
 %-----error reduction in time  - NODA-ERPALL (blue is good bc it means error is larger in NODA)
  \begin{figure}
 	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_U_error_reduction.pdf}
-	 \caption{Evolution of the difference in mean square error between no assimilation and assimilating the three angular momentum components (i.e. blue indicates that error is less when angular momentum is assimilated). The first row shows error reduction in the upper atmosphere (averaging between 100 and 0 hPa) and the second row shows error reduction in the lower atmosphere (averaging between the surface and 100 hPa).}
+	 \caption{Evolution of the difference in mean square error between Experiment 1 (no assimilation) and 2 (assimilating the three angular momentum components), at the same dates shown in previous figures . The first row shows error reduction in the stratosphere (averaging between 100 and 24 hPa) and the second row shows error reduction in the troposphere (averaging between the surface and 100 hPa).}
 	 \label{fig:ER}
 \end{figure}
 
@@ -76,7 +76,7 @@
 %-------comparison of the WACCM experiments in terms of true error ----
  \begin{figure}
 	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_evalvariable_state_space.pdf}
-	 \caption{Profiles of the \textcolor{unsure}{true error} in the zonal wind as a function of time, for four DART-WACCM simulations with increasing observational constraints (see text)}
+	 \caption{Profiles of the mean square error in the zonal wind as a function of time, for four DART-WACCM simulations with increasing observational constraints (see text)}
 	 \label{fig:evalvariable_state}
 \end{figure}
 
