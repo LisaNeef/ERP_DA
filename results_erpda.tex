@@ -57,14 +57,15 @@ We can see that, generally, the true error and the analysis increments have many
 the analysis increments are also an order of magnitude smaller than the true error, which reflects the miniscule state-to-observation correlations and reflects how the information from a single observation has to be spread over the entire state. 
 However, it's also possible to find regions where the analysis increment opposes the prior error, e.g. over the northeastern Pacific on 11 Feb. 
 Thus while the covariance model developed by the ensemble filter has a physical basis, its high degree of sampling error can easily result in spurious corrections. 
-
 To answer the question of whether assimilating global angular momentum improves the modeled fields or not, 
-Figure \ref{fig:ER} shows the difference in the mean square error (again in the zonal wind field), between experiment 1 (no assimilation) and experiment 2 (assimilating the angular momentum), at the same time snapshots as the previous figures. 
-(Blue indicates that the assimilation of angular momentum has reduced the overall error, i.e. improved the state estimate.)
-Figure \ref{fig:ER} again separates between the stratosphere (100-24 hPa, top row), and troposphere (1000-100 hPa, bottom row). 
-Error reduction on the order to 10-20 m/s is evident at both upper and lower levels throughout the assimilation, though increases in error of a similar magnitude also appear early and dominate by February (last column).  
-At the same time, the ensemble spread (not shown) consistently decreases to reflect the information ``gained'' from the observations. 
-This suggests that we have a divergent data assimilation system, where the ensemble clusters closer together around a mean state that is, generally, farther from the truth than implied by the ensemble. 
+\hl{Add description of how the MSE changes with analysis increments early in the run and also later.}  
+
+%---cut---Figure \ref{fig:ER} shows the difference in the mean square error (again in the zonal wind field), between experiment 1 (no assimilation) and experiment 2 (assimilating the angular momentum), at the same time snapshots as the previous figures. 
+%(Blue indicates that the assimilation of angular momentum has reduced the overall error, i.e. improved the state estimate.)
+%Figure \ref{fig:ER} again separates between the stratosphere (100-24 hPa, top row), and troposphere (1000-100 hPa, bottom row). 
+%Error reduction on the order to 10-20 m/s is evident at both upper and lower levels throughout the assimilation, though increases in error of a similar magnitude also appear early and dominate by February (last column).  
+%At the same time, the ensemble spread (not shown) consistently decreases to reflect the information ``gained'' from the observations. 
+%This suggests that we have a divergent data assimilation system, where the ensemble clusters closer together around a mean state that is, generally, farther from the truth than implied by the ensemble. 
 
 % point checks figure-------------------------------------------------------
 To illustrate this result on a local level, Figure \ref{fig:point_checks} compares the zonal wind in the ensemble and its mean to the true state, with no assimilation (left) and assimilation of angular momentum (right). 
