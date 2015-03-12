@@ -11,10 +11,12 @@
 @string{ae = "Atmos. Env."}
 @string{amm = "App.  Math. Mod."}
 @string{bams = "Bull. Am. Met. Soc."}
+@string{cd = "Clim. Dyn."}
 @string{eos = "Eos, Trans."}
 @string{grl = "Geophys. Res. Lett."}
 @string{gji = "Geophys. J. Int."}
 @string{jam = "J. Applied Met."}
+@string{james = "J. Adv. Model. Earth Syst."}
 @string{jas = "J. Atmos. Sci."}
 @string{jasa = "J. Acoust. Soc. Am."}
 @string{jcam = "J. Clim. App. Met."}
@@ -22,6 +24,7 @@
 @string{jd = "J. Geod."}
 @string{jfm = "J. Fluid Mech."}
 @string{jgr = "J. Geophys. Res."}
+@string{jgra = "J. Geophys. Res. Atmos."}
 @string{jg = "J. Geodyn."}
 @string{jgeod = "J. Geodesy."}
 @string{jmsj = "J. Met. Soc. Japan"}
@@ -41,6 +44,31 @@
 @string{rsta = "Phil. Trans R. Soc."}
 @string{rg = "Rev. Geophys."}
 
+@article{Saha2010,
+	author = {Saha, Suranjana and Moorthi, Shrinivas and Pan, Hua-Lu and Wu, Xingren 
+		and Wang, Jiande and Nadiga, Sudhir and Tripp, Patrick and Kistler, Robert and 
+			Woollen, John and Behringer, David and Liu, Haixia and Stokes, Diane and 
+			Grumbine, Robert and Gayno, George and Wang, Jun and Hou, Yu-Tai and Chuang, 
+		Hui-Ya and Juang, Hann-Ming H. and Sela, Joe and Iredell, Mark and Treadon, Russ 
+			and Kleist, Daryl and {Van Delst}, Paul and Keyser, Dennis and Derber, John and 
+			Ek, Michael and Meng, Jesse and Wei, Helin and Yang, Rongqian and Lord, Stephen 
+			and {Van Den Dool}, Huug and Kumar, Arun and Wang, Wanqiu and Long, Craig and 
+			Chelliah, Muthuvel and Xue, Yan and Huang, Boyin and Schemm, Jae-Kyung and 
+			Ebisuzaki, Wesley and Lin, Roger and Xie, Pingping and Chen, Mingyue and Zhou, 
+		Shuntai and Higgins, Wayne and Zou, Cheng-Zhi and Liu, Quanhua and Chen, Yong 
+			and Han, Yong and Cucurull, Lidia and Reynolds, Richard W. and Rutledge, Glenn 
+			and Goldberg, Mitch},
+	doi = {10.1175/2010BAMS3001.1},
+	issn = {0003-0007},
+	journal = {Bull. Am. Meteorol. Soc.},
+	month = aug,
+	number = {8},
+	pages = {1015--1057},
+	title = {{The NCEP Climate Forecast System Reanalysis}},
+	volume = {91},
+	year = {2010}
+}
+
 
 @article{Kursinski1997,
 	author = {Kursinski, E. R. and Hajj, G. A. and Schofield, J. T. and Linfield, R. P. and Hardy, K. R.},
@@ -56,7 +84,7 @@
 	author = {Pedatella, N. M. and Raeder, K. and Anderson, J. L. and Liu, H.-L.},
 	doi = {10.1002/grl.50884},
 	issn = {00948276},
-	journal = {Geophysical Research Letters},
+	journal = grl,
 	month = aug,
 	number = {16},
 	pages = {4469--4474},
@@ -103,14 +131,6 @@
         YEAR = 2001,
                 }
 
-@ARTICLE{andersoncollins2006,
-        author = {Jeffrey L. Anderson and Nancy Collins},
-        journal = jaot,
-        pages = {1452-1463},
-        title = {Scalable Implementations of Ensemble Filter Algorithms for Data Assimilation},
-        volume = {24},
-        year = {2006}
-}
 
 @ARTICLE{Anderson2009,
         author = {Jeffrey Anderson and Tim Hoar and Kevin Raeder and Hui Lui and Nancy Collins and Ryan Torn and Avelino Avellano},
@@ -136,7 +156,7 @@
 }
 
 
-@ARTICLE{evensen2003,
+@ARTICLE{Evensen2003,
         AUTHOR = "Geir Evensen",
         TITLE = "The ensemble {K}alman filter: theoretical formulation and practical implementation",
         JOURNAL = "Ocean Dynamics",
@@ -249,7 +269,7 @@
         year = {2010}
 }
 
-@article{Polavarapu2005,
+@article{Polavarapu2005a,
 	author = {Polavarapu, Saroja and Ren, Shuzhan and Rochon, Yves and Sankey, David
 		and Ek, Nils and Koshyk, John and Tarasick, David},
 	doi = {10.3137/ao.430105},
@@ -315,7 +335,6 @@
 @inproceedings{Neef2004,
 	author = {Neef, Lisa},
 	booktitle = {Proceedings, 2004 Program in Geophysical Fluid Dynamics},
-	file = {:home/lneef/Dropbox/NATHAN/Reprints/Neef2004.pdf:pdf},
 	publisher = {Woods Hole Oceanographic Institution},
 	title = {{Triad Resonance as a Mechanism for Internal Wave Dissipation Resonant Triad Model of Weakly Nonlinear Interactions}},
 	url = {http://www.whoi.edu/page.do?pid=13015},
@@ -329,7 +348,7 @@
 	author = {Neef, Lisa J. and Matthes, Katja},
 	doi = {10.1029/2011JD016555},
 	issn = {0148-0227},
-	journal = {Journal of Geophysical Research},
+	journal = jgr,
 	month = jan,
 	number = {D2},
 	pages = {D02107},
@@ -342,39 +361,34 @@
 @article{Neef2009,
 	author = {Neef, Lisa J. and Polavarapu, Saroja M. and Shepherd, Theodore G.},
 	doi = {10.1175/2008JAS2585.1},
-	file = {:home/lneef/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Neef, Polavarapu, Shepherd - 2009 - A Low-Order Model Investigation of the Analysis of Gravity Waves in the Ensemble Kalman Filter.pdf:pdf},
 	issn = {0022-4928},
-	journal = {Journal of the Atmospheric Sciences},
+	journal = jas,
 	month = jun,
 	number = {6},
 	pages = {1717--1734},
 	title = {{A Low-Order Model Investigation of the Analysis of Gravity Waves in the Ensemble Kalman Filter}},
-	url = {http://journals.ametsoc.org/doi/abs/10.1175/2008JAS2585.1},
 	volume = {66},
 	year = {2009}
 }
 
 @article{Neef2006,
-author = {Neef, Lisa J. and Polavarapu, Saroja M. and Shepherd, Theodore G.},
-file = {:home/lneef/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Neef, Polavarapu, Shepherd - 2006 - Four-Dimensional Data Assimilation and Balanced Dynamics.pdf:pdf},
-journal = {Journal of the Atmospheric Sciences},
-pages = {1840--1858},
-title = {{Four-Dimensional Data Assimilation and Balanced Dynamics}},
-volume = {63},
-year = {2006}
+	author = {Neef, Lisa J. and Polavarapu, Saroja M. and Shepherd, Theodore G.},
+	journal = {Journal of the Atmospheric Sciences},
+	pages = {1840--1858},
+	title = {{Four-Dimensional Data Assimilation and Balanced Dynamics}},
+	volume = {63},
+	year = {2006}
 }
 
 @article{Neef2010,
 	author = {Neef, Lisa and van Weele, Michiel and van Velthoven, Peter},
 	doi = {10.1029/2009GB003661},
-	file = {:home/lneef/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Neef, van Weele, van Velthoven - 2010 - Optimal estimation of the present-day global methane budget.pdf:pdf},
 	issn = {0886-6236},
-	journal = {Global Biogeochemical Cycles},
+	journal = gbc,
 	month = dec,
 	number = {4},
 	pages = {1--10},
 	title = {{Optimal estimation of the present-day global methane budget}},
-	url = {http://www.agu.org/pubs/crossref/2010/2009GB003661.shtml},
 	volume = {24},
 	year = {2010}
 }
@@ -407,14 +421,6 @@ year = {2006}
 	year = {2013}
 }
 
-
-@article{Neef2014,
-	author = {Neef, Lisa and Walther, Sophia and Matthes, Katja and Kodera, Kunihiko},
-	journal = jgr,
-	note = {In press.},
-	title = {{Observations of Stratospheric Sudden Warmings in Earth Rotation Variations}},
-	year = {2014}
-}
 
 @ARTICLE{abarcadelrio1999,
         author = {R. {Abarca del Rio}},
@@ -470,7 +476,7 @@ year = {2006}
         year = {2004}
 }
 
-@ARTICLE{aoyamanaito2000,
+@ARTICLE{Aoyama2000,
         author = {Yuichi Aoyama and Isao Naito},
         journal = jgr,
         pages = {12417-12431},
@@ -959,7 +965,7 @@ year = {2006}
         year = {1996}
 }
 
-@ARTICLE{grossetal1996a,
+@ARTICLE{Gross1996a,
         author = {Richard S. Gross and Kamal H. Hamdan and Dale H. Boggs},
         journal = grl,
         pages = {1809-1812},
@@ -1294,7 +1300,7 @@ year = {2006}
 
 @ARTICLE{neefmatthes2012,
         author = {Lisa J. Neef and Katja Matthes},
-        journal = jgr,
+        journal = jgra,
         title = {Comparison of earth rotation excitation in data-constrained and unconstrained atmosphere models},
         pages = {D02107},
         volume = {117},
@@ -1303,15 +1309,16 @@ year = {2006}
 }
 
 
-@article{nealeetal2010,
+@techreport{nealeetal2010,
 	author = {Neale, Richard B and Chen, Chih-chieh and Lauritzen, Peter
 H and Williamson, David L and Conley, Andrew J and Smith, Anne K and Mills,
 Mike and Morrison, Hugh},
 	journal = {National Center for Atmospheric Research Tech. Rep.},
 	number = {NCAR/TN-486+STR.},
 	pages = {268},
-	title = {{Description of the NCAR Community Atmosphere Model (CAM
-5.0)}},
+	title = {Description of the {NCAR} Community Atmosphere Model ({CAM}
+5.0)},
+	institution = {{National Center for Atmospheric Research}},
 	year = {2010}
 }
 
@@ -1335,11 +1342,17 @@ Mike and Morrison, Hugh},
 	year = {1989}
 }
 
-@ARTICLE{paekhuang2012,
-	author = {Houk Paek and Huei-Ping Huang},
-	journal = jclim,
-	note = {in press.},
-	title = {A comparison of decadal-to-interdecadal variability and trend in reanalysis datasets using atmospheric angular momentum},
+@article{Paek2012a,
+	author = {Paek, Houk and Huang, Huei-Ping},
+	doi = {10.1175/JCLI-D-11-00358.1},
+	issn = {0894-8755},
+	journal = {J. Clim.},
+	month = jul,
+	number = {13},
+	pages = {4750--4758},
+	title = {{A Comparison of Decadal-to-Interdecadal Variability and Trend in 
+		Reanalysis Datasets Using Atmospheric Angular Momentum}},
+	volume = {25},
 	year = {2012}
 }
 
@@ -1438,13 +1451,17 @@ Mike and Morrison, Hugh},
 
 
 @ARTICLE{Raeder2012,
-        author = {Kevin Raeder and Jeffrey L. Anderson and Nancy Collins and Timothy J. Hoar and Jennifer E. Kay and Peter H. Lauritzen and Robert Pincus},
-        journal = jclim,
-        note = {in press.},
-        title = {{DART/CAM}: An Ensemble Data Assimilation System for {CESM} Atmospheric Models},
-        doi = {10.1175/JCLI-D-11-00395.1},
-        year = {2012}
+	author = {Raeder, Kevin and Anderson, Jeffrey L. and Collins, Nancy and Hoar, Timothy J. and Kay, Jennifer E. and Lauritzen, Peter H. and Pincus, Robert},
+	doi = {10.1175/JCLI-D-11-00395.1},
+	journal = {J. Clim.},
+	month = sep,
+	number = {18},
+	pages = {6304--6317},
+	title = {{DART/CAM: An Ensemble Data Assimilation System for CESM Atmospheric Models}},
+	volume = {25},
+	year = {2012}
 }
+
 
 @ARTICLE{renetal2011,
         author = {Shuzhan Ren and Saroja Polavarapu and Stephen R. Beagley and Yulia Nezlin},
@@ -1502,7 +1519,7 @@ Mike and Morrison, Hugh},
         year = {1991}
 }
 
-@ARTICLE{rosensalstein2000,
+@ARTICLE{Rosen2000,
         author = {Richard D. Rosen and David A. Salstein},
         journal = "Clim. Dyn.",
         pages = {693-700},
@@ -1539,37 +1556,7 @@ Mike and Morrison, Hugh},
 	year = {1993}
 }
 
-@ARTICLE{Saynisch2011,
-	author = {J. Saynisch and M. Wenzel and J. Schr{\"o}ter},
-	journal = npg,
-	pages = {581-585},
-	title = {Assimilation of Earth rotation parameters into a global ocean model: excitation of polar motion},
-	volume = {18},
-	year = {2011}
-}
 
-@ARTICLE{Saynisch2010,
-	author = {Jan Saynisch and Manfred Wenzel and Jens Schr{\"o}ter},
-	journal = jgeod,
-	pages = {67-73},
-	title = {Assimilation of Earth rotation parameters into a global ocean model: length of day excitation},
-	volume = {85},
-	year = {2010}
-}
-
-@article{Saynisch2012,
-        author = {Saynisch, Jan and Thomas, Maik},
-        doi = {10.1016/j.jog.2011.10.003},
-        journal = jg,
-        month = dec,
-        pages = {24--29},
-        publisher = {Elsevier Ltd},
-        title = {{Ensemble Kalman-Filtering of Earth rotation observations with
-a global ocean model}},
-        url = {http://linkinghub.elsevier.com/retrieve/pii/S0264370711001153},
-        volume = {62},
-        year = {2012}
-}
 
 @ARTICLE{simpsonetal2011,
 	author = {Isla R. Simpson and Theodore G. Shepherd and Michael Sigmond},
@@ -1615,12 +1602,20 @@ a global ocean model}},
         year = {2011}
 }
 
-@ARTICLE{subramanianetal2011,
-        author = {Aneesh C. Subramanian and Markus Jochum and Arthur J. Miller and Raghu Murtugudde and Richard B. Neale and Duane E. Waliser},
-        journal = jclim,
-        title = {The {M}adden {J}ulian Oscillation in {CCSM4}},
-        note = {"in press."},
-        year = {2011}
+@article{Subramanian2011,
+	author = {Subramanian, Aneesh C. and Jochum, Markus and Miller, Arthur J. and 
+		Murtugudde, Raghu and Neale, Richard B. and Waliser, Duane E.},
+	doi = {10.1175/JCLI-D-11-00031.1},
+	issn = {0894-8755},
+	journal = jclim,
+	mendeley-groups = {MJO,CESM},
+	month = dec,
+	number = {24},
+	pages = {6261--6282},
+	title = {{The Madden–Julian Oscillation in CCSM4}},
+	url = {http://journals.ametsoc.org/doi/abs/10.1175/JCLI-D-11-00031.1},
+	volume = {24},
+	year = {2011}
 }
 
 @ARTICLE{tanajurabelyaev2009,
@@ -1764,7 +1759,7 @@ a global ocean model}},
 	year = {1997}
 }
 
-@ARTICLE{yuetal1999,
+@ARTICLE{Yu1999,
 	author = {N. Yu and D. Zheng and H. Wu},
 	journal = jd,
 	pages = {385-390},
@@ -1946,7 +1941,7 @@ a global ocean model}},
         year = {2011}
 }
 
-@ARTICLE{baldwindunkerton2001,
+@ARTICLE{Baldwin2001,
         author = {Mark P. Baldwin and Timothy J. Dunkerton},
         journal = "Science",
         pages = {581-584},
@@ -2094,15 +2089,13 @@ a global ocean model}},
 @article{Garfinkel2008,
 	author = {Garfinkel, C. I. and Hartmann, D. L.},
 	doi = {10.1029/2008JD009920},
-	file = {:home/lneef/Dropbox/NATHAN/Reprints/garfinkelhartmann2008.pdf:pdf},
 	issn = {0148-0227},
-	journal = {Journal of Geophysical Research},
-	mendeley-groups = {SSW,ENSO},
+	journal = jgr,
 	month = sep,
 	number = {D18},
 	pages = {D18114},
-	title = {{Different ENSO teleconnections and their effects on the stratospheric
-		polar vortex}},
+	title = {Different ENSO teleconnections and their effects on the stratospheric
+		polar vortex},
 	url = {http://doi.wiley.com/10.1029/2008JD009920},
 	volume = {113},
 	year = {2008}
@@ -2112,11 +2105,11 @@ a global ocean model}},
 	author = {Garfinkel, Chaim I. and Hartmann, Dennis L. and Sassi, Fabrizio},
 	doi = {10.1175/2010JCLI3010.1},
 	issn = {0894-8755},
-	journal = {Journal of Climate},
+	journal = jclim,
 	month = jun,
 	number = {12},
 	pages = {3282--3299},
-	title = {{Tropospheric Precursors of Anomalous Northern Hemisphere Stratospheric Polar Vortices}},
+	title = {Tropospheric Precursors of Anomalous Northern Hemisphere Stratospheric Polar Vortices},
 	volume = {23},
 	year = {2010}
 }
@@ -2139,7 +2132,7 @@ a global ocean model}},
 }
 
 
-@article{garfinkeletal2012,
+@article{Garfinkel2012,
 	author = {Garfinkel, Chaim I. and Feldstein, Steven B. and Waugh, Darryn W. and Yoo, Changhyun and Lee, Sukyoung},
 	doi = {10.1029/2012GL053144},
 	journal = {Geophysical Research Letters},
@@ -2567,7 +2560,7 @@ a global ocean model}},
 }
 
 
-@ARTICLE{thompsonetal2002,
+@ARTICLE{Thompson2002,
         author = {David W.J. Thompson and Mark P. Baldwin and John M. Wallace},
         journal = jclim,
         pages = {14211428},
@@ -2626,7 +2619,7 @@ a global ocean model}},
 	author = {Huntley, Helga S. and Hakim, Gregory J.},
 	doi = {10.1007/s00382-009-0714-5},
 	issn = {0930-7575},
-	journal = {Climate Dynamics},
+	journal = cd,
 	month = dec,
 	number = {6},
 	pages = {995--1009},
@@ -2638,17 +2631,17 @@ a global ocean model}},
 
 @article{Murphy1988,
 	author = {Murphy, J.M.},
-	journal = {Quarterly Journal of the Royal Meteorological Society},
+	journal = qjrms,
 	pages = {463--493},
 	title = {{The impact of ensemble forecasts on predictability}},
 	volume = {114},
 	year = {1988}
 }
 
-@article{Pedatella2014
+@article{Pedatella2014,
 	author = {Pedatella, N. M. and Raeder, K. and Anderson, J. L. and Liu, H.-L.},
 	title = {Ensemble Data Assimilation in the Whole Atmosphere Community Climate Model},
-	journal = {Journal of Geophysical Research: Atmospheres},
+	journal = jgra,
 	issn = {2169-8996},
 	url = {http://dx.doi.org/10.1002/2014JD021776},
 	doi = {10.1002/2014JD021776},
@@ -2659,9 +2652,8 @@ a global ocean model}},
 
 @article{Hamill2001,
 	author = {Hamill, Thomas M.},
-	doi = {10.1175/1520-0493(2001)129<0550:IORHFV>2.0.CO;2},
 	issn = {0027-0644},
-	journal = {Monthly Weather Review},
+	journal = mwr,
 	month = mar,
 	number = {3},
 	pages = {550--560},
@@ -2669,3 +2661,335 @@ a global ocean model}},
 	volume = {129},
 	year = {2001}
 }
+
+@article{Neef2014,
+	author = {Neef, Lisa and Walther, Sophia and Matthes, Katja and Kodera, Kunihiko},
+	doi = {10.1002/2014JD021621.},
+	journal = jgra,
+	pages = {1--13},
+	title = {{Observations of stratospheric sudden warmings in Earth rotation variations}},
+	volume = {119},
+	year = {2014}
+}
+
+@article{Saynisch2010,
+	author = {Saynisch, Jan and Wenzel, Manfred and Schr\"{o}ter, Jens},
+	doi = {10.1007/s00190-010-0416-0},
+	isbn = {0019001004160},
+	issn = {0949-7714},
+	journal = {J. Geod.},
+	keywords = {angular momentum,data assimilation,earth rotation,length of 
+		day,ocean},
+	month = oct,
+	number = {2},
+	pages = {67--73},
+	title = {{Assimilation of Earth rotation parameters into a global ocean model: 
+		length of day excitation}},
+	url = {http://www.springerlink.com/index/10.1007/s00190-010-0416-0},
+	volume = {85},
+	year = {2010}
+}
+
+@article{Saynisch2011,
+	author = {Saynisch, Jan and Wenzel, M. and Schr\"{o}ter, Jens},
+	doi = {10.5194/npg-18-581-2011},
+	issn = {1607-7946},
+	journal = {Nonlinear Process. Geophys.},
+	month = sep,
+	number = {5},
+	pages = {581--585},
+	title = {{Assimilation of Earth rotation parameters into a global ocean model: 
+		excitation of polar motion}},
+	url = {http://www.nonlin-processes-geophys.net/18/581/2011/},
+	volume = {18},
+	year = {2011}
+}
+
+@article{Saynisch2012,
+	author = {Saynisch, Jan and Thomas, Maik},
+	doi = {10.1016/j.jog.2011.10.003},
+	issn = {02643707},
+	journal = {J. Geodyn.},
+	month = dec,
+	pages = {24--29},
+	publisher = {Elsevier Ltd},
+	title = {{Ensemble Kalman-Filtering of Earth rotation observations with a global 
+		ocean model}},
+	url = {http://linkinghub.elsevier.com/retrieve/pii/S0264370711001153},
+	volume = {62},
+	year = {2012}
+}
+
+@article{Marsh2013,
+	author = {Marsh, Daniel R. and Mills, Michael J. and Kinnison, Douglas E. and 
+		Lamarque, Jean Francois and Calvo, Natalia and Polvani, Lorenzo M.},
+	doi = {10.1175/JCLI-D-12-00558.1},
+	isbn = {0894-8755},
+	issn = {08948755},
+	journal = {J. Clim.},
+	pages = {7372--7391},
+	title = {{Climate change from 1850 to 2005 simulated in CESM1(WACCM)}},
+	volume = {26},
+	year = {2013}
+}
+
+@article{Russell2009,
+	author = {J.M. Russell and M.G. Mlynczak and L.L. Gordley and J. Tansock and R. Esplin},
+	doi = {10.1117/12.366383},
+	journal = {Proc. {SPIE}},
+	pages = {277-288},
+	title = {An overview of the {SABER} experiment and preliminary calibration results},
+	volume = {3756},
+	year = {2009}
+}
+
+@article{Houtekamer1998,
+	author = {Houtekamer, P.L. and Mitchell, Herschel L.},
+	journal = {Mon. Weather Rev.},
+	number = {1969},
+	pages = {796--811},
+	title = {{Data Assimilation Using an Ensemble Kalman Filter Technique}},
+	volume = {126},
+	year = {1998}
+}
+
+@article{Tripathi2014,
+	author = {Tripathi, Om P and Baldwin, Mark and Charlton-Perez, Andrew and 
+		Charron, Martin and Eckermann, Stephen D. and Gerber, Edwin and Harrison, R. 
+			Giles and Jackson, David R. and Kim, Baek-Min and Kuroda, Yuhji and Lang, Andrea 
+			and Mahmood, Sana and Mizuta, Ryo and Roff, Greg and Sigmond, Michael and Son, 
+		Seok-Woo},
+	doi = {10.1002/qj.2432},
+	issn = {00359009},
+	journal = qjrms,
+	month = jul,
+	title = {Review: The Predictability of the Extra-tropical Stratosphere on 
+		monthly timescales and its Impact on the Skill of Tropospheric Forecasts},
+	year = {2014}
+}
+
+
+@article{Randel2010,
+	author = {Randel, William J and Park, Mijeong and Emmons, Louisa and Kinnison, 
+		Doug and Bernath, Peter and Walker, Kaley a and Boone, Chris and Pumphrey, 
+		Hugh},
+	doi = {10.1126/science.1182274},
+	issn = {1095-9203},
+	journal = {Science},
+	month = apr,
+	number = {5978},
+	pages = {611--3},
+	pmid = {20339030},
+	title = {{Asian monsoon transport of pollution to the stratosphere.}},
+	volume = {328},
+	year = {2010}
+}
+
+@article{Lawson2004,
+	author = {Lawson, W. Gregory and Hansen, James A.},
+	journal = mwr,
+	pages = {1966--1981},
+	title = {Implications of Stochastic and Deterministic Filters as Ensemble-Based 
+		Data Assimilation Methods in Varying Regimes of Error Growth},
+	volume = {132},
+	year = {2004}
+}
+
+@article{Gaspari1999,
+	author = {Gaspari, Gregory and Gaspari, Gregory and Cohn, Stephen E and Cohn, 
+		Stephen E},
+	doi = {10.1002/qj.49712555417},
+	isbn = {1477-870X},
+	issn = {00359009},
+	journal = qjrms,
+	number = {April 1998},
+	pages = {723--757},
+	title = {{Construction of correlation functions in two and three dimensions}},
+	url = {http://dx.doi.org/10.1002/qj.49712555417},
+	volume = {125},
+	year = {1999}
+}
+
+@article{Polavarapu2005b,
+	author = {Polavarapu, S. and Shepherd, T. G. and Rochon, Y. and Ren, S.},
+	doi = {10.1256/qj.05.87},
+	issn = {00359009},
+	journal = qjrms,
+	month = oct,
+	number = {613},
+	pages = {3513--3527},
+	title = {{Some challenges of middle atmosphere data assimilation}},
+	volume = {131},
+	year = {2005}
+}
+
+@article{Wheeler2004,
+	author = {Wheeler, Matthew C. and Hendon, Harry H.},
+	issn = {0027-0644},
+	journal = mwr,
+	month = aug,
+	number = {8},
+	pages = {1917--1932},
+	title = {An All-Season Real-Time Multivariate MJO Index: Development of an 
+		Index for Monitoring and Prediction},
+	volume = {132},
+	year = {2004}
+}
+@article{Anderson2009tellus,
+	author = {Jeffrey L. Anderson},
+	title = {Spatially and temporally varying adaptive covariance inflation for ensemble filters},
+	journal = {Tellus A},
+	volume = {61},
+	number = {1},
+	issn = {1600-0870},
+	url = {http://dx.doi.org/10.1111/j.1600-0870.2008.00361.x},
+	doi = {10.1111/j.1600-0870.2008.00361.x},
+	pages = {72--83},
+	year = {2009},
+}
+
+@article{Cohen2010,
+	author = {Cohen, Judah and Foster, James and Barlow, Mathew and Saito, Kazuyuki 
+		and Jones, Justin},
+	doi = {10.1029/2010GL044256},
+	isbn = {0094-8276},
+	issn = {00948276},
+	journal = {Geophys. Res. Lett.},
+	number = {July},
+	pages = {1--6},
+	title = {Winter 2009-2010: A case study of an extreme Arctic Oscillation 
+		event},
+	volume = {37},
+	year = {2010}
+}
+
+@article{Fereday2012,
+	author = {Fereday, D R and Maidens, a and Arribas, a and Scaife, a a and Knight, 
+		J R},
+	doi = {10.1088/1748-9326/7/3/034031},
+	issn = {1748-9326},
+	journal = {Env. Res. Lett.},
+	pages = {034031},
+	title = {Seasonal forecasts of northern hemisphere winter 2009/10},
+	volume = {7},
+	year = {2012}
+}
+
+@article{Kolstad2010,
+	archivePrefix = {arXiv},
+	arxivId = {0906.0027},
+	author = {Kolstad, Erik W. and Breiteig, Tarjei and Scaife, Adam a.},
+	doi = {10.1002/qj.620},
+	eprint = {0906.0027},
+	isbn = {1477-870X},
+	issn = {00359009},
+	journal = qjrms,
+	number = {May},
+	pages = {886--893},
+	title = {The association between stratospheric weak polar vortex events and 
+		cold air outbreaks in the Northern Hemisphere},
+	volume = {136},
+	year = {2010}
+}
+
+@article{LHeureux2010,
+	author = {L'Heureux, Michelle and Butler, Amy and Jha, Bhaskar and Kumar, Arun 
+		and Wang, Wanqiu},
+	doi = {10.1029/2010GL043338},
+	isbn = {0094-8276},
+	issn = {00948276},
+	journal = grl,
+	pages = {L10704},
+	title = {Unusual extremes in the negative phase of the Arctic Oscillation 
+		during 2009},
+	volume = {37},
+	year = {2010}
+}
+
+@article{Cattiaux2010,
+	author = {Cattiaux, J. and Vautard, R. and Cassou, C. and Yiou, P. and 
+		Masson-Delmotte, V. and Codron, F.},
+	doi = {10.1029/2010GL044613},
+	journal = grl,
+	month = oct,
+	number = {20},
+	pages = {L20704},
+	title = {Winter 2010 in Europe: A cold extreme in a warming climate},
+	volume = {37},
+	year = {2010}
+}
+
+@article{Seager2010,
+	author = {Seager, R. and Kushnir, Y. and Nakamura, J. and Ting, M. and Naik, N.},
+	doi = {10.1029/2010GL043830},
+	isbn = {0094-8276},
+	journal = grl,
+	pages = {L14703},
+	title = {Northern Hemisphere winter snow anomalies: ENSO, NAO and the winter of 
+		2009/10},
+	volume = {37},
+	year = {2010}
+}
+
+@article{Wang2010,
+	author = {Wang, Lin and Chen, Wen},
+	doi = {10.1029/2010GL042659},
+	journal = grl,
+	pages = {L09707},
+	title = {Downward Arctic Oscillation signal associated with moderate weak 
+		stratospheric polar vortex and the cold December 2009},
+	volume = {37},
+	year = {2010}
+}
+
+@article{Buchan2014,
+	author = {Buchan, Jian and Hirschi, Jo\"{e}l J.-M. and Blaker, Adam T. and 
+		Sinha, Bablu},
+	doi = {10.1175/MWR-D-13-00104.1},
+	journal = mwr,
+	pages = {922--932},
+	title = {North Atlantic SST Anomalies and the Cold North European Weather 
+		Events of Winter 2009/10 and December 2010},
+	url = {http://journals.ametsoc.org/doi/abs/10.1175/MWR-D-13-00104.1},
+	volume = {142},
+	year = {2014}
+}
+
+@article{Thompson1998,
+	author = {Thompson, David W. J. and Wallace, John M.},
+	journal = grl,
+	number = {9},
+	pages = {1297--1300},
+	title = {The Arctic Oscillation signature in the wintertime geopotential height 
+		and temperature fields},
+	volume = {25},
+	year = {1998}
+}
+
+@article{Tomassini2012,
+	author = {Tomassini, Lorenzo and Gerber, Edwin P. and Baldwin, Mark P. and 
+		Bunzel, Felix and Giorgetta, Marco},
+	doi = {10.1029/2012MS000177},
+	issn = {19422466},
+	journal = james,
+	keywords = {Research},
+	mendeley-groups = {NAO/NAM,SSW},
+	number = {October},
+	pages = {1--14},
+	title = {{The role of stratosphere-troposphere coupling in the occurrence of 
+		extreme winter cold spells over northern Europe}},
+	volume = {4},
+	year = {2012}
+}
+
+@article{Vecchi2004,
+	author = {Vecchi, Gabriel A. and Bond, Nicholas A.},
+	doi = {10.1029/2003GL018645},
+	journal = grl,
+	pages = {L04104},
+	title = {The Madden-Julian Oscillation (MJO) and northern high latitude 
+		wintertime surface air temperatures},
+	volume = {31},
+	year = {2004}
+}
+
