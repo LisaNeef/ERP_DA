@@ -16,18 +16,12 @@ We only integrated these latter two experiments for 31 and 17 days, respectively
 
 
 %-----WACCM experiments
-In Section \ref{sec:evaluation_variable} we test whether angular momentum observations are useful as an evaluation (i.e. unassimilated) variable. 
-Here we compare four synthetic-observation assimilations with DART-WACCM, three of which were performed by \citet{Pedatella2013}.  
-In Experiment 5, a 40-member DART-WACCM ensemble is run forward from 5-25 November, with no assimilation. 
-The same initial ensemble is used for experiments 7-8, but with assimilation of synthetic observations generated from a reference simulation. 
-Experiment 7 assimilates the synthetic versions of NCEP/NCAR reanalysis observation (i.e. winds and temperatures from radiosondes and aircraft \citep{Saha2010}), as well as refractivity profiles simulating observations by the COSMIC GPS Radio-Occultation instrument \citep{Anthes2008}.
-Experiment 8 is similar to experiment 7, but additionally assimilates simulated temperature profiles from the Sounding of the Atmosphere Using Broadband Emission Radiometry experiment \citep[SABER]{Russell2009}, from 20-100k.
-
-For this study we selected an additional simulation (experiment 6), performed for testing DART-WACCM at the GEOMAR Helmholtz Centre for Ocean Research Kiel, wherein 40 DART-WACCM ensemble members are run forward from 1-27 October 2009, assimilating only COSMIC refractivities.  
-Experiment 6 is not entirely comparable to experiments 5,7 and 8 because it uses both a different starting ensemble and a different truth state, but the experiment are still qualitatively comparable, and together Experiments 5-8 demonstrate a progressively-stronger constraint applied to a WACCM ensemble using DART.  
-
-
-
-%---uncomment if needed
-%GPS-RO measurements have been shown to add a high amount of information to numerical weather forecasts (Bonavita, 2013), due to their low systematic errors and high vertical resolution. It was shown by (Wang et al., 2013) that GPS-RO data give an unprecedented look into the vertical structure of the atmosphere because of their high vertical resolution, in this case showing a warming trend in the tropopause inversion layer that would not have been observed otherwise.
+In Section \ref{sec:evaluation_variable} we examine how angular momentum observations can be used to evaluate the constrait imposed by other observations in a data assimilation system.  
+Here we compare four DART-WACCM ensemble simulations (E5-E8), where the amount of (real) observations assimilated is increased for each experiment. 
+In E5, a 40-member DART-WACCM ensemble is run forward from through October 2009 with no assimilation.  
+The same initial ensemble is used for E6-E7, but now assimilating the meteorological observations that are also used in the NCEP/NCAR reanalysis (i.e. winds and temperatures from radiosondes and aircraft \citep{Saha2010}), as well as refractivity profiles simulating observations by the COSMIC GPS Radio-Occultation instrument \citep{Anthes2008}.
+In E6, the assimilation is limited to the 30S-30N tropical band, while in E7 observations are assimilated globally. 
+E8 is similar to E7, but additionally assimilates temperature profiles from the Sounding of the Atmosphere Using Broadband Emission Radiometry experiment \citep[SABER]{Russell2009}, from 20-100k.
+E8 was performed by \hl{CITE NICK'S PAPER} for a different study and thus covers a different period, 6-25 November 2008.  
+E6 is not entirely comparable to E5-7 because it uses a different starting ensemble and covers a different time period, but, as shall be seen below, the qualitative comparison between these experiments is sufficient to demonstrate the usefulness of Earth rotation parameters as an evaluation variable. 
 

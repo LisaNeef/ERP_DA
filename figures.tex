@@ -1,28 +1,28 @@
-
 \begin{table}
 \caption{Overview of assimilation experiments performed.}
 \centering
 \begin{tabular}{p{2cm}p{2cm}p{6cm}p{4cm}}
 	Experiment& Model &  Assimilated Quantities  & Run dates \\
 \hline
-1 & CAM	&	none &  1 Jan - 28 Feb 2009 \\
-2 & CAM &	$\chi_1$, $\chi_2$, $\Delta$LOD	& 1 Jan - 28 Feb 2009 \\
-3 & CAM &	Radiosonde temperatures	& 1 Jan -31 Jan 2009	\\
-4 & CAM &	Radiosonde temperatures, $\chi_1$, $\chi_2$, $\Delta$LOD	& 1 Jan - 17 Jan 2009\\
-5$^a$ & WACCM &	none   & 6-25 Nov 2008	\\
-6 & WACCM &	GPS-RO  & 1-27 Oct 2009	\\
-7$^a$ & WACCM &	GPS-RO + NNRA$^b$  & 6-25 Nov 2008	\\
-8$^a$ & WACCM &	GPS-RO + NNRA$^b$ +SABER & 6-25 Nov 2008\\	
+E1 & CAM	&	none &  1 Jan - 28 Feb 2009 \\
+E2 & CAM &	$\chi_1$, $\chi_2$, $\Delta$LOD	& 1 Jan - 28 Feb 2009 \\
+E3 & CAM &	Radiosonde temperatures	& 1 Jan -31 Jan 2009	\\
+E4 & CAM &	Radiosonde temperatures, $\chi_1$, $\chi_2$, $\Delta$LOD	& 1 Jan - 17 Jan 2009\\
+E5 & WACCM &	none   & 1-30 Oct 2009	\\
+E6 & WACCM &	GPS-RO + NNRA$^b$ tropics only & 1-30 Oct 2009	\\
+E7 & WACCM &	GPS-RO + NNRA$^b$ whole atmosphere  & 1-30 Oct 2009	\\
+E8$^a$ & WACCM &	GPS-RO + NNRA$^b$ whole atmosphere +SABER & \hl{6-25 Nov 2008}\\	
 \hline
 \end{tabular}
 \tablenotetext{a}{Experiments performed by \citet{Pedatella2013}}
 \tablenotetext{b}{Observations used in the NCEP/NCAR Reanalysis project \citet{Saha2010}, which include radiosonde and aircraft winds and temperatures, plus satellite drift winds.}
 \label{tab:expts}
 \end{table}
+\clearpage
 
 
 %------comparison of the DA runs in the observation space
- \begin{figure}
+\begin{figure}[p]
 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_erpda_obs_space.pdf} 
  \caption{ The DART prior ensemble (gray) compared to the true state (green) in terms of assimilation time and each of the three angular momentum functions [(\ref{eq:X1})-(\ref{eq:X3}), (\ref{eq:X3_to_LOD})].  The columns compare the four experiments summarized in Table \ref{tab:expts}.  }
  \label{fig:fit_to_ERPs}
