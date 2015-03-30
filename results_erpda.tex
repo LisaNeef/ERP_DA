@@ -48,24 +48,20 @@ This means that we would need upwards of $N=1000$ ensemble members to compute co
 The only hope for attaining a reasonable correlation estimate from the 80-member model ensemble is if the covariance patterns have a large enough scale.  
 Comparing the two rwos of Figure \ref{fig:covariances} shows that, while
 the covariance patterns in the stratosphere and troposphere are similar, the covariance field in the stratosphere has larger spatial scales, in keeping with the larger spatial structures of stratospheric flow.
-This suggests that the analysis increment due to assimilation of global AAM might be the most accurate in the stratosphere, where is more covariant with its neighbors.  
+This suggests that the analysis increment due to assimilation of global angular momentum might be the most accurate in the stratosphere, where is more covariant with its neighbors.  
 
 % increments versus error figure-----------------------------------
-The top row of Figure \ref{fig:error_increments} shows the bias between the ensemble mean and the truth in the Northern Hemisphere, at the same time snapshots as the previous figure, and at the 320 hPa level, i.e. is roughly at the height of the tropospheric jets. 
-The second row of Fig. \ref{fig:error_increments} shows the analysis increments (i.e. posterior-prior ensemble mean) at the same times and vertical level. 
-We can see that, generally, the true error and the analysis increments have many similarities (e.g., on 28 Jan the prior ensemble mean zonal wind is too strong over the USA, and the analysis step increases the wind there), though 
-the analysis increments are also an order of magnitude smaller than the true error, which reflects the miniscule state-to-observation correlations and reflects how the information from a single observation has to be spread over the entire state. 
-However, it's also possible to find regions where the analysis increment opposes the prior error, e.g. over the northeastern Pacific on 11 Feb. 
-Thus while the covariance model developed by the ensemble filter has a physical basis, its high degree of sampling error can easily result in spurious corrections. 
-To answer the question of whether assimilating global angular momentum improves the modeled fields or not, 
-\hl{Add description of how the MSE changes with analysis increments early in the run and also later.}  
+Figure \ref{fig:error_increments} (a) shows the bias between the prior ensemble mean and the truth in the Northern Hemisphere on 31 January, i.e. after one month of assimilating the three angular momentum components, and at the 320 hPa level, i.e. roughly at the height of the tropospheric jets. 
+Fig. \ref{fig:error_increments} (b) shows the difference in the ensemble mean before and after the assimilation of data on that day, the so-called analysis increment. 
+The true error and the analysis increment have some large-scale similarites, e.g. the North Atlantic jet stream winds are too weak relative to the truth (positive bias), and the assimilation increases wind in this region (positive increment). 
+On the other hand, we can also find regions where the increment is in the opposite direction of the bias, e.g. over Siberia and Mongolia. 
+Note also that the analysis increments are also an order of magnitude smaller than the true error, which reflects the miniscule state-to-observation correlations and reflects how the information from a single observation has to be spread over the entire state.
+The difference in the mean square error between the prior and posterior states (Fig. \ref{fig:error_increments}c) shows where assimilation increases or decreases the distance to the true state (here red shading means a reduction of error from prior to posterior).  
+On this particular date, the assimilation has reduced the zonal wind error over North America, but with commensurate error increases over Asia. 
+Meanwhile, assimilation decreases the ensemble spread everywhere (Fig. \ref{fig:error_increments}c), following (\ref{eq:y_a}) -(\ref{eq:state_update}).  
+Thus, while the covariance model developed by the ensemble filter has a physical basis, its high degree of sampling error can also lead to analysis increments that make the state estimate worse, but are interpreted wrongly in terms of ensemble spread. 
+This will ultimately lead to a divergent data assimilation system, where the ensemble clusters closer together around a mean state that is, generally, farther from the truth than implied by the ensemble. 
 
-%---cut---Figure \ref{fig:ER} shows the difference in the mean square error (again in the zonal wind field), between experiment 1 (no assimilation) and experiment 2 (assimilating the angular momentum), at the same time snapshots as the previous figures. 
-%(Blue indicates that the assimilation of angular momentum has reduced the overall error, i.e. improved the state estimate.)
-%Figure \ref{fig:ER} again separates between the stratosphere (100-24 hPa, top row), and troposphere (1000-100 hPa, bottom row). 
-%Error reduction on the order to 10-20 m/s is evident at both upper and lower levels throughout the assimilation, though increases in error of a similar magnitude also appear early and dominate by February (last column).  
-%At the same time, the ensemble spread (not shown) consistently decreases to reflect the information ``gained'' from the observations. 
-%This suggests that we have a divergent data assimilation system, where the ensemble clusters closer together around a mean state that is, generally, farther from the truth than implied by the ensemble. 
 
 % point checks figure-------------------------------------------------------
 To illustrate this result on a local level, Figure \ref{fig:point_checks} compares the zonal wind in the ensemble and its mean to the true state, with no assimilation (left) and assimilation of angular momentum (right). 
