@@ -1,10 +1,13 @@
-In the assimilation of real observations, it is difficult to judge whether the assimilation has actually succeeded in bringing the estimated state closer to the truth --simply because we don't know the true state of the atmosphere.
-We can validate such an assimilation experiment by comparing to independent observations, but these can be difficult to obtain because observing systems often don't overlap sufficiently in time and space.
+In practical data assimilation, it is difficult to judge whether the assimilation has actually succeeded in bringing the estimated state closer to the truth --simply because we don't know the true state of the atmosphere.
+Typically the solution is to compare the analyzed model state to independent observations, but these can be difficult to obtain because observing systems often don't overlap sufficiently in time and space.
 Here the atmospheric angular momentum may make a useful evaluation parameter, since it is easy to compute from the modeled wind and pressure fields, and is observed in the form of three parameters that are freely available at 12-hourly resolution.  
 
-The four DART-WACCM simulations in Table \ref{tab:expts} illustrate this idea in Figures \ref{fig:evalvariable_state}-\ref{fig:evalvariable_aam}. 
+Figures \ref{fig:evalvariable_state}-\ref{fig:evalvariable_aam} illustrate this idea for experiments E5-E8, in which we assimilate a variety of real observations into 40-member ensembles of WACCM simulations.  
 The four experiments together represent a stepwise increase of the constraint imposed by observations (Section \ref{sec:expts}).  
-Figure \ref{fig:evalvariable_state} compares Northern Hemisphere maps of the mean square error in the zonal wind at 320 hPa on day 14 of the assimilation for each of the four experiments shown.
+Figure \ref{fig:evalvariable_state} shows the ensemble variance of the zonal wind field in each experiment, as a function of assimilation day. 
+Not knowing the true state of the atmosphere, the ensemble variance can be taken as a measure of the constraint imposed by the observations as the assimilation progresses. 
+The ensemble variance for E6-E8 shows the "saw" pattern that is typical of ensemble data assimilation, the ensemble variance increasing rapidly between observations and then being reduced again at each observation time. 
+
 Comparison of the mean square error \hl{and the spread} shows an expected result, that increasing the observations decreases both the error and the uncertainty estimate, as well as one surprising result, \hl{that adding SABER observations actually increases error slightly.} 
 
 It would be difficult to identify the differences between these four levels of constraint in realistic simulations where we don't know the true state. 
