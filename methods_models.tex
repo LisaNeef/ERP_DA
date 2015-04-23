@@ -5,12 +5,12 @@ The top three model levels (starting at about 14 hPa) constitute a ``sponge'' la
 The diffusion has been tuned in order to give a reasonable strength of the stratospheric polar night jets \citep{nealeetal2010}.
 
 %-------------------WACCM-------------------------
-The Whole Atmosphere Community Climate Model \citep[WACCM]{Marsh2013} extends the dynamical core of CAM up to $5 \times 10^{-6}$hPa, which is in the lower thermosphere. 
+The Whole Atmosphere Community Climate Model \citep[WACCM]{Marsh2013} extends the dynamical core of CAM up to $5 \times 10^{-6}$hPa, which is in the lower thermosphere, and includes additional chemical and physical processes for these regions. 
+The experiments here use WACCM4, from the Community Earth System Model (CESM) distribution 1.1.1 (E8) and 1.2.0 (E5-7). 
 Again, the trop three model levels (now starting from about $2 \times 10^{-5}$hPa) have strong horizontal diffusion to absorb planetary waves. 
 %% Kevin Reader's answer about the WACCM sponge layers: 
 %The number of damped levels depends on the dissipation choice in the WACCM atm_in namelist variable div24del2flag. For value 2 (ldiv2 diffusion) there are 3 damped levels. For values 4 and 42 (ldiv4 and ldiv4+ldel2) there are 4 damped levels.
 %In addition, the advection operators go to first order for the top 1/8 of the levels, which is 8 for the 66 level model.  I believe that this is a gentler
 The DART-WACCM simulations in this study were also run at $1.9^{\text{o}} \times 2.5^{\text{o}}$ horizontal resolution, with 66 vertical levels. 
 %dissipation, so I think that we should set highest_state_pressure_Pa so that only levels 1-3 (or 4) feel no observations.
-\hl{Mention any important diffs between CAM and WACCM.}
 
