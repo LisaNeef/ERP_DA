@@ -1,21 +1,24 @@
 In practical data assimilation, it is difficult to judge whether the assimilation has actually succeeded in bringing the estimated state closer to the truth --simply because we don't know the true state of the atmosphere.
 Typically the solution is to compare the analyzed model state to independent observations, but these can be difficult to obtain because observing systems often don't overlap sufficiently in time and space.
-Here the atmospheric angular momentum may make a useful evaluation parameter, since it is easy to compute from the modeled wind and pressure fields, and is observed in the form of three parameters that are freely available at 12-hourly resolution.  
+Here the atmospheric angular momentum may make a useful evaluation parameter, since it is easy to compute from the modeled wind and pressure fields, and is observed in the form of three parameters that are freely available at 12-hourly resolution, updated continuously, and available at high accuracy since about 1980.  
 
-Figures \ref{fig:evalvariable_state}-\ref{fig:evalvariable_aam} illustrate this idea for experiments E5-E8, in which we assimilate a variety of real observations into 40-member ensembles of WACCM simulations.  
-The four experiments together represent a stepwise increase of the constraint imposed by observations (Section \ref{sec:expts}).  
-Figure \ref{fig:evalvariable_state} shows the ensemble variance of the zonal wind field in each experiment, as a function of assimilation day. 
-Not knowing the true state of the atmosphere, the ensemble variance can be taken as a measure of the constraint imposed by the observations as the assimilation progresses. 
-The ensemble variance for E6-E8 shows the "saw" pattern that is typical of ensemble data assimilation, the ensemble variance increasing rapidly between observations and then being reduced again at each observation time. 
+Experiments \hl{E5-58}, which assimilate reanalysis-type observations into 40-member ensembles of WACCM simulations, illustrate this idea.  
+The four experiments together (see Section  \ref{sec:expts}) represent a stepwise increase of the constraint imposed by observations.
+Since we don't know the true state of the atmosphere, we could take the ensemble variance as a measure of the constraint imposed by the observations in each case. 
+This is done in Figure \ref{fig:evalvariable_state}, which compares 
+the global mean ensemble variance of the zonal wind in each experiment as a function of time.  
+As expected, ensemble variance is pushed down every time an observation comes in, in the "saw" pattern that is typical of sequential data assimilation. 
+It is not surprising that, after 10 or more days of assimilation, the simulation with the most observations assimilated (E8) has the lowest ensemble variance, but a spike in the ensemble variance of E8 after 20 days of assimilation suggests that the addional SABER observations might also increase the error at times. 
+At the same time, E6 (assimilating only in the tropics), doesn't see a reduced ensemble spread relative to E5 (no assimilation) until about two weeks of assimilation.  
+Figures like Fig.  \ref{fig:evalvariable_state} can give us an idea of where the state estimate is more or less certain, but can tell us nothing about 
+whether the observational constraints actually bring the analyzed state closer to the truth. 
 
-Comparison of the mean square error \hl{and the spread} shows an expected result, that increasing the observations decreases both the error and the uncertainty estimate, as well as one surprising result, \hl{that adding SABER observations actually increases error slightly.} 
-
-It would be difficult to identify the differences between these four levels of constraint in realistic simulations where we don't know the true state. 
-Figure \ref{fig:evalvariable_aam} shows how the four simulations instead compare in terms of their three global components of angular momentum, in each case compared to the truth.  
-In a realistic case, we could replace the ``true'' values with the observed Earth rotation parameter corresponding to each angular momentum component (polar motion for the equatorial terms, and length-of-day anomalies for the axial term), possibly adjusting for the angular momentum of the oceans, though that contribution should be small on these short timescales.  
-
-Figure  \ref{fig:evalvariable_aam} makes it easy to see the increasing constraint as the number of observations increases.
-We can see, for example, that the SABER observations seem to shock the state towards the beginning of the assimilation period, an effect that doesn't go away until about a week later.  
+Figure \ref{fig:evalvariable_aam} shows how the four simulations compare in terms of two of the three global components of angular momentum, $\chi_2$ and $\chi_3$ (here $\chi_1$ has been omitted because it looks qualitatively similar to $\chi_2$).  
+For each experiment, the angular momentum components of the ensemble are compared  to the corresponding observed Earth rotation parameter. 
+Figure  \ref{fig:evalvariable_aam} makes it easy to see how the constraint increases with more observations assimilated -- scanning the panels from left to right, the ensemble becomes more tightly clustered for both angular momentum components, and generally moves closer to the observed Earth rotation parameter. 
+We can see that whil E6 (assimilating only in the tropics) actually increases the ensemble spread in the first 20 days of assimilation, it also brings the ensemble angular momentum closer to the observed Earth roation parameters -- thus even while assimilation increases spread, it also improves the state estimate. 
+In the rightmost panels, the peak on the ensemble variance at 20 days in E8 (adding SABER observations) reveals itself as a strong departure of the equatorial angular momentum from the polar motion.   
+The difference between modeled $\chi_2$ and the observed polar motion in this case suggests that the entire ensemble might have developed a midlatitude mass field anomaly that is not present in the true state. 
 
 The angular momentum has one shortcoming as an assimilation variable in that it mostly reflects on the troposphere, which of course has most of the atmosphere's mass.
-Thus, for example, the angular momentum diagnostic does not capture the added benefit of the SABER observations, which is that they reduce the error in the stratosphere. 
+Thus, for example, the angular momentum diagnostic does not capture a major benefit of the SABER observations, which is that they reduce the error in the stratosphere. 
