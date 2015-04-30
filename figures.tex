@@ -43,7 +43,7 @@ E8$^a$ & WACCM &	GPS-RO + NNRA$^b$ whole atmosphere +SABER & 1 Jan - 28 Feb 2009
 
 %-----evolution of the covariances between local variables and the AAM observations 
  \begin{figure}
-	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_U_to_LOD_covariances.pdf}
+	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_U_to_LOD_covariances_.pdf}
 	 \caption{Evolution of the covariance zonal wind and the axial angular momentum component ($\chi_3$) on three dates in E2 (assimilating AAM). The top row shows values averaged over stratospheric levels, while the bottom row shows values averaged over tropospheric levels.}
  \label{fig:covariances}
 \end{figure}
@@ -51,7 +51,7 @@ E8$^a$ & WACCM &	GPS-RO + NNRA$^b$ whole atmosphere +SABER & 1 Jan - 28 Feb 2009
 %-----evolution of the prior error and corresponding increments 
  \begin{figure}
 	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_U_priorerror_vs_increment_vs_ER_31jan.pdf}
-	 \caption{\hl{Need to fix the letter labels here!} Snapshots of the (a) bias (truth minus prior ensemble mean), (b) analysis increment (posterior minus prior ensemble mean), (c) posterior minus prior mean square error, and (d) posterior-minus prior ensemble variance on 31 January, i.e. after 1 month of assimilation, on the 320 hPa vertical leve, and all for assimilation in experiment E2 (assimilating AAM only). } 
+	 \caption{Snapshots of the (a) bias (truth minus prior ensemble mean), (b) analysis increment (posterior minus prior ensemble mean), (c) posterior minus prior mean square error, and (d) posterior-minus prior ensemble variance on 31 January, i.e. after 1 month of assimilation, on the 320 hPa vertical leve, and all for assimilation in experiment E2 (assimilating AAM only). } 
  \label{fig:error_increments}
 \end{figure}
 
@@ -59,32 +59,24 @@ E8$^a$ & WACCM &	GPS-RO + NNRA$^b$ whole atmosphere +SABER & 1 Jan - 28 Feb 2009
 %-----focus on the ensemble in two regions to show how it is moved away from the true state
  \begin{figure}
 	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_point_checks.pdf}
-	 \caption{Comparison of the ensemble (gray) and its mean (black) to the true state (pink), for no assimilation (left column) and with assimilation of the three angular momentum components (right column). The top row shows zonal wind averaged over the North Atlantic jet (see text), and the bottom row shows zonal wind averaged in the polar vortex (see text).}
+	 \caption{Comparison of the ensemble (gray) and its mean (black) to the true state (pink), for no assimilation [E1, (a) and (c)], and with assimilation of the three angular momentum components [E2, (b) and (d)]. The top row shows zonal wind averaged over the Atlantic jet stream, and the bottom row shows zonal wind averaged in the polar vortex (see text).}
 	 \label{fig:point_checks}
 \end{figure}
 
 
 
 
-%------difference in MSE for RST - ERPRST (blue is good)
+%------MSE increments in time (RST means error reduction) comparing RST and ERPSRT
  \begin{figure}
-	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_U_error_RST_vs_ERPRST.pdf}
-	 \caption{Snapshots of the difference in mean square error (top) and scaled ensemble variance (see eqn \ref{eq:EvsS}) (bottom) between the assimilation of radiosonde temperatures and the assimilation of both radiosonde temperatures and the global angular momentum, averaging between the surface and 100 hPa. Blue indicates that adding the angular momentum to the assimilation reduces error / ensemble variance. }
+	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_MSEincrement_comparison.pdf}
+	 \caption{Vertical profiles of the difference in MSE between the posterior and prior states (where read means that assimilation reduces error) as a function of time, (a) assimilating a global grid of temperatures, and (b) additionally assimilating the three global angular momentum components.}
+	 \label{fig:added_value_MSEincrement}
+\end{figure}
+
+
+%------MSE diff between ERPRST and RST (red is good)
+ \begin{figure}
+	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_MSE_RST_vs_ERPRST.pdf}
+	 \caption{Vertical profiles of the differenence in MSE between E4 (assimilating temperatures and global angular momentum) and E3 (assimilating temperatures only). Blue indicates that the error is higher when angular momentum observations are added.}
 	 \label{fig:added_value_MSE}
 \end{figure}
-
-%-----evolution of rank histograms to show filter divergence when you add ERPs to RST  
- \begin{figure}
-	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_added_value_RH.pdf}
-	 \caption{Evolution of the rank histogram of the zonal wind field over the first week of assimilation of (top) radiosonde temperatures and (bottom) radiosonde temperatures with angular momentum.}
-	 \label{fig:added_value_RH}
-\end{figure}
-
-
-
-
-
-
-
-
-
