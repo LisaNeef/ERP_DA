@@ -38,8 +38,8 @@ troposphere (surface to 100 hPa).
 Note that the covariance pattern does not resemble the weighting function of the axial wind integral (\ref{eq:h3}, which follows the cosine of latitude and is therefore zonally symmetric and maximal in the tropics), and varies strongly in time. 
 This implies that dynamic, ensemble-based covariance estimates should be more useful thatn a static estimate based on the weighting functions.
 
-However, the covariances in both regions are on the order of $10^{-11}(\text{milliseconds} \times \text{m/s})$.  
-\hl{Considering the variances of the zonal wind (of order **) and the axial angular momentum (of order **), the corresponding state-to-observation correlations turn out to be on the order of 0.001.} 
+However, the covariances in both regions are on the order of $10^{-11}\text{m/s}$.  
+Considering the standard deviation of the zonal wind (of order 10 m/s) and the (dimensionless) axial angular momentum (of order $10^{-9}$), the corresponding state-to-observation correlations turn out to be on the order of $10^{-4}\text{m/s}$. 
 The miniscule correlations are not surprising, given that each individual state component contributes only a small amount to the global angular momentum integral, but to 
 correctly estimate them, the correlations need to be significantly larger than the sampling error that comes from using a finite ensemble, which 
 scales as $1/\sqrt{N}$ \citep{Houtekamer1998}. 
@@ -67,8 +67,12 @@ This will ultimately lead to a divergent data assimilation system, where the ens
 
 
 % point checks figure-------------------------------------------------------
-To illustrate this result on a local level, Figure \ref{fig:point_checks} compares the zonal wind in the ensemble and its mean to the true state, with no assimilation (left) and assimilation of angular momentum (right). 
-The ensemble in each cases is shown as averages over two regions: the tropospheric extratropical jet (averaging between 30N-45N, between 300hPa-200hPa, \hl{and all longitudes}), and the Northern Hemisphere stratospheric polar vortex (averaging between 60N-90N, between 30-24 hPa, and all longitudes).
-For both measures, the angular momentum assimilation over the first three weeks or so decreases the ensemble's spread about the mean, and gives the ensemble mean a bit more of the day-to-day variations of the true state (which average out in the ensemble with not assimilation), but \hl{in general, only the polar vortex winds, which showed a more large-scale covariance structure} (Fig. \ref{fig:covariances}) \hl{show improvement relative to the truth, and only for the first few weeks of assimilation}. 
+To illustrate this result on a local level, Figure \ref{fig:point_checks} compares the zonal wind in the ensemble and its mean to the true state, with E1 (no assimilation) and E2 (assimilation of angular momentum). 
+The ensemble in each cases is shown as averages over two regions: the tropospheric jet over the Atlantic (averaging between 30N-40N, 280W-360W, and 300hPa-200hPa), and the northern stratospheric polar vortex (averaging between 60N-90N, 30-24 hPa, and all longitudes).
+For both measures, the angular momentum assimilation over the first three weeks or so clearly decreases the ensemble's spread about the mean, and gives the ensemble mean more realistic variations (which average out in the ensemble with no assimilation). 
+However, only the polar vortex winds, which showed a more large-scale covariance structure (Fig. \ref{fig:covariances}) show improvement relative to the truth, and only for the first few weeks of assimilation. 
 
-\hl{[maybe insert a sub-summary here?]}
+Thus we do see some improvement in the state estimate when assimilating the global angular momentum, which is perhaps a remarkable result given the high sampling error in the state-to-observation covariances. 
+This improvement is nevertheless small, limited to regions with large-scale correlation patterns, and fades as the assimilation progresses and the ensemble spread increases.
+A natural next question is to ask whether angular momentum observations could improve the state more if the ensemble spread is kept small by the assimilation of other, spatially localized, observations. 
+This question will be treated in the next section.  

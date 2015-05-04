@@ -1,28 +1,25 @@
+%The previous section showed that the assimilation of global angular momentum can reduce bias in the model state while the ensemble spread is still relatively small.
+%This suggests that global integral observations like the anglar momentum might better constrain the state in the presence of other observations that keep the ensemble spread small. 
+If angular momentum / Earth rotation parameter observations are assimilated in the presence of local observations, it is conceivable that an ensemble that is already clustered around the true state could perhaps be pushed even closer to the truth by adding the additional requirement that the global angular momentum should match observations. 
+In this section, we compare DART-CAM simulations 3 and 4 in Table \ref{tab:expts}, i.e. assimilating temperatures alone, and with additional angular momentum observations.
 
-
-The previous section showed that the assimilation of global angular momentum can reduce bias in the model state while the ensemble spread is still relatively small.
-This suggests that global integral observations like the anglar momentum might better constrain the state in the presence of other observations that keep the ensemble spread small. 
-In this case, an ensemble that is already clustered around the true state could perhaps pushed even closer to the truth by adding the additional requirement that the global angular momentum should match observations. 
-
-In this section, we compare DART-CAM simulations 3 and 4 in Table \ref{tab:expts}, i.e. assimilating radiosonde temperatures alone, and with additional angular momentum observations.
-Comparing these two experiments in terms of the fit to the angular momentum components (Fig. \ref{fig:fit_to_ERPs} columns 3-4), we see that the radiosonde observations alone already achieve a good fit to the true angular momentum, and that 
+Comparing these two experiments in terms of the fit to the angular momentum components (Fig. \ref{fig:fit_to_ERPs} columns 3-4), we see that the temperature observations alone already achieve a good fit to the true angular momentum, and that 
 then adding observations of the angular momentum components further improves the fit.  
 This means that the angular momentum observations add information to the ensemble, but the question remains as to whether the information is interpreted correctly by the model.
 
-\hl{is it work mentioning that in Jan's papers the impact of adding ERPs was larger??}
+Figure \ref{fig:added_value_MSEincrement} shows zonal mean profiles of the increment in mean square error in zonal wind (i.e. the difference between posterior and prior) as a function of time, for 17 days of asssimilation in E3 [assimilating temperatures, (a)] and E4 [assimilating temperatures and angular momentum, (b)].  
+Both experiments show entirely negative values, meaning that the analysis increment at each time has reduced the difference between the ensemble mean and the true state.  
+Adding the angular momentum observations in E4 (Fig. \ref{fig:added_value_MSEincrement}b) reduces the breadth of this error reduction, though the error reduction is also sometimes more intense in E4 than in E3 (e.g. between 300 and 200 hPa towards the end of the assimilation period). 
+This means that the added information from the observed angular momentum indeed sometimes improves the state estimate, but also sometimes inhibits the filter from finding the true state. 
 
-Figure \ref{fig:added_value_MSE} \hl{[add letter labels]} shows time snapshots of the difference in mean square error (\ref{eq:MSE}) between E3 (assimilating temperatures) and E4 (assimilating temperatures and angular momentum), \hl{at four-day intervals starting on 5 January 2009, now focusing only on atmospheric levels below 100hPa, and showing the corresponding ensemble spread in the second row of plots.} 
-\hl{[Need to simplify this figure - maybe show fewer days and the whole atmosphere?]}
-As in Fig.  \ref{fig:error_increments}c, red indicates that adding the angular momentum observations reduces the mean square error. 
-Unlike Fig.  \ref{fig:error_increments}c, here we see that adding the angular momentum observations to the conventional observations almost always increases the mean square error, \hl{save for a few occasional and weak blips of error reduction.}
-At the same time, adding the angular momentum observations very slightly decreases the ensemble spread in all cases.
-This indicates that the ensemble filter, in correcting the state to fit the observed angular momentum, is now even more likely to find an ensemble mean model state that satisfies the observations, but is not closer to the truth. 
-In other words, it is too easy to nudge the ensemble into a wrong state that has the right angular momentum. 
+To examine the overall "added value" of assimilating the angular momentum, Figure \ref{fig:added_value_MSE} shows profiles of the differense in zonal wind mean square error between E4 and E3. 
+The pervasive positive values indicate that adding the angular momentum observations (E4) almost always increases the distance to the true state (short instances of negative values can be found, but they are small and disappear in the ensemble mean). 
+At the same time, adding the angular momentum observations very slightly decreases the ensemble spread (not shown here) everyhwere.  
+This indicates that the ensemble filter, in correcting the state to fit the observed angular momentum, tends to keep the ensemble from finding the true state by requiring it to fit the observed angular momentum.  
 
-Figure \ref{fig:added_value_RH} compares E3 and E4  in terms of daily rank histograms, for the first six days of assimilation.  
-Assimilating radiosonde temperatures alone (Fig. \ref{fig:added_value_RH} top row) gives a consistently convex rank histogram, which means that the true state is most frequently at the center of the ensemble, whose spread is larger than the actual uncertainty in the analysis.  
-Adding angular momentum observations (Fig. \ref{fig:added_value_RH} bottom row) turns the rank histogram concave within about four days of assimilation, meaning that at virtually all points in the model state, the truth is considered an outlier of the ensemble. 
-Rank histograms computed at later times (not shown) look similar to the last panel of Fig. \ref{fig:added_value_RH}.  
+%---cut---it's mostly redundant information----------------
+%Figure \ref{fig:added_value_RH} compares E3 and E4  in terms of daily rank histograms, for the first six days of assimilation.  
+%Assimilating radiosonde temperatures alone (Fig. \ref{fig:added_value_RH} top row) gives a consistently convex rank histogram, which means that the true state is most frequently at the center of the ensemble, whose spread is larger than the actual uncertainty in the analysis.  
+%Adding angular momentum observations (Fig. \ref{fig:added_value_RH} bottom row) turns the rank histogram concave within about four days of assimilation, meaning that at virtually all points in the model state, the truth is considered an outlier of the ensemble. 
+%Rank histograms computed at later times (not shown) look similar to the last panel of Fig. \ref{fig:added_value_RH}.  
 
-Thus even when the initial ensemble is spread very closely around the truth, it is still very difficult to satisfy the observed angular momentum with the correct state adjustment -- even in this case, it is far more likely that the ensemble clusters around a mean state that is farther from the truth than the spread of the ensemble.  
-\hl{[add a statement summarizing our result: there is no clear added value in ERP assimilation.]}
