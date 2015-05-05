@@ -204,7 +204,17 @@ National Center for Atmospheric Research, Boulder, Colorado, USA.}
 %  MATH ABBREVIATSIONS
 %
 %% ------------------------------------------------------------------------ %%
+% note that AGU doesn't want us to use macros, so have to replace these manually
+% later. 
 \newcommand{\degree}{\ensuremath{^\circ}}
+\newcommand{\WACCMNODA}{E1}
+\newcommand{\WACCMTROPICS}{E2}
+\newcommand{\WACCMGLOBAL}{E3}
+\newcommand{\NCARFULL}{E4}
+\newcommand{\NODA}{E5}
+\newcommand{\ERPALL}{E6}
+\newcommand{\RST}{E7}
+\newcommand{\ERPRST}{E8}
 
 
 %% ------------------------------------------------------------------------ %%
@@ -221,7 +231,7 @@ National Center for Atmospheric Research, Boulder, Colorado, USA.}
 
 \section{Methods}
 \label{sec:methods}
-This study relies on eight idealized data assimilation experiments, four using the low-top Community Atmosphere Model 5 (CAM5) and four using the high-top Whole Atmosphere Community Climate Model (WACCM), all within the Data Assimilation Research Testbed \citep[DART]{Anderson2009} from the National Center for Atmospheric Research. 
+This study relies on eight idealized data assimilation experiments, four using the low-top Community Atmosphere Model 5 (CAM5) and four using the high-top Whole Atmosphere Community Climate Model (WACCM), all within the Data Assimilation Research Testbed \citep[DART]{Anderson2009} from the National Center for Atmospheric Research (NCAR). 
 Table \ref{tab:expts} summarizes the experiments. 
 This section describes our study's special focus on observations of the atmospheric angular  momentum (Section \ref{sec:obs}), the atmospheric models (Section \ref{sec:models}), and the assimilation system (Section \ref{sec:dart}).  
 The reader familiar with these subjects may skip directly to the description of the experiments in Section \ref{sec:expts}, or the results in Sections \ref{sec:obs_space}-\ref{sec:evaluation_variable}.
@@ -257,6 +267,11 @@ The reader familiar with these subjects may skip directly to the description of 
 %-------------------------------------RESULTS 2- integral obs suck to assimilate------------------------------------------
 \section{Global Angular Momentum as an Assimilation Variable}
 \label{sec:assimilation_variable}
+
+This section evaluates whether an assimilation run can be improved by actually assimilating the Earth rotation data. 
+This analysis is similar to the studies of \citet{Saynisch2010,Saynisch2011} and \citet{Saynisch2012}, with two main differences: 
+(1) We use an atmosphere rather than an ocean model.
+(2) We generate synthetic observations from a model simulation that serves as the ``true state''. This allows us to measure the true error in the constrained model state. The use of synthetic observations also simuluates an idealized situation where the atmosphere accounts for 100\% of Earth rotation variations, which means that our experiments do not require an estimate of the oceanic or hydrospheric contributions to Earth rotation variations.  
 
 \subsection{Observation-space diagnosis}
 \label{sec:obs_space}

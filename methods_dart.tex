@@ -33,7 +33,7 @@ y_{b}^n - \left< y_b  \right> \right)
 \end{eqnarray}
 i.e. by linearly transforming the ensemble members about their updated mean such that (\ref{eq:sigma_a}) is satisfied by the ensemble \citep{andersoncollins2006}.
 
-Practically, of course, we don't update the \textit{observation} implied by the ensemble, but rather the \textit{state} of each ensemble member (in our case the wind, surface pressure, and temperature fields). 
+In practice we don't update the \textit{observation} implied by the ensemble, but rather the \textit{state} of each ensemble member (in our case the wind, surface pressure, and temperature fields). 
 To update the state vector of each ensemble member, ${\bf x}^n = \left(x_1,x_2,...x_M  \right)^{\text{T}}$, with the information from a vector of observations ${\bf y}_{\text{obs}}^n = \left(y_{\text{obs},1},y_{\text{obs},2},...y_{\text{obs},Z}  \right)^{\text{T}}$ (where $M$ and $Z$ represent the size of the state and observation vectors, respectively), we simply project the observation space update for each ensemble member by each individual observation ($\Delta y^n_j = y_{a,j}^n-y_{b,j}^n$) onto the individual state components $x_i$ via linear regression:
 \begin{eqnarray}
  \Delta x_{i}^n = 

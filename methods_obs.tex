@@ -56,29 +56,25 @@ Consequently, $\chi_2$ has a pronounced annual cycle due to the yearly appearanc
 $\chi_1$ has much weaker subseasonal to annual variations because surface pressure variations cause corresponding displacements of the ocean surface, which even out the angular momentum changes (the so-called ``inverted barometer'' effect, e.g. \citet{salsteinrosen1989}).
 
 In reality, of course, we don't measure the atmospheric angular momentum but rather the variations in the Earth rotation parameters that the angular momentum variations excite, namely the polar motion and anomalies in the length-of-day. 
-To map these observed parameters to equivalent angular momentum variations, one would rotate the inertial reference frame, convert observed length-of-day anomalies into corresponding axial angular momentum, and subtract out the excitation of each parameter that is due to other components of the Earth system.
-For the purpose of simplicity, however, we assimilate the three angular momentum components directly.
-%---cut this part: since we assimilate the X's, we don't need to talk about polar motion
-%The non-dimensional representation of the angular momentum in (\ref{eq:X1})-(\ref{eq:X3}) makes it easy to map angular momentum changes to equivalent changes in the polar orientation (or polar motion) and the rate of Earth's rotation. 
-%Polar motion is measured in terms of two angles, $p_1$ and $p_2$, that represent the location of the Earth's rotational axis in an inertial, celestial reference frame that is fixed in space and defined relative to a group of stars (the so-called celestial ephemeris pole).
-%\citet{barnesetal1983} and later \citet{Gross1992} showed that these vectors can be directly related to unit variations in the equatorial components of the Earth's angular momentum ($\chi_1$ and $\chi_2$) via a rotation into the inertial reference frame of the so-called Chandler wobble (a free nutation of the Earth of frequency 
-%$\sigma_0 = 2\pi/ 433\text{d}$, which results from the oblateness of the Earth's figure):
-%\begin{eqnarray}
-%  p_1 + \frac{\dot{p_2}}{\sigma_0} &=& \chi_1 \\
-%  -p_2 + \frac{\dot{p_1}}{\sigma_0} &=& \chi_2.
-%\label{eq:X12_to_PM}
-%\end{eqnarray}
-%where the overdots represent time derivatives, $\sigma_0 = 2\pi/ 433\text{d}$ denotes the Chandler frequency.
+The non-dimensional representation of the angular momentum in (\ref{eq:X1})-(\ref{eq:X3}) makes it easy to map angular momentum changes to equivalent polar motion and the rate of Earth's rotation. 
+Polar motion is measured in terms of two angles, $p_1$ and $p_2$, that represent the location of the Earth's rotational axis in an inertial, celestial reference frame that is fixed in space and defined relative to a group of stars (the so-called celestial ephemeris pole).
+\citet{barnesetal1983} and later \citet{Gross1992} showed that these vectors can be directly related to unit variations in the equatorial components of the Earth's angular momentum ($\chi_1$ and $\chi_2$) via a rotation into the inertial reference frame of the so-called Chandler wobble (a free nutation of the Earth of frequency 
+$\sigma_0 = 2\pi/ 433\text{d}$, which results from the oblateness of the Earth's figure):
+\begin{eqnarray}
+  p_1 + \frac{\dot{p_2}}{\sigma_0} &=& \chi_1 \\
+  -p_2 + \frac{\dot{p_1}}{\sigma_0} &=& \chi_2,
+\label{eq:X12_to_PM}
+\end{eqnarray}
+where the overdots represent time derivatives.
 
-Nevertheless, it is conceptually helpful to transform the axial angular momentum $\chi_3$ into corresponding anomalies in the length of a day ($\Delta$LOD), which is done using the following relationship:
+Length-of-day anomalies are observed as $\Delta \text{LOD}  \equiv \text{UT1} - \text{IAT}$, where UT1 denotes the universal time measured by geodetic instruments, and IAT is a reference time based on atomic clock measurements.
+Anomalies in the length-of-day correspond directly to anomalies in the axial angular momentum: 
 \begin{eqnarray}
 \Delta \text{LOD} &=& \Delta \chi_3 \times \text{LOD}_0 ,
 \label{eq:X3_to_LOD}
 \end{eqnarray}
 where $\text{LOD}_0$ denotes the nominal length-of-day (86400s).  
-%----cut----The length-of-day anomalies are observed as $\Delta \text{LOD}  \equiv \text{UT1} - \text{IAT}$ where UT1 denotes the universal time measured by geodetic techniques and IAT is a reference time based on atomic clock measurements.
 
-In the experiments of this study, we generate synthetic observations of $\chi_1$, $\chi_2$, and $\chi_3$ every 24 hours, reflecting the observation frequency of the real Earth rotation data series published by the International Earth Rotation Services \citep{iers}.  
 
 
 
