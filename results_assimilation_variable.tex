@@ -1,0 +1,18 @@
+This section evaluates whether an assimilation run can be improved by actually assimilating the Earth rotation data, using experiments \NODA-\ERPRST.
+This analysis is similar to the studies of \citet{Saynisch2010,Saynisch2011} and \citet{Saynisch2012}, with two main differences:
+(1) We use an atmosphere rather than an ocean model.
+(2) We assimilate synthetic observations generated from a model simulation that serves as the ``true state''. This allows us to measure the true error.
+The use of synthetic observations also simuluates an idealized situation where the atmosphere accounts for 100\% of Earth rotation variations, which means that our experiments do not require an estimate of the oceanic or hydrospheric contributions to Earth rotation variations.
+
+\subsection{Observation-space diagnosis}
+\label{sec:obs_space}
+\input{results_obs_space.tex}
+
+\subsection{State Update from Angular Momentum Observations}
+\label{sec:erpda}
+\input{results_erpda.tex}
+
+\subsection{Assimilating AAM in the Presence of Conventional Observations}
+\label{sec:added_value}
+\input{results_addedvalue.tex}
+
