@@ -3,27 +3,25 @@ DART \citep{Anderson2009} is an open-source, community tool that provides ensemb
 Interfaces exist between DART and both CAM \citep{Raeder2012} and WACCM \citep{Pedatella2013}.
 
 %-----WACCM experiments
-Experiments \WACCMNODA-\NCARFULL are used in Section \ref{sec:evaluation_variable} to examine how Earth rotation parameters may be used to evaluate the constrait imposed by other observations in a data assimilation system.  
-Here we compare four DART-WACCM ensemble simulations (E5-E8), where the amount of (real) observations assimilated is increased for each experiment. 
-In E5, a 40-member DART-WACCM ensemble is run forward from through October 2009 with no assimilation.  
-The same initial ensemble is used for E6-E7, but now assimilating the meteorological observations that are also used in the NCEP/NCAR reanalysis (i.e. winds and temperatures from radiosondes and aircraft \citep{Saha2010}), as well as refractivity profiles simulating observations by the COSMIC GPS Radio-Occultation instrument \citep{Anthes2008}.
-In E6, the assimilation is limited to the 30S-30N tropical band, while in E7 observations are assimilated globally. 
-E8 is similar to E7, but additionally assimilates temperature profiles from the Sounding of the Atmosphere Using Broadband Emission Radiometry experiment \citep[SABER]{Russell2009}, from 20-100k.
-E8 was performed by \citet{Pedatella2014} and covers a different period, 1 January - 27 February 2009.  
-E6 is not entirely comparable to E5-7 because it uses a different starting ensemble and covers a different time period, but, as shall be seen below, the qualitative comparison between these experiments is sufficient to demonstrate the usefulness of Earth rotation parameters as an evaluation variable. 
+Experiments \WACCMNODA-\NCARFULL ~are used in Section \ref{sec:evaluation_variable} to examine how Earth rotation parameters may be used to evaluate the constraint imposed by other observations in a data assimilation system.  
+Experiment \WACCMNODA~ runs a 40-member ensemble of WACCM simulations forward through October 2009, with no assimilation. 
+Experiments \WACCMTROPICS-\NCARFULL ~steadily increase the number of observations assimilated. 
+\WACCMTROPICS~ and \WACCMGLOBAL~ use the same initial ensemble as \WACCMNODA, and assimilate the meteorological observations that are also used in the NCEP/NCAR reanalysis, i.e. winds and temperatures from radiosondes and aircraft \citep{Saha2010},as well as refractivity profiles from the COSMIC GPS radio-occultation instrument \citep{Anthes2008}.
+In \WACCMTROPICS, these observations are only assimilated in the 30S-30N tropical band, while in \WACCMGLOBAL ~observations are assimilated globally. 
+\NCARFULL ~is similar to \WACCMGLOBAL, but additionally assimilates temperature profiles from the Sounding of the Atmosphere Using Broadband Emission Radiometry experiment \citep[SABER]{Russell2009}, from 20-100k.
+\NCARFULL ~was performed by \citet{Pedatella2014}; this run covers a different period than \WACCMNODA-\WACCMTROPICS ~(1 Jan- 27 Feb 2009), and uses a different starting ensemble.  
+As shall be seen below, the qualitative comparison between these experiments is sufficient to demonstrate the usefulness of Earth rotation parameters as an evaluation variable. 
 
 %-----CAM5 experiments
-Experiments 1-4 (Table \ref{tab:expts} are performed using CAM5.  
-A reference CAM5 simulation, run from January 2008 through February 2009 with observed sea surface temperatures as a boundary condition, constitutes the ``truth'' from which we generate a set of synthetic observations for assimilation. 
-We generated an 80-member CAM5 ensemble by selecting the 1 January 2009 restart files from an 80-year CAM simulation, and assimilating 6-hourly synthetic temperature and wind ``radiosonde'' observations on a grid, amounting to roughly 27000 observations per day. 
-This yields a tightly-constrained starting ensemble for experiments 1-4, which all start on 1 January 2009.
+Experiments \NODA-\ERPRST ~(Table \ref{tab:expts}) are performed using DART-CAM.  
+A reference CAM simulation, run from Jan 2008 through Feb 2009 with observed sea surface temperatures as a boundary condition, constitutes the ``truth'' from which we generate a set of synthetic observations for assimilation. 
 From this simulation, we generate synthetic observations of $\chi_1$, $\chi_2$, and $\chi_3$ every 24 hours, reflecting the observation frequency of the real Earth rotation data series published by the International Earth Rotation Services \citep{iers}.  
+We also generate generic temperature observations on a regular grid every 6 hours, to roughly mimic the reanalysis-type observations that would conventionally be assimilated, as in \WACCMGLOBAL ~for example. 
+\hl{Is this the same grid used in Lili Lei's paper on surface pressure assimilation?}
 
-As a control experiment, the 80-member CAM5 ensemble is integrated forward over January and February 2009 without data assimilation. 
-In the second experiment, the ensemble is run forward as before, but assimilating the synthetic angular momentum observations every 12 hours.
-In Experiment 3, we continue to assimilate the grid of radiosonde observations, but only observing temperature.
-In Experiment 4, we assimilate both the 6-hourly radiosonde temperatures and the three 12-hourly global angular momentum components.
-We only integrated these latter two experiments for 31 and 17 days, respectively, because this amount of integration time was found to be sufficient to \hl{compare the error reduction in the two experiments.} 
-
-
-
+An 80-member ensemble of CAM simulations was generated by selecting the 1 Jan restart files from an 80-year CAM simulation, and assimilating 6-hourly synthetic temperature and wind observations on a uniform grid (roughly 27000 observations per day) for an entire year, which yields a tightly-constrained starting ensemble on 1 Jan 2009.  
+\NODA ~integrates the CAM ensemble forward over Jan and Feb 2009 without data assimilation. 
+In \ERPALL, the ensemble is run forward as before, but assimilating the synthetic angular momentum observations every 12 hours.
+\RST ~assimilates only the regularly-spaced temperature observations.
+\ERPRST ~assimilates both the temperature observations and the three global angular momentum components.
+We only integrated these latter two experiments for 31 and 17 days, respectively, because this amount of integration time was found to be sufficient to compare the relative error reduction in the two experiments. 
