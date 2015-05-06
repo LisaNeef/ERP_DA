@@ -3,9 +3,15 @@
 % answer the question asked by this study 
 We have evaluated the potential for using observations of Earth rotation parameters to evaluate data assimilation systems and to additionally constrain atmospheric models as assimilated variables.  
 % a high-level summary of what my data show:
-% (1) the covariance model doesn't work right because the constraint is too weak, so we only get improvement in some places, and it doesn't last  
-% (2) if we constrain the ensemble more using other obs, it still doesn't really work
-% (3) [MAYBE] a simple example showed that perhaps the best use for ER data is to evaluate the constraint offered by other obs types 
+% (1) ER data is a convenient way to evaluate how close an analysis is getting to the truth
+% (2) But if we want to assimilate ER data, we find that the covariance model doesn't work right because it is trying to capture tiny correlations 
+% (2) if we constrain the ensemble more using other obs, it still doesn't really work because we end up inhibiting out ability to fit the conventional obs by insisting that it fit these small, flawed correlations. 
+%
+Earth rotation parameters are a useful set of three simple observables against which to validate a simulation that is constrained by more conventional data.  
+The observed Earth rotation parameters are freely available \citep{iers} and continuously updated in a timeseries starting in 1960. 
+Comparing the angular momentum of a model ensemble to these observations is computationally straightforward, and 
+gives a global view both of how well the modeled wind and mass fields approximate the truth, and allows us to compare the degree of constraint imposed by different observations. 
+
 Idealized assimilation experiments, using synthetic observations generated from a prescribed truth, showed that it is extremely difficult to constrain the model state with such observations.  
 While the ensemble filter generates a covariance model that is physically plausible and computes the statistically most likely update of each state space component, correlations between individual state components and the global angular momentum are much smaller than the sampling error of a finite ensemble. 
 \hl{Thus, our numerical experiments showed that the ensemble is rarely updated globally in such a way as to bring it closer to the true state. 
@@ -26,12 +32,6 @@ We have seen in a set of short assimilation runs with ensemble inflation (omitte
 Even though this study focused on an atmosphere model, the results can likely be extended to ocean models, where the state vector, although smaller, is also many orders of magnitude larger than the observation vector, which would also yield state-to-observation correlations that are much smaller than the sampling error. 
 In both the atmosphere and ocean cases, it would make the most sense to use the assimilation of Earth rotation parameters to adjust only large-scale parameters, such as the freshwater flux adjustments found by \citet{Saynisch2010} and \citet{Saynisch2012}, although here of course care must be taken that there is a physical motivation for adjusting the chosen parameters.  
 
-% the other point about the evaluation variable, contextualized in greater research
-\hl{Perhaps move this to the front of this section and point out more clearly how useful this is.}
-A more useful application of Earth rotation data is as a set of three simple variables against which to validate a simulation that is constrained by more conventional data.  
-The observed Earth rotation parameters are freely available \citep{iers} and continuously updated in a timeseries starting in 1960. 
-Comparing the angular momentum of a model ensemble to these observations is computationally straightforward, and 
-gives a global view both of how well the modeled wind and mass fields approximate the truth, and allows us to compare the degree of constraint imposed by different observations. 
 
 % anticipation of any criticisms and caveats  
 
