@@ -15,20 +15,20 @@ S =
 \label{eq:spread}
 \end{eqnarray}
 (where $x_{i}$ represents a component of the state vector in the ensemble,  and $x_{i}^t$ and $x_{i}^n$ the corresponding component in the truth and individual ensemble members, respectively) as a measure of the constraint imposed by the observations in each case. 
-
 Figure \ref{fig:evalvariable_state} compares 
 the global mean ensemble variance of the zonal wind in each experiment as a function of time.  
 As expected, ensemble variance is pushed down every time an observation comes in, in the ``saw'' pattern that is typical of sequential data assimilation. 
-Fig.  \ref{fig:evalvariable_state} can give us an idea of where the state estimate is more or less certain, but can tell us nothing about whether the observational constraints actually bring the analyzed state closer to the truth. 
+Fig.  \ref{fig:evalvariable_state} gives an idea of where the state estimate is more or less certain, but tells nothing about whether the observational constraints actually bring the analyzed state closer to the truth. 
+
 For example, while it is not surprising that the simulation with the most observations assimilated (\NCARFULL) eventually has the lowest ensemble variance, the ensemble variance in this case also shows a spike at about 20 days, which suggests that the effect of the addional SABER observations might be more complicated. 
-\WACCMTROPICS~ (assimilating only in the tropics), doesn't see a reduced ensemble spread relative to \NODA~ (no assimilation) until about two weeks of assimilation, which suggests that the ensemble mean state in this case has not become more accurate --though, again, we don't know if this is indeed the case.  
+\WACCMTROPICS~(assimilating only in the tropics), doesn't see a reduced ensemble spread relative to \NODA~(no assimilation) until about two weeks of assimilation, which suggests that the ensemble mean state in this case has not become more accurate --though, again, we don't know if this is indeed the case.  
 
 
 Figure \ref{fig:evalvariable_aam} shows how the four simulations compare in terms of two of the three global components of angular momentum, $\chi_2$ and $\chi_3$ (here $\chi_1$ has been omitted because it looks qualitatively similar to $\chi_2$).  
 For each experiment, the angular momentum components of the ensemble are compared  to the corresponding observed Earth rotation parameter. 
 Figure  \ref{fig:evalvariable_aam} makes it easy to see how the constraint increases with more observations assimilated -- scanning the panels from left to right, the ensemble becomes more tightly clustered for both angular momentum components, and generally moves closer to the observed Earth rotation parameter. 
-For example, while \WACCMTROPICS~ (assimilating only in the tropics) increases the ensemble spread relative to no assimilation in the first 20 days of assimilation, it still brings the ensemble angular momentum closer to the observed Earth roation parameters -- thus even while assimilation increases spread, it also improves the state estimate. 
-In the rightmost panels, the peak on the ensemble variance at 20 days in \NCARFULL~ (adding SABER observations) reveals itself as a strong departure of the equatorial angular momentum from the polar motion.   
+For example, while \WACCMTROPICS~(assimilating only in the tropics) increases the ensemble spread relative to no assimilation in the first 20 days of assimilation, it still brings the ensemble angular momentum closer to the observed Earth roation parameters -- thus even while assimilation increases spread, it also improves the state estimate. 
+In the rightmost panels, the peak on the ensemble variance at 20 days in \NCARFULL~(adding SABER observations) reveals itself as a strong departure of the equatorial angular momentum from the polar motion.   
 The difference between modeled $\chi_2$ and the observed polar motion in this case suggests that the entire ensemble might have developed a midlatitude mass field anomaly that is not present in the true state. 
 
 The angular momentum has one shortcoming as an assimilation variable in that it most strongly weights the lowest model levels, since they carry the most mass. 

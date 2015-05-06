@@ -1,26 +1,38 @@
 %-------------------experiments-------------------------
 DART \citep{Anderson2009} is an open-source, community tool that provides ensemble-based data assimilation that is independent of a particular model and observation set.
-Interfaces exist between DART and both CAM \citep{Raeder2012} and WACCM \citep{Pedatella2013}.
+Interfaces have been developed between DART and both CAM \citep{Raeder2012} and WACCM \citep{Pedatella2013}.
 
 %-----WACCM experiments
-Section \ref{sec:evaluation_variable} uses experiments \WACCMNODA-\NCARFULL~to examine how Earth rotation parameters can reflect the constraint imposed by other observations in a data assimilation system.  
-Experiment \WACCMNODA~ runs a 40-member ensemble of WACCM simulations forward through October 2009, with no assimilation. 
-Experiments \WACCMTROPICS-\NCARFULL ~steadily increase the number of observations assimilated. 
-\WACCMTROPICS~ and \WACCMGLOBAL~ use the same initial ensemble as \WACCMNODA, and assimilate the meteorological observations that are also used in the NCEP/NCAR reanalysis, i.e. winds and temperatures from radiosondes and aircraft \citep{Saha2010}, as well as refractivity profiles measured via GPS radio-occultation by the COSMIC satellite \citep{Anthes2008}.
+\subsubsection{DART-WACCM Experiments}
+Section \ref{sec:evaluation_variable} uses experiments \WACCMNODA-\NCARFULL~to examine how Earth rotation parameters reflect the constraint imposed by other observations in a data assimilation system.  
+Experiment \WACCMNODA~runs a 40-member ensemble of WACCM simulations forward through October 2009, with no assimilation. 
+Experiments \WACCMTROPICS-\NCARFULL~steadily increase the number of observations assimilated. 
+\WACCMTROPICS~and \WACCMGLOBAL~use the same initial ensemble as \WACCMNODA, and assimilate the meteorological observations that are also used in the NCEP/NCAR reanalysis, i.e. winds and temperatures from radiosondes and aircraft \citep{Saha2010}, as well as refractivity profiles measured via GPS radio-occultation by the COSMIC satellite \citep{Anthes2008}.
+The observations extend from the surface to about 2 hPa. 
 \WACCMTROPICS~assimilates the observations only in the 30S-30N tropical band, while in \WACCMGLOBAL~assimilates over the entire globe.
-\hl{what is the vertical extent of these observations, and how do we localize?} 
-\hl{also here describe how we generate the initial ensemble.}
 
 \NCARFULL ~is similar to \WACCMGLOBAL, but additionally assimilates temperature profiles from the Sounding of the Atmosphere Using Broadband Emission Radiometry experiment \citep[SABER]{Russell2009}, from 20-100km.
 \NCARFULL ~was performed by \citet{Pedatella2014}; this run covers a different period than \WACCMNODA-\WACCMTROPICS ~(1 Jan- 27 Feb 2009), and uses a different starting ensemble.  
 As shall be seen below, the qualitative comparison between these experiments is sufficient to demonstrate the usefulness of Earth rotation parameters as an evaluation variable. 
 
+Experiments \WACCMNODA-\NCARFULL~all use a Gaspari-Cohn function \citep{Gaspari1999} to localize observations, with a half-width of 0.2 radians in the horizontal, and 0.5 scale heights in the vertical.  
+Experiments \WACCMNODA-\WACCMGLOBAL~carry the additional requirement that no analysis increment is allowed about 0.1 hPa, in order to prevent the generation of spurious gravity waves resulting from a large ensemble spread in the absense of upper level observations. 
+All DART-WACCM experiments shown here employ adaptive inflation to inflate the prior ensemble \citep{Anderson2009}.  
+
+%%---localization and inflation in Nick's 2014 paper: 
+%Similar to Pedatella et al. [2013], the horizontal and vertical localizations are specified with a Gaspari-Cohn function [Gaspari and Cohn, 1999]
+%with half widths of 0.2 radians and 0.5 in ln(p∕p0) coordinates, respectively. Spatially and temporally varying adaptive inflation is used to inflate the ensemble prior to the assimilation in order to prevent collapse of the model spread [Anderson, 2009].
+
+%%---localization and inflation in Nick's 2013 paper: 
+%The most notable change is that we specify the ver- tical localization using a Gaspari-Cohn function [Gaspari and Cohn, 1999] with a half width of 0.5 in ln(p/p0) coor- dinates, where p is pressure and p0 is the surface pressure. This differs from the vertical localization of 1000 hPa in p used by Raeder et al. [2012]. 
+
 %-----CAM5 experiments
+\subsubsection{DART-CAM Experiments}
 Experiments \NODA-\ERPRST ~(Table \ref{tab:expts}) are performed using DART-CAM.  
 A reference CAM simulation, run from Jan 2008 through Feb 2009 with observed sea surface temperatures as a boundary condition, constitutes the ``truth'' from which we generate a set of synthetic observations for assimilation. 
 From this simulation, we generate synthetic observations of $\chi_1$, $\chi_2$, and $\chi_3$ every 24 hours, reflecting the observation frequency of the real Earth rotation data series published by the International Earth Rotation Services \citep{iers}.  
-We also generate generic temperature observations on a regular grid every 6 hours, to roughly mimic the reanalysis-type observations that would conventionally be assimilated, as in \WACCMGLOBAL ~for example. 
-\hl{Mention vertical extent of the obs here.}
+To roughly simulate reanalysis-type observations, we also generate 
+6-hourly temperature observations on a uniform grid, with 1800 locations on the globe and on 15 levels ranging from the surface to 5 hPa (i.e. 27000 observations total at each time). 
 
 An 80-member ensemble of CAM simulations was generated by selecting the 1 Jan restart files from an 80-year CAM simulation, and assimilating 6-hourly synthetic temperature and wind observations on a uniform grid (roughly 27000 observations per day) for an entire year, which yields a tightly-constrained starting ensemble on 1 Jan 2009.  
 \NODA ~integrates the CAM ensemble forward over Jan and Feb 2009 without data assimilation. 
