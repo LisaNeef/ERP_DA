@@ -59,28 +59,28 @@ On the other hand, we can also find regions where the increment is in the opposi
 The analysis increments are also an order of magnitude smaller than the true error, which reflects how a single observation has to be spread over the entire state with 
 miniscule state-to-observation correlations.
 
-To see whether the assimilation increment has improved things or not, we compute the mean square error
+To see whether the assimilation increment has improved things or not, we compute the mean square error for each state vector component $i$:
 \begin{eqnarray}
-	E_M = \left(
+	E_i = \left(
 		\left< x_i \right>-x_{i}^{t}
 	\right)^2,
 \end{eqnarray}
-for the prior and posterior states.
-The mean square error difference between the prior and posterior states for zonal wind (Fig. \ref{fig:error_increments}c) shows where the assimilation of global angular momentum increases or decreases the distance to the true state (here red shading means that the assimilation has reduction the bias relative to the truth).  
+A sample map of the difference in the mean square error between the prior and posterior states for zonal wind (Fig. \ref{fig:error_increments}c) shows where the assimilation of global angular momentum increases or decreases the distance to the true state (here red shading means that the assimilation has reduction the bias relative to the truth).  
 On this particular date, the assimilation has reduced the zonal wind bias over large swaths of North America, but with commensurate error increases over Asia. 
 
 In order for a data assimilation to be considered reliable, it should not only 
 decrease error but also reflect the correct error statistics in its covariance 
 estimate. 
-For esnsemble filters, this means that the ensemble spread should be large 
+For ensemble filters, this means that the ensemble spread should be large 
 enough that the true state can be considered  a sample of the probability 
 distribution represented by the ensemble.
  \citet{Huntley2009} and \citet{Murphy1988} pointed out that this is the case when 
  \begin{eqnarray}
-	 \llbracket E_M \rrbracket = \frac{N+1}{N} \llbracket S \rrbracket, 
+	 %---cut---\llbracket E_i \rrbracket = \frac{N+1}{N} \llbracket S_i \rrbracket, 
+	 % (don't need the square brackets now that we show maps of scaled ensemble variance) 
+	 E_i = \frac{N+1}{N} S_i. 
 	 \label{eq:EvsS}
  \end{eqnarray}
-where the square brackets represent spatial averages. 
 In \ERPALL, assimilation decreases error only in some regions, but 
 decreases the scaled ensemble spread everywhere (Fig. \ref{fig:error_increments}d), following (\ref{eq:y_a}) -(\ref{eq:state_update}).  
 Thus, while the covariance model developed by the ensemble filter has a physical basis, its high degree of sampling error can also lead to analysis increments that make the state estimate worse, all while the ensemble spread decreases.  
