@@ -35,7 +35,9 @@ Figure \ref{fig:covariances} shows the covariance between the zonal wind field a
 stratosphere (100-24 hPa) 
 and
 troposphere (surface to 100 hPa).
-Note that the covariance pattern does not resemble the weighting function of the axial wind integral (\ref{eq:h3}, which follows the cosine of latitude and is therefore zonally symmetric and maximal in the tropics), and varies strongly in time. 
+Note that the covariance pattern does not resemble the weighting function of the axial wind integral (\ref{eq:h3}) 
+%--cut---which follows the cosine of latitude and is therefore zonally symmetric and maximal in the tropics), 
+and varies strongly in time. 
 This implies that dynamic, ensemble-based covariance estimates should be more useful thatn a static estimate based on the weighting functions.
 
 However, the covariances in both regions are on the order of $10^{-11}\text{m/s}$.  
@@ -65,7 +67,7 @@ To see whether the assimilation increment has improved things or not, we compute
 		\left< x_i \right>-x_{i}^{t}
 	\right)^2,
 \end{eqnarray}
-A sample map of the difference in the mean square error between the prior and posterior states for zonal wind (Fig. \ref{fig:error_increments}c) shows where the assimilation of global angular momentum increases or decreases the distance to the true state (here red shading means that the assimilation has reduction the bias relative to the truth).  
+A sample map of the difference in the mean square error between the prior and posterior states for zonal wind (Fig. \ref{fig:error_increments}c) shows where the assimilation of global angular momentum increases or decreases the distance to the true state (here red shading means that the assimilation has reduced the bias relative to the truth).  
 On this particular date, the assimilation has reduced the zonal wind bias over large swaths of North America, but with commensurate error increases over Asia. 
 
 In order for a data assimilation to be considered reliable, it should not only 
