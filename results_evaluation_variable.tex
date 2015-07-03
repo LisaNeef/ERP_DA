@@ -1,10 +1,9 @@
-In practice, it is often difficult to judge whether an assimilation system has actually succeeded in bringing the modeled state closer to the truth, simply because the true state isn't known. 
-Typically the solution is to compare the analyzed model state to independent observations, but these can be difficult to obtain because observing systems often don't overlap sufficiently in time and space.
-Here the atmospheric angular momentum may make a useful evaluation parameter, since it is easy to compute from the modeled wind and pressure fields, and is observed in the form of three parameters that are freely available at 12-hourly resolution, updated continuously, and available at high accuracy since about 1980.  
+It can be difficult to judge whether assimilation has succeeded in bringing a model closer to the truth, which isn't known. 
+Independent observations that cover the same temporal and spatial domain as the assimilated observations often don't exist. 
+Here the atmospheric angular momentum is a useful evaluation parameter, since it is easy to compute from the modeled wind and pressure fields, and is observed in the form of three parameters that are freely available at 12-hourly resolution, updated continuously, and available since the 1960s (and at high accuracy since about 1980).  
 
-Experiments \WACCMNODA-\NCARFULL, which each run 40-member DART-WACCM ensembles, 
-represent a stepwise increase of the constraint imposed by observations, and can be used to illustrate this idea.
-Since we don't know the true state of the atmosphere, we could take the ensemble variance 
+Experiments \WACCMNODA-\WACCMGLOBAL, which run 40-member DART-WACCM ensembles with an increasing data constraint, illustrate this idea in Figures \ref{fig:evalvariable_state}-\ref{fig:evalvariable_aam}.   
+The ensemble variance,
 \begin{eqnarray}
 S_i = 
 \frac{1}{N-1}
@@ -14,24 +13,19 @@ S_i =
 \right)^2,
 \label{eq:spread}
 \end{eqnarray}
-(where $x_{i}$ represents a component of the state vector in the ensemble,  and $x_{i}^t$ and $x_{i}^n$ the corresponding component in the truth and individual ensemble members, respectively) as a measure of the constraint imposed by the observations in each case. 
-Figure \ref{fig:evalvariable_state} compares 
-the global mean ensemble variance of the zonal wind in each experiment as a function of time.  
-As expected, ensemble variance is pushed down every time an observation comes in, in the ``saw'' pattern that is typical of sequential data assimilation. 
-Fig.  \ref{fig:evalvariable_state} shows how the uncertainty of the ensemble estimate evolves, but does not reveal whether the observational constraints actually bring the analyzed state closer to the truth. 
+(where $x_{i}$ represents a component of the state vector in the ensemble,  and $x_{i}^t$ and $x_{i}^n$ the corresponding component in the truth and individual ensemble members, respectively), measures the constraint imposed by the observations in each case.
+For example, comparing the global mean ensemble variance of the zonal wind in each experiment (Fig. \ref{fig:evalvariable_state}), we see that uncertainty in the state estimate is reduced at every observation time (in the ``saw'' pattern that is typical of sequential data assimilation), and that the experiments with more observations have a lower overall ensemble spread. 
 
-For example, while it is not surprising that the simulation with the most observations assimilated (\NCARFULL) eventually has the lowest ensemble variance, the ensemble variance in this case also shows a spike at about 20 days, which suggests that the effect of the additonal SABER observations might be more complicated. 
-\WACCMTROPICS~(assimilating only in the tropics), doesn't see a reduced ensemble spread relative to \NODA~(no assimilation) until about two weeks of assimilation, which suggests that the ensemble mean state in this case has not become more accurate --though, not knowing the true state of the atmosphere, we don't know if this is indeed the case.  
+Not knowing the true state, however, the ensemble variance only tells us about the uncertainty of the ensemble and not whether this uncertainty captures the true error. 
+For example, ensemble spread in \WACCMTROPICS~(assimilating in the tropical band) is actually larger than in \WACCMNODA~(no assimilation), which suggests that the state estimate in this case might be less accurate. 
+Likewise, increases in the ensemble spread in \WACCMGLOBAL around 5 and 32 days suggest that the state estimate might be worse here. 
 
 
-Figure \ref{fig:evalvariable_aam} shows how the four simulations compare in terms of two of the three global components of angular momentum, $\chi_2$ and $\chi_3$ ($\chi_1$ has been omitted because it looks qualitatively similar to $\chi_2$).  
-For each experiment, the angular momentum components of the ensemble are compared  to the corresponding observed Earth rotation parameter. 
-(Note that \NCARFULL~ covers a different time span and therefore has different observed $\chi_2$ and $\chi_3$.)
-Figure  \ref{fig:evalvariable_aam} makes it easy to see how the constraint increases with more observations assimilated -- scanning the panels from left to right, the ensemble becomes more tightly clustered for both angular momentum components, and generally moves closer to the observed Earth rotation parameter. 
-For example, while \WACCMTROPICS~(assimilating only in the tropics) increases the ensemble spread relative to no assimilation in the first 20 days of assimilation, it still brings the ensemble angular momentum closer to the observed Earth rotation parameters -- thus even while assimilation increases spread, it also seems to improve the state estimate in a global-mean sense.  
-In the rightmost panels, the peak on the ensemble variance at 20 days in \NCARFULL~(adding SABER observations) reveals itself as a strong departure of the equatorial angular momentum from the polar motion.   
-The difference between modeled $\chi_2$ and the observed polar motion in this case suggests that the entire ensemble might have developed a midlatitude mass field anomaly that is not present in the true state. 
+Figure \ref{fig:evalvariable_aam} shows how  \WACCMNODA-\WACCMGLOBAL~compare in terms of two of the three components of angular momentum, $\chi_2$ and $\chi_3$ ($\chi_1$ has been omitted because it looks qualitatively similar to $\chi_2$),  
+compared to the corresponding observed Earth rotation parameters. 
+Figure  \ref{fig:evalvariable_aam} also shows how the constraint increases with more observations assimilated (scanning the panels from left to right, the ensemble becomes more tightly clustered for both angular momentum components, and moves closer to the observed Earth rotation parameter), but now also reveals when the filter does and does not diverge from the truth.  
+For example, the large ensemble spread in the first two weeks of \WACCMTROPICS, and in the first 5 days of \WACCMGLOBAL, actually reflects the true error better than the ensemble spread in \WACCMNODA, and shows an ensemble that is closer to the true state. 
+The increased ensemble spread in \WACCMGLOBAL~at 32 days coincides with divergence of the ensemble from the truth in $\chi_2$. 
+This suggests that the adaptive inflation in DART has detected the budding filter divergence and increased the ensemble spread in order to prevent further divergence, although comparing the ensemble-estimated $\chi_2$ to the observed polar motion in this case suggests that filter divergence may be ongoing.  
 
-The angular momentum has one shortcoming as an assimilation variable in that it most strongly weights the lowest model levels, since they carry the most mass. 
-Thus, for example, the angular momentum diagnostic does not capture a major benefit of the SABER observations, which is that they reduce the error in the stratosphere. 
-The observed Earth rotation parameters nevertheless make a useful tool for evaluating different data assimilation experiments. 
+\hl{Modifications: I know that filter divergence in this case doesn't go on for the whole run, so we should show a longer timeseries, which is fine after I eliminate the SABER data.}
