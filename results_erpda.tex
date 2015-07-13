@@ -3,7 +3,7 @@ The filter computes these covariances from the ensemble using (\ref{eq:covarianc
 
 %--------covariance analysis---------------------
 
-To see what the ensemble-estimated covariance $c_{x_i y_j}$ looks like when $y_j$ is one of the angular momentum components, we can abbreviate the angular momentum integrals [(\ref{eq:I1})-(\ref{eq:h3})] as
+To see what the ensemble-estimated covariance $c_{x_i y}$ looks like when $y$ is one of the angular momentum components, we can abbreviate the angular momentum integrals [(\ref{eq:I1})-(\ref{eq:h3})] as
 %
 \begin{eqnarray}
 y_j = \sum_{i=1}^M f_{i,j} x_i,
@@ -12,22 +12,22 @@ y_j = \sum_{i=1}^M f_{i,j} x_i,
 where $f_{i,j}$ represents the spatial weighting that is applied to state component $i$ for angular momentum component $j$, times the latitude, longitude, and mass increments in the integrals, and $M$ represents the number of variables in the model state.
 Then the observation error terms in (\ref{eq:covariance}) become
 \begin{eqnarray}
-	e_{y_j}^n = y_j^n - \left< y_j^n \right>
-	= \sum_{k=1}^{M}f_{k,j}e_{x_k}^n,
+	e_{y_{j,n}} = y_{j,n} - \left< y_{j,n} \right>
+		= \sum_{k=1}^{M}f_{k,j}e_{x_k,n},
 \end{eqnarray}
 which means that the state-to-observation covariance term becomes
 \begin{eqnarray}
 	c_{x_i y_j} = \frac{1}{N-1}
 	\sum_{n=1}^{N}
 	\left[
-	e_{x_i}^n
-	\sum_{k=1}^{M} f_{k,j}e_{x_k}^n
+	e_{x_i,n}
+	\sum_{k=1}^{M} f_{k,j}e_{x_k,n}
 	\right].
 	\label{eq:state_to_obs_covariance}
 \end{eqnarray}
 
 %--------covariance analysis---------------------
-For a given point $x_i$ in the model state, the covariance to angular momentum component $y_j$ is proportional to the ensemble spread at that point ($\frac{1}{N-1}\left[\sum_{n=1}^N \left( e^n_{x_i} \right)^2 \right]$) times the weighting function at that point ($f_{i,j}$), plus the sum of the covariances between $x_i$ and all other other points in the model state [$\frac{1}{N-1}\sum_{n=1}^N e_{x_i}^n e_{x_k}^n$], each multiplied by their respective weighting functions ($f_{k,j}$). 
+For a given point $x_i$ in the model state, the covariance to angular momentum component $y_j$ is proportional to the ensemble spread at that point ($\frac{1}{N-1}\left[\sum_{n=1}^N  e_{x_{i,n}} ^2 \right]$) times the weighting function at that point ($f_{i,j}$), plus the sum of the covariances between $x_i$ and all other other points in the model state [$\frac{1}{N-1}\sum_{n=1}^N e_{x_{i,n}} e_{x_{k,n}}$], each multiplied by their respective weighting functions ($f_{k,j}$). 
 In other words, a point will be updated by an angular momentum observation if it is located in a region that is weighted strongly for that particular angular momentum component, and/or if it happens to covary strongly with other points that are strongly weighted in the integrals.  
 
 % covariance figure-----------------------------------

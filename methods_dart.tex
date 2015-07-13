@@ -1,60 +1,45 @@
 %-------------------DAS-------------------------
-The Ensemble Adjustment Kalman Filter (EAKF) \citep{anderson2001}, is one of several ensemble assimilation algorithms available within DART and is used in all assimilation experiments in this study. 
-
 Having advanced an ensemble of $N$ model states to the time at which an observation is available, 
-the filter unites two basic quantities: the observation $y_{\text{obs}}$, and $N$ \textit{background} estimates of the observation, $y_{b}^{n}$, predicted by the ensemble. 
+the filter unites two basic quantities: the observation $y$, and $N$ prior estimates of the observation, $y^{\text{pri}}_{n}$, predicted by the ensemble. 
 Bayes' theorem states that the conditional probability distribution of the observation, given the prior ensemble estimate on the one hand, and the physical measurement on the other, is the product of their respective probability distributions.
-The resulting joint probability distribution has an updated \textit{analysis} variance 
+The resulting joint posterior probability distribution has variance 
 \begin{eqnarray}
- \sigma_a^2 = 
+	\sigma_y^{\text{po}} = 
 \left[
-\left( \sigma_b^2  \right)^{-1}+
-\left( \sigma_{\text{obs}}^2  \right)^{-1}
+	\frac{1}{\sigma_y^{\text{pri}}}
+	+
+	\frac{1}{R}
 \right]^{-1},
 \label{eq:sigma_a}
 \end{eqnarray}
-where $\sigma_b^2$ is  the prior error variance of the observation implied by the ensemble, and $\sigma_{\text{obs}}^2$ is the error variance of the observation itself (i.e. the measurement error).
+where $\sigma_y^{\text{pri}}$ is  the prior variance of the observation implied by the ensemble, and $R$ is the variance of the observation itself (i.e. the measurement error).
 The ensemble mean of this joint probability distribution is given by
 \begin{eqnarray}
-\left< y_a \right> = \sigma_a^2 
-\left(
-\frac{\left< y_b \right>}{\sigma_b^2} +
-\frac{y_{\text{obs}} }{\sigma_{\text{obs}}^2} 
-\right).
+	\left< y^{\text{po}}_n \right> = \sigma_y^{\text{po}} 
+	\left[
+		\frac{\left< y^{\text{pri}}_n \right>}{\sigma_y^{\text{pri}}} +
+		\frac{y}{R} 
+	\right].
 \label{eq:y_a}
 \end{eqnarray}
-For the ensemble to reflect the new distribution, we need to update the observation value of each ensemble member (denoted by superscript $n$) as follows:
-\begin{eqnarray}
- y_{a}^n = 
-\left( \frac{\sigma_a^2}{\sigma_b^2}  \right)
-\left(
-y_{b}^n - \left< y_b  \right> \right)
-+ \left< y_a \right>,
-\end{eqnarray}
-i.e. by linearly transforming the ensemble members about their updated mean such that (\ref{eq:sigma_a}) is satisfied by the ensemble \citep{andersoncollins2006}.
 
-In practice we don't update the \textit{observation} implied by the ensemble, but rather the \textit{state} of each ensemble member (in our case the wind, surface pressure, and temperature fields). 
-To update the state vector of each ensemble member, ${\bf x}^n = \left(x_1,x_2,...x_M  \right)^{\text{T}}$, with the information from a vector of observations ${\bf y}_{\text{obs}}^n = \left(y_{\text{obs},1},y_{\text{obs},2},...y_{\text{obs},Z}  \right)^{\text{T}}$ (where $M$ and $Z$ represent the size of the state and observation vectors, respectively), we simply project the observation space update for each ensemble member by each individual observation ($\Delta y^n_j = y_{a,j}^n-y_{b,j}^n$) onto the individual state components $x_i$ via linear regression:
+Given an update $\Delta y =  y^{\text{po}} - y^{\text{pri}}$ in the observation space, ensemble filters compute a corresponding update in the model state (in this study: the wind, surface pressure, and temperature fields of an atmospheric model) via linear regression \citep{Anderson2003}:
 \begin{eqnarray}
- \Delta x_{i}^n = 
+ \Delta x_{i} = 
 \left(
-\frac{c_{x_iy_j}}{\sigma_b^2}
+	\frac{c_{x_iy}}{\sigma_y}
 \right)
-\Delta y^n_j,
+\Delta y,
 \label{eq:state_update}
 \end{eqnarray}
-where $c_{x_iy_j}$ represents the prior covariance between the state component $x_i$ and the observation component $y_j$.
-
-%---cut---(it's not really relevant)
-%Because the EAKF adjusts the ensemble based on the expected error reduction, it is called a stochastic ensemble filter.
-%In contrast, so-called stochastic filters, such as the well-known Ensemble Kalman Filter \citep{evensen2003}, adjust the forecast ensemble first with perturbed upservations, and then compute the resulting error distribution from the ensemble.
+where $x_i$ represents a component of the model state and $c_{x_iy}$ represents the prior covariance between the state component $x_i$ and the observation $y$.
 
 Ensemble assimilation algorithms are novel because they estimate the covariance and variance terms in the above equations using an ensemble of model simulations, rather than prescribing them, i.e. 
 \begin{eqnarray}
-c_{x_iy_j} &=& 
+c_{x_iy} &=& 
 \left<
-e_{x_i}^n 
-e_{y_j}^n
+e_{{x_i},n} 
+e_{{y},n}
 \right>,
 \label{eq:covariance} 
 \end{eqnarray}
@@ -73,12 +58,13 @@ e_{y_j}^n
 %
 where 
 \begin{eqnarray}
-	e_{x_i}^n = x_i^n - \left< x_i^n \right>   \label{eq:exn}
-	e_{y_j}^n = y_j^n - \left< y_j^n \right>    \label{eq:eyn}
+	e_{{x_i},n} &=& x_{i,n} - \left< x_{i,n} \right>   \label{eq:exn} \\
+	e_{y,n} &=& y_{n} - \left< y_{n} \right>    \label{eq:eyn}
 \end{eqnarray}
 are the deviations of each ensemble member from the ensemble mean.
-Thus the model's error stastitics can vary in time and space (according to the physical relationships simulated in the model), and are updated with new information whenever a new observation comes in.  
 
+Thus the error statistics can vary in time and space (according to the physical relationships simulated in the model), and are updated with new information whenever a new observation comes in.  
 In a successful ensemble assimilation system, these terms should reflect the true error statistics of the model system.
 If not, the ensemble filter will diverge, i.e. the uncertainty predicted by the ensemble will increasingly underestimate the true error, eventually leading to the rejection of new observations.
 
+The experiments in this study use the Ensemble Adjustment Kalman Filter (EAKF) of \citet{anderson2001}, which computes the linear regression (\ref{eq:state_update}) for the ensemble mean, and then computes the state-space ensemble deviations that correspond to the updated ensemble variance (\ref{eq:sigma_a}), which is also linearly regressed from the observation space to the state space (see \citet{Anderson2003}). 
