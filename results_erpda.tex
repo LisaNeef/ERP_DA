@@ -80,9 +80,10 @@ distribution represented by the ensemble.
  \begin{eqnarray}
 	 %---cut---\llbracket E_i \rrbracket = \frac{N+1}{N} \llbracket S_i \rrbracket, 
 	 % (don't need the square brackets now that we show maps of scaled ensemble variance) 
-	 E_i = \frac{N+1}{N} S_i. 
+	 E_i = \frac{N+1}{N} S_i, 
 	 \label{eq:EvsS}
  \end{eqnarray}
+ where $S_i$ us the ensemble spread in some state variable and $E_i$ is the RMS error in that variable. 
 In \ERPALL, assimilation decreases error only in some regions, but 
 decreases the scaled ensemble spread everywhere (Fig. \ref{fig:error_increments}d), following (\ref{eq:y_a}) -(\ref{eq:state_update}).  
 Thus, while the covariance model developed by the ensemble filter has a physical basis, its high degree of sampling error can also lead to analysis increments that make the state estimate worse, all while the ensemble spread decreases.  
