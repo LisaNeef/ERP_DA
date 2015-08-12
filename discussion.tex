@@ -18,11 +18,12 @@ Nevertheless, correlations between individual state components and the global an
 the state update computed by the filter moves the ensemble and its mean farther away from the true state, while still satisfying the angular momentum observations. 
 The global angular momentum observations do not impose a strong enough constraint to yield a reliable and robust correction to the model state. 
 
-We might therefore expect that global angular momentum observations can constrain the modeled state better if the ensemble is already largely constrained to the truth by more conventional, spatially-localized observations. 
+One might therefore expect that global angular momentum observations can constrain the modeled state better if the ensemble is already largely constrained to the truth by more conventional, spatially-localized observations. 
 We tested this idea by assimilating a global grid of synthetic temperature observations in addition to the global angular momentum observations. 
 We found that, overall, adding the angular momentum observations worsens the analysis, 
 because requiring that the state satisfy the observed angular momentum inhibits the analysis increment in the model state.  
 
+% anticipation of any criticisms and caveats  
 A common technique for avoiding divergence of an ensemble filter is to periodically inflate the ensemble about its mean. 
 It is unlikely that ensemble inflation would help here, since we found that the filter diverges both when the ensemble spread is large (section \ref{sec:erpda}) and when it is very small (section \ref{sec:added_value}). 
 We have seen in a set of short assimilation runs with ensemble inflation (omitted here for brevity), that this is indeed the case. 
@@ -32,8 +33,16 @@ We have seen in a set of short assimilation runs with ensemble inflation (omitte
 Even though this study focused on an atmosphere model, the results can likely be extended to ocean models, where the state vector, although smaller, is also many orders of magnitude larger than the observation vector, which would also yield state-to-observation correlations that are much smaller than the sampling error. 
 In both the atmosphere and ocean cases, it would make the most sense to use the assimilation of Earth rotation parameters to adjust only large-scale parameters, such as the freshwater flux adjustments found by \citet{Saynisch2010} and \citet{Saynisch2012}, although here of course care must be taken that there is a physical motivation for adjusting the chosen parameters.  
 
+% points for future research  
+Overall, this work illustrates the difficulties of assimilating observations that represent integrals or averages of the model state. 
+\citet{Dirren2005} proposed a variation of the ensemble filter to deal with observations that are temporal averages of the state; their alternative algorithm projects the observation increment only on the time-average of each ensemble member while keeping deviations from the average untouched. 
+\citet{Huntley2009} showed that applying this method in a global atmosphere model reduces errors over a wide range of errors, and that one can even improve instantanous errors when only time-average observations are assimilated. 
+It is quite plausible that this approach could be extended to the assimilation of Earth rotation parameters, by updating the global-average contribution to the AAM at each gridpoint, and thereby improve the state estimate. 
 
-% anticipation of any criticisms and caveats  
+
+Another alternative pathway may be to assimilate the rate-of-change of Earth rotation parameters, thereby constraining the total torque between the atmosphere and the solid Earth. 
+The net torque is the sum of pressure gradients over topography (the so-called mountain torque), surface friction, and torque due to topographic gravity waves \citep{Lejenas1997}. 
+Thus appropriate control variables could be the surface pressure, orographic gravity wave drag parameters, or surface friction. 
+We defer exploration of this idea to future research. 
 
 
-% greater meaning and take-home message -- what do my results ACTUALLY say?  

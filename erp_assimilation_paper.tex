@@ -106,11 +106,6 @@
 \usepackage{stmaryrd}
 \usepackage{soul}		% this package allows  highlighting -- useful in the text
 
-% define some colors
-\definecolor{unsure}{RGB}{27,158,119}
-\definecolor{alert}{RGB}{217,95,2}
-\definecolor{reviewer}{RGB}{117,112,179}
-
 %
 %
 %% ------------------------------------------------------------------------ %%
@@ -232,9 +227,13 @@ National Center for Atmospheric Research, Boulder, Colorado, USA.}
 
 \section{Methods}
 \label{sec:methods}
-This study relies on eight idealized data assimilation experiments, four using the low-top Community Atmosphere Model (CAM) and four using the high-top Whole Atmosphere Community Climate Model (WACCM), all within the Data Assimilation Research Testbed \citep[DART]{Anderson2009} from the National Center for Atmospheric Research (NCAR). 
-Table \ref{tab:expts} summarizes the experiments. 
-This section describes our study's special focus on observations of the atmospheric angular  momentum (Section \ref{sec:obs}), the atmospheric models (Section \ref{sec:models}), and the assimilation system (Section \ref{sec:dart}).  
+This study employs data assimilation experiments with the Data Assimilation Research Testbed \citep[DART][]{Anderson2009},  
+an open-source, community tool that provides ensemble-based data assimilation that is independent of a particular model and observation set.
+In the first set of experiments, observations of Earth rotation parameters are used as proxies of the atmospheric angular momentum (Section \ref{sec:obs}) to evaluate a set of simulations assimilating real meteorological observations in the Whole Atmosphere Community Climate Model (WACCM).
+In the second set of experiments, idealized angular momentum observations are assimilated into the Community Atmosphere Model (CAM), the low-top version of WACCM. 
+Section  \ref{sec:models} describes the models in more detail. 
+Both experiments use DART's Ensemble Adjustment Kalman Filter \citep[EAKF][]{}, described in more detail in Section \ref{sec:dart}.
+
 The reader familiar with these subjects may skip directly to the description of the experiments in Section \ref{sec:expts}, or the results in Sections \ref{sec:evaluation_variable}-\ref{sec:assimilation_variable}.
 
 
