@@ -1,0 +1,38 @@
+
+%-------------------WACCM-------------------------
+WACCM \citep{Marsh2013} extends the dynamical core of CAM up to $5 \times 10^{-6}$hPa (circa 140km, in the lower thermosphere) with 66 levels, and includes additional chemical and physical processes for these regions. 
+The experiments here use WACCM version 4 \hl{with no interactive chemistry}.
+WACCM's three highest model levels (starting from about $2 \times 10^{-5}$hPa) have strong horizontal diffusion to absorb planetary waves. 
+%% Kevin Reader's answer about the WACCM sponge layers: 
+%The number of damped levels depends on the dissipation choice in the WACCM atm_in namelist variable div24del2flag. For value 2 (ldiv2 diffusion) there are 3 damped levels. For values 4 and 42 (ldiv4 and ldiv4+ldel2) there are 4 damped levels.
+%In addition, the advection operators go to first order for the top 1/8 of the levels, which is 8 for the 66 level model.  I believe that this is a gentler
+The DART-WACCM simulations in this study were also run at $1.9^{\text{o}} \times 2.5^{\text{o}}$ horizontal resolution, with 66 vertical hybrid coordinate levels. 
+%dissipation, so I think that we should set highest_state_pressure_Pa so that only levels 1-3 (or 4) feel no observations.
+
+%-------------------experiments-------------------------
+Interfaces have been developed between DART and both CAM \citep{Raeder2012} and WACCM \citep{Pedatella2013}.
+The experiments used in this study are summarized in Table \ref{tab:expts}.
+
+%-----WACCM experiments
+\subsubsection{DART-WACCM Experiments}
+Experiments \WACCMNODA-\WACCMGLOBAL~ \hl{were developed for a different study (in preparation)}, and assimilate a range of real meteorological observations over the winter of 2009-10. 
+In Section \ref{sec:evaluation_variable}, we use these experiments  
+to examine how Earth rotation parameters reflect the constraint imposed by other observations in a data assimilation system.  
+Experiment \WACCMNODA~runs a 40-member ensemble of WACCM simulations forward for six months starting on 1 Oct 2009, with no assimilation. 
+\WACCMTROPICS~and \WACCMGLOBAL~use the same initial ensemble, but assimilate the meteorological observations that are also used in the NCEP/NCAR reanalysis, i.e. winds and temperatures from radiosondes and aircraft \citep{Saha2010}, as well as refractivity profiles measured via GPS radio-occultation by the COSMIC satellite constellation \citep{Anthes2008}.
+The observations extend from the surface to about 2 hPa. 
+\WACCMTROPICS~assimilates the observations only in the 30S-30N tropical band, while \WACCMGLOBAL~assimilates over the entire globe.
+Though experiments \WACCMNODA-\WACCMGLOBAL~were run for six months, only the first 60 days of assimilation are discussed in this study.  
+
+Experiments \WACCMTROPICS-\WACCMGLOBAL~both use a Gaspari-Cohn function \citep{Gaspari1999} to localize observations, with a half-width of 0.2 radians in the horizontal, and 0.5 scale heights in the vertical.  
+Adaptive ensemble inflation \citep{Anderson2009tellus} is used to increase the ensemble spread when necessary; the inflation factor varies in space and time and is proportional to the distance between the ensemble mean and the observation, given the uncertainties of each.  
+No analysis increment is allowed above 0.1 hPa, in order to prevent the generation of spurious gravity waves resulting from a large ensemble spread in the absence of upper level observations. 
+\hl{Cite paper by Saroja here?}
+
+%%---localization and inflation in Nick's 2014 paper: 
+%Similar to Pedatella et al. [2013], the horizontal and vertical localizations are specified with a Gaspari-Cohn function [Gaspari and Cohn, 1999]
+%with half widths of 0.2 radians and 0.5 in ln(p∕p0) coordinates, respectively. Spatially and temporally varying adaptive inflation is used to inflate the ensemble prior to the assimilation in order to prevent collapse of the model spread [Anderson, 2009].
+
+%%---localization and inflation in Nick's 2013 paper: 
+%The most notable change is that we specify the ver- tical localization using a Gaspari-Cohn function [Gaspari and Cohn, 1999] with a half width of 0.5 in ln(p/p0) coor- dinates, where p is pressure and p0 is the surface pressure. This differs from the vertical localization of 1000 hPa in p used by Raeder et al. [2012]. 
+

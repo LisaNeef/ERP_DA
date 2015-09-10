@@ -230,7 +230,7 @@ National Center for Atmospheric Research, Boulder, Colorado, USA.}
 \label{sec:methods}
 This study employs data assimilation experiments with the Data Assimilation Research Testbed \citep[DART][]{Anderson2009},  
 an open-source, community tool that provides ensemble-based data assimilation that is independent of a particular model and observation set.
-In the first set of experiments, observations of Earth rotation parameters are used as proxies of the atmospheric angular momentum (Section \ref{sec:obs}) to evaluate a set of simulations assimilating real meteorological observations in the Whole Atmosphere Community Climate Model (WACCM).
+\hl{In the first set of experiments}, observations of Earth rotation parameters are used as proxies of the atmospheric angular momentum (Section \ref{sec:obs}) to evaluate a set of simulations assimilating real meteorological observations in the Whole Atmosphere Community Climate Model (WACCM).
 In the second set of experiments, idealized angular momentum observations are assimilated into the Community Atmosphere Model (CAM), the low-top version of WACCM. 
 Section  \ref{sec:models} describes the models in more detail. 
 Both experiments use DART's Ensemble Adjustment Kalman Filter \citep[EAKF][]{}, described in more detail in Section \ref{sec:dart}.
@@ -242,30 +242,29 @@ The reader familiar with these subjects may skip directly to the description of 
 \label{sec:obs}
 \input{methods_obs.tex}
 
-\subsection{Atmospheric Models CAM and WACCM}
-\label{sec:models}
-\input{methods_models.tex}
-
 \subsection{Data Assimilation System}
 \label{sec:dart}
 \input{methods_dart.tex}
 
-\subsection{Assimilation Experiments}
-\label{sec:expts}
-\input{methods_expts.tex}
-
-%-------------------------------------RESULTS 1- integral help us to evaluate stuff----------------------------------
-
-\section{Global Angular Momentum as an Evaluation Variable}
-\label{sec:evaluation_variable}
-\input{results_evaluation_variable.tex}
-
-
-%-------------------------------------RESULTS 2- integral obs suck to assimilate------------------------------------------
+%-------------------------------------RESULTS 1- integral obs suck to assimilate------------------------------------------
 \section{Global Angular Momentum as an Assimilation Variable}
 \label{sec:assimilation_variable}
+
+\subsection{DART-CAM Experiments}
+\input{experiments_cam.tex}
+
+\subsection{Assimilation of AAM into DART-CAM}
 \input{results_assimilation_variable.tex}
 
+%-------------------------------------RESULTS 2- integral can help us to evaluate stuff----------------------------------
+\section{Global Angular Momentum as an Evaluation Variable}
+\label{sec:evaluation_variable}
+
+\subsection{DART-WACCM Experiments}
+\input{experiments_waccm.tex}
+
+\subsection{AAM to evaluate DART-WACCM}
+\input{results_evaluation_variable.tex}
 
 %------------------------------------summary and conclusions-------------------------
 \section{Summary and Discusssion}

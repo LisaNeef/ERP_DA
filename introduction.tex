@@ -9,7 +9,7 @@ The atmosphere and ocean dominate sub-decadal Earth rotation variations.
 We can therefore potentially use the difference between the observed Earth rotation anomalies, and modeled atmospheric and oceanic angular momenta, to correct models of the atmosphere and oceans. 
 Indeed, previous studies have used Earth rotation data to evaluate the accuracy of, 
 and identify biases in, atmosphere models \citep{Boer1990, Rosen2000}, ocean 
-models \citep{Gross1996a} or reanalyses \citep{Yu1999, Aoyama2000, 
+models \citep{Gross1996a} or atmosphere reanalyses \citep{Yu1999, Aoyama2000, 
 Paek2012a,Berrisford2011},
 %\citet{Ayoma2000} identified potential problems in reanalysis wind data due to discrepancies between predicted and observed LOD variations.
 %\citet{Paek2012} used LOD observations to evaluate the accuracy of and identify biases in various reanalysis sets.
@@ -17,18 +17,20 @@ Paek2012a,Berrisford2011},
 %\citet{Gross2006a} used observed polar motion to identify discrepancies in ocean tide models: [FILL IN]
 %\citet{Berrisford2011} used the angular momentum / torque budget to compare ERA-Interim and ERA-40.  
 
-\citet{Saynisch2010,Saynisch2011} and \citet{Saynisch2012} assimilated the residual between observed Earth rotation parameters and the estimated atmospheric angular momentum--the residual being an estimate of the oceanic angular momentum-- into two ocean models of varying complexity. 
-Their simulations were able to close the Earth angular momentum budget by adjusting the modeled oceanic angular momentum, while simultaneously keeping the modeled ocean state in agreement with other ocean observations.  
+\citet{Saynisch2010,Saynisch2011} and \citet{Saynisch2012} assimilated the residual between observed Earth rotation parameters and the estimated atmospheric angular momentum (the residual being an estimate of the oceanic angular momentum), along with standard oceanic observations such as temperature and salinity, into two ocean models of varying complexity. 
+Their simulations were able to close the Earth angular momentum budget by adjusting the modeled oceanic angular momentum, while simultaneously keeping the modeled ocean state in agreement with the other ocean observations.  
 \citet{Saynisch2010} and \citet{Saynisch2012} showed that the axial angular momentum budget is mainly closed by changing large-scale model parameters such as the freshwater flux, while \citet{Saynisch2011} found that closing the equatorial angular momentum budget in particular required changes in the model's current field. 
 
 These results suggest that an atmosphere model could also benefit from the assimilation of Earth rotation observation, especially since the atmosphere dominates subdecadal length-of-day variations and accounts for at least half of subdecadal polar motion variations. 
-Many large-atmospheric phenomena that dominate local weather but are subject to longer-timescale climate fluctuations, such as 
+Many large-scale atmospheric phenomena that dominate local weather but are subject to longer-timescale climate fluctuations, such as 
 %the position and intensity of the storm tracks \hl{CITE}, 
+the El Nino / Southern Oscillation \hl{[CITE]} \citep{Neef2012},
 sudden stratospheric warmings \citep{Neef2014} and the Madden Julian Oscillation \citep{Weickmann1992}, all have discernible footprints in Earth rotation anomalies. 
 Climate reanalyses, while heavily constrained by observations from the surface to the lower stratosphere, still have discrepancies in the atmosphere's angular momentum budget \citep{Berrisford2011,Lehmann2012}, and  may therefore benefit from adding atmosphere angular momentum to the assimilated observations. 
 
 However, the studies of \citet{Saynisch2010,Saynisch2011} and \citet{Saynisch2012} also faced a major challenge in that they attempted to constrain large, global model fields with observations of three global parameters, which presents a strongly underconstrained optimization problem. 
 While these studies found that reconciling a model to observed Earth rotation variations leads to physically interesting and plausible adjustments to the model fields, the solutions found by the data assimilation in these simulations may not have been unique or truly closer to the true state of the ocean.  
+\hl{check whether Jan et al showed some evidence of this via the MOC.}
 
 % P3: how our study closes the gap: We show how a model state is updated using obseved ER information and identif the problems thereing, using (1) idealized experiments where the true error is known, and (2) a comparison to more conventional obs.
 This study examines the potential of observed Earth rotation variations to (Section \ref{sec:evaluation_variable}) serve as a tool to evaluate data assimilation systems, and (Section \ref{sec:assimilation_variable}) constrain an atmosphere model as an assimilated variable.
