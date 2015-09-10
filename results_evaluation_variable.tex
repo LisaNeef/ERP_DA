@@ -1,21 +1,11 @@
 Figure \ref{fig:evalvariable_state} compares the global mean ensemble variance of the zonal wind between the free-running, 40-member WACCM ensemble, and the ensemble with 6-hourly assimilation. 
-%\begin{eqnarray}
-%S_i = 
-%\frac{1}{N-1}
-%\sum_{n=1}^N
-%\left(
-%	\left< x_{i}^{n} \right>-x_i^t
-%\right)^2,
-%\label{eq:spread}
-%\end{eqnarray}
-%(where $x_{i}$ represents a component of the state vector in the ensemble,  and $x_{i}^t$ and $x_{i}^n$ the corresponding component in the truth and individual ensemble members, respectively), measures the constraint imposed by the observations in each case.
-We see that uncertainty in the state estimate is reduced at every observation time (in the ``saw'' pattern that is typical of sequential data assimilation), and that the experiments with more observations have a lower overall ensemble spread. 
-
+With assimilation, the ensemble variance, which measures the uncertainty in the state estimate, is reduced at every observation time in the ``saw'' pattern that is typical of sequential data assimilationd.
 Not knowing the true state, however, the ensemble variance only tells us about the uncertainty of the ensemble and not whether this uncertainty captures the true error. 
-For example, 
-increases in the spread in around 5 and 32 days suggest that the state estimate might be worse here.
-\hl{[flesh out the examples.]}
+At the beginning of the assimilation window ("A" in Fig.~\ref{fig:evalvariable_state}) the ensemble spread in the assimilation case is larger than it would be with no assimilation, indicating larger uncertainty. 
+The ensemble spread reaches a steady state after about 20 days of assimilation, but still shows rises and falls, e.g. ensemble variance increases at 32 days ("B" in Fig.~\ref{fig:evalvariable_state}), suggesting that the state estimate might be less reliable there. 
 
+To see what is actually going on during the assimilation, we can compare the angular momentum of the model ensemble in each case to the corresponding Earth rotation variations. 
+\hl{[Correct text here after updating figure.]}
 Figure \ref{fig:evalvariable_aam} compares the WACCM ensembles with and without assimilation in terms of two angular momentum components, $\chi_2$ and $\chi_3$ ($\chi_1$ has been omitted because it looks qualitatively similar to $\chi_2$),  
 compared to the corresponding observed Earth rotation parameters. 
 Figure  \ref{fig:evalvariable_aam} shows how the constraint increases with more observations assimilated (scanning the panels from left to right, the ensemble becomes more tightly clustered and moves closer to the corresponding observed Earth rotation parameters). 
