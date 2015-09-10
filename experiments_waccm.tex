@@ -1,5 +1,8 @@
 %-------------------overview-------------------------
 Having found that it is extremely difficult to assimilate Earth rotation observations effectively, we now ask whether Earth rotation variables may be useful as an independent variable for evaluation of data assimilation systems. 
+\hl{In practice, it can be difficult to judge whether assimilation has succeeded in bringing a model closer to the truth, which isn't known. 
+Independent observations that cover the same temporal and spatial domain as the assimilated observations often don't exist. 
+Here the atmospheric angular momentum is a useful evaluation parameter, since it is easy to compute from the modeled wind and pressure fields, and is observed in the form of three parameters that are freely available at daily resolution, updated continuously, and available since the 1960s (and at high accuracy since about 1980). } 
 In these experiments we take advantage of a set of recent WACCM simulations of the winter 2009/10, wherein meteorological observations were assimilated using DART. 
 
 %-------------------WACCM-------------------------
@@ -14,13 +17,13 @@ The DART-WACCM simulations in this study were also run at $1.9^{\text{o}} \times
 
 
 %-----WACCM experiments
-Experiment \WACCMNODA~runs a 40-member ensemble of WACCM simulations forward for six months starting on 1 Oct 2009, with no assimilation. 
-\WACCMTROPICS~and \WACCMGLOBAL~use the same initial ensemble, but assimilate the meteorological observations that are also used in the NCEP/NCAR reanalysis, i.e. winds and temperatures from radiosondes and aircraft \citep{Saha2010}, as well as refractivity profiles measured via GPS radio-occultation by the COSMIC satellite constellation \citep{Anthes2008}.
+Both DART-WACCM simulations in this section 
+run a 40-member WACCM ensemble forward for six months starting on 1 Oct 2009 (though only the first 60 days of assimilation are discussed here).
+The first experiment is simply a 40-member WACCM simulation with no assimilation, while the second 
+assimilates the meteorological observations that are used in the NCEP/NCAR reanalysis, i.e. winds and temperatures from radiosondes and aircraft \citep{Saha2010}, as well as refractivity profiles measured via GPS radio-occultation by the COSMIC satellite constellation \citep{Anthes2008}.
 The observations extend from the surface to about 2 hPa. 
-\WACCMTROPICS~assimilates the observations only in the 30S-30N tropical band, while \WACCMGLOBAL~assimilates over the entire globe.
-Though experiments \WACCMNODA-\WACCMGLOBAL~were run for six months, only the first 60 days of assimilation are discussed in this study.  
-
-Experiments \WACCMTROPICS-\WACCMGLOBAL~both use a Gaspari-Cohn function \citep{Gaspari1999} to localize observations, with a half-width of 0.2 radians in the horizontal, and 0.5 scale heights in the vertical.  
+In the case with assimilation, the impact of the observations is localized using a  
+Gaspari-Cohn function \citep{Gaspari1999} with a half-width of 0.2 radians in the horizontal, and 0.5 scale heights in the vertical.  
 Adaptive ensemble inflation \citep{Anderson2009tellus} is used to increase the ensemble spread when necessary; the inflation factor varies in space and time and is proportional to the distance between the ensemble mean and the observation, given the uncertainties of each.  
 No analysis increment is allowed above 0.1 hPa, in order to prevent the generation of spurious gravity waves resulting from a large ensemble spread in the absence of upper level observations. 
 \hl{Cite paper by Saroja here?}

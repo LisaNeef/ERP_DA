@@ -31,7 +31,7 @@ For a given point $x_i$ in the model state, the covariance to angular momentum c
 In other words, a point will be updated by an angular momentum observation if it is located in a region that is weighted strongly for that particular angular momentum component, and/or if it happens to covary strongly with other points that are strongly weighted in the integrals.  
 
 % covariance figure-----------------------------------
-Figure \ref{fig:covariances} shows the covariance between the zonal wind field and the axial angular momentum ($\chi_3$) over the Northern Hemisphere for three days in \ERPALL, roughly dividing between the 
+Figure \ref{fig:covariances} shows the covariance between the zonal wind field and the axial angular momentum ($\chi_3$) over the Northern Hemisphere for three days in the assimilation of angular momentum \hl{[add abbrev?]}, roughly dividing between the 
 stratosphere [100-24 hPa, (a)-(c)] 
 and
 troposphere [surface to 100 hPa, (d)-(e)].
@@ -53,7 +53,7 @@ the covariance patterns in the stratosphere and troposphere are similar, the cov
 This suggests that the analysis increment due to assimilation of global angular momentum \hl{might be the most accurate in the stratosphere, where an individual point is more covariant with its neighbors.}  
 
 % increments versus error figure-----------------------------------
-Figure \ref{fig:error_increments} (a) shows the zonal wind difference between the prior ensemble mean and the truth in \ERPALL, after one month of assimilating the three angular momentum components (on 31 Jan 2009). 
+Figure \ref{fig:error_increments} (a) shows the zonal wind difference between the prior ensemble mean and the truth, after one month of assimilating the three angular momentum components (on 31 Jan 2009). 
 For simplicity, this figure shows a Northern Hemisphere-only slice at the 320 hPa level, i.e. roughly at the height of the subtropical jets.
 We can compare this error field to the analysis increment (i.e., the difference between the posterior and prior ensemble mean) on the same day, Fig. \ref{fig:error_increments}(b).
 The true error and the analysis increment have some large-scale similarities, e.g. the North Atlantic jet stream winds are too weak relative to the truth (positive error in Fig.  \ref{fig:error_increments}(a)), and the assimilation increases wind in this region (positive increment in  \ref{fig:error_increments}(b)). 
@@ -80,14 +80,14 @@ distribution represented by the ensemble.
 	 \label{eq:EvsS}
  \end{eqnarray}
  where $S_i$ us the ensemble spread in some state variable and $E_i$ is the RMS error in that variable. 
-In \ERPALL, assimilation decreases error only in some regions, but 
+ Assimilating only the angular momentum \hl{[indicate where]} decreases error only in some regions, but 
 decreases the scaled ensemble spread everywhere (Fig. \ref{fig:error_increments}d), following (\ref{eq:y_a}) -(\ref{eq:state_update}).  
 \hl{Thus, while the covariance model developed by the ensemble filter has a physical basis, its high degree of sampling error can also lead to analysis increments that make the state estimate worse, all while the ensemble spread decreases.  
 This will ultimately lead to a divergent data assimilation system, where the ensemble clusters closer together around a mean state that is, generally, farther from the truth than implied by the ensemble.} 
 
 
 % point checks figure-------------------------------------------------------
-To illustrate this result on a local level, Figure \ref{fig:point_checks} compares the zonal wind in the ensemble and its mean to the true state, with \NODA~ (no assimilation) and \ERPALL~ (assimilation of angular momentum). 
+To illustrate this result on a local level, Figure \ref{fig:point_checks} compares the zonal wind in the ensemble and its mean to the true state, no assimilation (left column) and assimilation of angular momentum (right column). 
 The ensemble in each cases is shown as averages over two regions: the tropospheric jet over the Atlantic (averaging between 30N-40N, 280W-360W, and 300hPa-200hPa), and the northern stratospheric polar vortex (averaging between 60N-90N, 30-24 hPa, and all longitudes).
 For both measures, the angular momentum assimilation over the first two weeks clearly decreases the ensemble's spread about the mean, and gives the ensemble mean more realistic variations (which average out in the ensemble with no assimilation). 
 However, only the polar vortex winds, which showed a more large-scale covariance structure (Fig. \ref{fig:covariances}) show improvement relative to the truth, and only for the first few weeks of assimilation. 

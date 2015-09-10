@@ -1,9 +1,4 @@
-In practice, it can be difficult to judge whether assimilation has succeeded in bringing a model closer to the truth, which isn't known. 
-Independent observations that cover the same temporal and spatial domain as the assimilated observations often don't exist. 
-Here the atmospheric angular momentum is a useful evaluation parameter, since it is easy to compute from the modeled wind and pressure fields, and is observed in the form of three parameters that are freely available at daily resolution, updated continuously, and available since the 1960s (and at high accuracy since about 1980).  
-
-Experiments \WACCMNODA-\WACCMGLOBAL, which run 40-member DART-WACCM ensembles with an increasing data constraint, illustrate this idea in Figures \ref{fig:evalvariable_state}-\ref{fig:evalvariable_aam}.   
-In Figure \ref{fig:evalvariable_state}, the global mean ensemble variance of the zonal wind is used to measure the constraint imposed by the observations in each case.
+Figure \ref{fig:evalvariable_state} compares the global mean ensemble variance of the zonal wind between the free-running, 40-member WACCM ensemble, and the ensemble with 6-hourly assimilation. 
 %\begin{eqnarray}
 %S_i = 
 %\frac{1}{N-1}
@@ -17,15 +12,16 @@ In Figure \ref{fig:evalvariable_state}, the global mean ensemble variance of the
 We see that uncertainty in the state estimate is reduced at every observation time (in the ``saw'' pattern that is typical of sequential data assimilation), and that the experiments with more observations have a lower overall ensemble spread. 
 
 Not knowing the true state, however, the ensemble variance only tells us about the uncertainty of the ensemble and not whether this uncertainty captures the true error. 
-For example, the large ensemble spread in \WACCMTROPICS~(assimilating in the tropical band) relative to \WACCMNODA~(no assimilation), suggests that the state estimate in this case might be less accurate. 
-Likewise, increases in the spread in \WACCMGLOBAL~\hl{around 5 and 32 days suggest that the state estimate might be worse here.}
+For example, 
+increases in the spread in around 5 and 32 days suggest that the state estimate might be worse here.
+\hl{[flesh out the examples.]}
 
-Figure \ref{fig:evalvariable_aam} compares the ensemble in \WACCMNODA-\WACCMGLOBAL~compare in terms of two angular momentum components, $\chi_2$ and $\chi_3$ ($\chi_1$ has been omitted because it looks qualitatively similar to $\chi_2$),  
+Figure \ref{fig:evalvariable_aam} compares the WACCM ensembles with and without assimilation in terms of two angular momentum components, $\chi_2$ and $\chi_3$ ($\chi_1$ has been omitted because it looks qualitatively similar to $\chi_2$),  
 compared to the corresponding observed Earth rotation parameters. 
 Figure  \ref{fig:evalvariable_aam} shows how the constraint increases with more observations assimilated (scanning the panels from left to right, the ensemble becomes more tightly clustered and moves closer to the corresponding observed Earth rotation parameters). 
 Fig. \ref{fig:evalvariable_aam} now also reveals when the filter does and does not diverge from the truth.  
-For example, the examples of large ensemble spread in the first two weeks of \WACCMTROPICS and the first 5 days of \WACCMGLOBAL, actually belong to ensembles that are closer to the true state than that of E1. 
-The increased ensemble spread in \WACCMGLOBAL~at about 30 days coincides with divergence of the ensemble mean from the truth in $\chi_2$. 
-This suggests that the adaptive inflation in DART has detected the budding filter divergence at \~30 days, and increased the ensemble spread in order to prevent further divergence.
-However, both $\chi_2$ and $\chi_3$ for \WACCMGLOBAL~also show increased divergence of the ensemble from the truth after the first month of assimilation. 
+For example, while the ensemble with assimilation shows larger spread in the first five days, comparison to the Earth rotation parameters shows that the ensemble in this case is already closer to the truth than without assimilation. 
+In the case with assimilation, an increased ensemble spread at about 30 days coincides with divergence of the ensemble mean from the truth, which can be seen in $\chi_2$ and $\chi_2$ . 
+This suggests that the adaptive inflation in DART has detected the budding filter divergence at \~30 days, and increased the ensemble spread in order to prevent further divergence, though divergence from the truth continues well into the second month of assimilation.
+\hl{[indicate this clearly on the figures.]}
 This divergence would not have been detected by lookig at ensemble spread (Fig. \ref{fig:evalvariable_state}) alone. 

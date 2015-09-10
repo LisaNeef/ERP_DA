@@ -1,18 +1,18 @@
 Even when a given type of observation is unable to significantly constrain a modeled state by itself, it may still improve the assimilation of other, more standard observations.  
 %\cite{Pincus2011} showed that this is the case for cloud moisture and cloud fraction observations, which \hl{FILL IN}.
 If angular momentum / Earth rotation parameter observations are assimilated in the presence of local observations, it is conceivable that an ensemble that is already clustered around the true state could perhaps be pushed even closer to the truth by adding the additional requirement that the global angular momentum should match observations. 
-In this section, we compare experiments \RST~and \ERPRST, i.e. assimilating synthetic temperature observations with and without additional angular momentum observations.
+In this section, we compare 80-member CAM ensembles assimilating synthetic temperature observations \hl{[ref where this is decribed in the text]}  with and without additional angular momentum observations.
 
 Comparing these two experiments in terms of the fit to the angular momentum components (Fig. \ref{fig:fit_to_ERPs} columns 3-4), we see that the temperature observations alone already achieve a good fit to the true angular momentum, and that 
 then adding observations of the angular momentum components further improves the fit.  
 This means that the angular momentum observations add information to the ensemble, but the question remains as to whether the information is interpreted correctly by the model.
 
-Figure \ref{fig:added_value_MSEincrement} shows zonal mean profiles of the increment (posterior minus prior) in the mean square error of zonal wind as a function of time, for 17 days of asssimilation in \RST~[assimilating temperatures, (a)] and \ERPRST~[assimilating temperatures and angular momentum, (b)].  
+Figure \ref{fig:added_value_MSEincrement} shows zonal mean profiles of the increment (posterior minus prior) in the mean square error of zonal wind as a function of time, for 17 days of assimilating temperatures (a) and assimilating temperatures wth angular momentum (b).  
 Both experiments show entirely negative values, meaning that the wind field is so well constrained that adding observations always pushes the ensemble mean closer to the truth. 
-Adding the angular momentum observations in \ERPRST~(Fig. \ref{fig:added_value_MSEincrement}b) shows a weaker overall correction in the first week of assimilation, and then sometimes stronger corrections (e.g. around 200 hPa on 11 January). 
+Adding the angular momentum observations to the assimilation of temerpatures (Fig. \ref{fig:added_value_MSEincrement}b) shows a weaker overall correction in the first week of assimilation, and then sometimes stronger corrections (e.g. around 200 hPa on 11 January). 
 However, 
-Figure \ref{fig:added_value_MSE} shows profiles of the difference in posterior zonal wind mean square error between \ERPRST~and \RST, and we can see that 
-adding the angular momentum observations (\ERPRST) always maintains a larger zonal mean square error (short instances of negative values can be found, but they are small and disappear in the ensemble mean). 
+Figure \ref{fig:added_value_MSE} shows profiles of the difference in posterior zonal wind mean square error between assimilation of temperatures alone and assimilation of temerpatures with angular momentum, and we can see that 
+adding the angular momentum observations always maintains a larger zonal mean square error (short instances of negative values can be found, but they are small and disappear in the ensemble mean). 
 At the same time, adding the angular momentum observations very slightly decreases the ensemble spread (not shown here) everywhere.  
 \hl{This indicates that the ensemble filter tends to keep the ensemble from finding the true state by requiring it to fit the observed angular momentum.}  
 \hl{[explain why -- it's not obvious.]}
