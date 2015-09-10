@@ -1,3 +1,6 @@
+%-------------------overview-------------------------
+Having found that it is extremely difficult to assimilate Earth rotation observations effectively, we now ask whether Earth rotation variables may be useful as an independent variable for evaluation of data assimilation systems. 
+In these experiments we take advantage of a set of recent WACCM simulations of the winter 2009/10, wherein meteorological observations were assimilated using DART. 
 
 %-------------------WACCM-------------------------
 WACCM \citep{Marsh2013} extends the dynamical core of CAM up to $5 \times 10^{-6}$hPa (circa 140km, in the lower thermosphere) with 66 levels, and includes additional chemical and physical processes for these regions. 
@@ -9,15 +12,8 @@ WACCM's three highest model levels (starting from about $2 \times 10^{-5}$hPa) h
 The DART-WACCM simulations in this study were also run at $1.9^{\text{o}} \times 2.5^{\text{o}}$ horizontal resolution, with 66 vertical hybrid coordinate levels. 
 %dissipation, so I think that we should set highest_state_pressure_Pa so that only levels 1-3 (or 4) feel no observations.
 
-%-------------------experiments-------------------------
-Interfaces have been developed between DART and both CAM \citep{Raeder2012} and WACCM \citep{Pedatella2013}.
-The experiments used in this study are summarized in Table \ref{tab:expts}.
 
 %-----WACCM experiments
-\subsubsection{DART-WACCM Experiments}
-Experiments \WACCMNODA-\WACCMGLOBAL~ \hl{were developed for a different study (in preparation)}, and assimilate a range of real meteorological observations over the winter of 2009-10. 
-In Section \ref{sec:evaluation_variable}, we use these experiments  
-to examine how Earth rotation parameters reflect the constraint imposed by other observations in a data assimilation system.  
 Experiment \WACCMNODA~runs a 40-member ensemble of WACCM simulations forward for six months starting on 1 Oct 2009, with no assimilation. 
 \WACCMTROPICS~and \WACCMGLOBAL~use the same initial ensemble, but assimilate the meteorological observations that are also used in the NCEP/NCAR reanalysis, i.e. winds and temperatures from radiosondes and aircraft \citep{Saha2010}, as well as refractivity profiles measured via GPS radio-occultation by the COSMIC satellite constellation \citep{Anthes2008}.
 The observations extend from the surface to about 2 hPa. 

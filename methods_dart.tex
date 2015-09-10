@@ -68,3 +68,4 @@ In a successful ensemble assimilation system, these terms should reflect the tru
 If not, the ensemble filter will diverge, i.e. the uncertainty predicted by the ensemble will increasingly underestimate the true error, eventually leading to the rejection of new observations.
 
 The experiments in this study use the Ensemble Adjustment Kalman Filter (EAKF) of \citet{anderson2001}, which computes the linear regression (\ref{eq:state_update}) for the ensemble mean, and then computes the state-space ensemble deviations that correspond to the updated ensemble variance (\ref{eq:sigma_a}), which is also linearly regressed from the observation space to the state space (see \citet{Anderson2003}). 
+Interfaces have been developed between DART and both CAM \citep[][see Section \ref{sec:assimilation_variable}]{Raeder2012} and WACCM \citep[][see Section \ref{sec:evaluation_variable}]{Pedatella2013}.

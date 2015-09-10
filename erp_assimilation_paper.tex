@@ -230,21 +230,21 @@ National Center for Atmospheric Research, Boulder, Colorado, USA.}
 \label{sec:methods}
 This study employs data assimilation experiments with the Data Assimilation Research Testbed \citep[DART][]{Anderson2009},  
 an open-source, community tool that provides ensemble-based data assimilation that is independent of a particular model and observation set.
-\hl{In the first set of experiments}, observations of Earth rotation parameters are used as proxies of the atmospheric angular momentum (Section \ref{sec:obs}) to evaluate a set of simulations assimilating real meteorological observations in the Whole Atmosphere Community Climate Model (WACCM).
-In the second set of experiments, idealized angular momentum observations are assimilated into the Community Atmosphere Model (CAM), the low-top version of WACCM. 
+In the first set of experiments (Section \ref{sec:assimilation_variable}), idealized angular momentum observations are assimilated into the Community Atmosphere Model (CAM), the low-top version of WACCM. 
+In the second set of experiments (Section \ref{sec:evaluation_variable}), observations of Earth rotation parameters are used as proxies of the atmospheric angular momentum (Section \ref{sec:obs}) to evaluate a set of simulations assimilating real meteorological observations in the Whole Atmosphere Community Climate Model (WACCM).
 Section  \ref{sec:models} describes the models in more detail. 
 Both experiments use DART's Ensemble Adjustment Kalman Filter \citep[EAKF][]{}, described in more detail in Section \ref{sec:dart}.
 
-The reader familiar with these subjects may skip directly to the description of the experiments in Section \ref{sec:expts}, or the results in Sections \ref{sec:evaluation_variable}-\ref{sec:assimilation_variable}.
+The reader familiar with these subjects may skip directly to the description of the experiments and their results in Sections \ref{sec:evaluation_variable}-\ref{sec:assimilation_variable}.
 
+\subsection{Data Assimilation System}
+\label{sec:dart}
+\input{methods_dart.tex}
 
 \subsection{Atmospheric Angular Momentum Observations}
 \label{sec:obs}
 \input{methods_obs.tex}
 
-\subsection{Data Assimilation System}
-\label{sec:dart}
-\input{methods_dart.tex}
 
 %-------------------------------------RESULTS 1- integral obs suck to assimilate------------------------------------------
 \section{Global Angular Momentum as an Assimilation Variable}
@@ -253,8 +253,18 @@ The reader familiar with these subjects may skip directly to the description of 
 \subsection{DART-CAM Experiments}
 \input{experiments_cam.tex}
 
-\subsection{Assimilation of AAM into DART-CAM}
-\input{results_assimilation_variable.tex}
+\subsection{Observation-space diagnosis}
+\label{sec:obs_space}
+\input{results_obs_space.tex}
+
+\subsection{State Update from Angular Momentum Observations}
+\label{sec:erpda}
+\input{results_erpda.tex}
+
+\subsection{Assimilating AAM in the Presence of Conventional Observations}
+\label{sec:added_value}
+\input{results_addedvalue.tex}
+
 
 %-------------------------------------RESULTS 2- integral can help us to evaluate stuff----------------------------------
 \section{Global Angular Momentum as an Evaluation Variable}
