@@ -35,21 +35,21 @@ E7 & CAM &	Temperature, $\chi_1$, $\chi_2$, $\Delta$LOD	& 1 Jan - 17 Jan 2009\\
 %------comparison of the DA runs in the observation space
 \begin{figure}[p]
 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_erpda_obs_space.pdf} 
-\caption{ The DART-CAM prior ensemble (gray) and its mean (black) compared to the true state (pink) in terms of angular momentum components $\chi_2$ and $\chi_3$, comparing four perfect-model experiments (Table \ref{tab:expts}).  }
+\caption{ The DART-CAM prior ensemble (gray) and its mean (black) compared to the true state (pink) in terms of angular momentum components $\chi_2$ and $\chi_3$, comparing four perfect-model experiments with DART-CAM (see text and Table \ref{tab:expts}).  }
  \label{fig:fit_to_ERPs}
 \end{figure}
 
 %-----evolution of the covariances between local variables and the AAM observations 
  \begin{figure}
-	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_U_to_LOD_covariances_.pdf}
-	 \caption{Evolution of the covariance between the zonal wind and the axial angular momentum ($\chi_3$) on three dates, assimilating only the three components of angular momentum. The top row shows values averaged over stratospheric levels, while the bottom row shows values averaged over tropospheric levels.}
+	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_U_to_LOD_covariances.pdf}
+	 \caption{Evolution of the covariance between the zonal wind and the axial angular momentum ($\chi_3$) on three dates, when we assimilate only the three components of angular momentum. The top row shows values averaged over stratospheric levels, while the bottom row shows values averaged over tropospheric levels.}
  \label{fig:covariances}
 \end{figure}
 
 %-----evolution of the prior error and corresponding increments 
  \begin{figure}
-	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_U_priorerror_vs_increment_vs_ER_31jan.pdf}
-	 \caption{Snapshots of the 320 hPa zonal wind (a) bias (truth minus prior ensemble mean), (b) analysis increment (posterior minus prior ensemble mean), (c) posterior minus prior mean square error, and (d) posterior minus prior ensemble variance on 31 January, i.e. after 1 month of assimilation, assimilating the three angular momentum components only. } 
+	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_U_priorerror_vs_increment_vs_ER_30jan.pdf}
+	 \caption{Snapshots of the 320 hPa zonal wind (a) bias (truth minus prior ensemble mean), (b) analysis increment (posterior minus prior ensemble mean), (c) posterior minus prior mean square error, and (d) posterior minus prior ensemble variance on 30 January, assimilating the three angular momentum components only. } 
  \label{fig:error_increments}
 \end{figure}
 
@@ -57,24 +57,14 @@ E7 & CAM &	Temperature, $\chi_1$, $\chi_2$, $\Delta$LOD	& 1 Jan - 17 Jan 2009\\
 %-----focus on the ensemble in two regions to show how it is moved away from the true state
  \begin{figure}
 	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_point_checks.pdf}
-	 \caption{Comparison of the ensemble (gray) and its mean (black) to the true state (pink), for no assimilation [(a) and (c)], and with assimilation of the three angular momentum components [(b) and (d)]. The top row shows zonal wind averaged over the Atlantic jet stream, and the bottom row shows zonal wind averaged in the polar vortex (see text).}
+	 \caption{Comparison of the ensemble and its mean to the true state, comparing no assimilation (left column), and assimilation of the three angular momentum components (right column). The top row shows zonal wind averaged over the Atlantic jet stream, and the bottom row shows zonal wind averaged in the polar vortex (see text).}
 	 \label{fig:point_checks}
-\end{figure}
-
-
-
-
-%------MSE increments in time (RST means error reduction) comparing RST and ERPSRT
- \begin{figure}
-	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_MSEincrement_comparison.pdf}
-	 \caption{Vertical profiles of the difference in MSE between the posterior and prior states (red means that assimilation reduces error) as a function of time, (a) assimilating a global grid of temperatures, and (b) additionally assimilating the three global angular momentum components.}
-	 \label{fig:added_value_MSEincrement}
 \end{figure}
 
 
 %------MSE diff between ERPRST and RST (red is good)
  \begin{figure}
-	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_MSE_RST_vs_ERPRST.pdf}
-	 \caption{Vertical profiles of the differenence in MSE between assimilation of temperatures and global angular momentum, and assimilation of temperatures only. Blue indicates that the error is higher when angular momentum observations are added.}
+	 \includegraphics[width=0.7\textwidth]{Paper_figures/ERPDA_paper_MSE_RST_vs_ERPRST_global.pdf}
+	 \caption{(a) Global average mean square error (solid lines) and scaled ensemble variance (dashed lines, see eqn \ref{eq:EvsS}) in the surface pressure, comparing the assimilation of regularly-spaced temperature observations with and without additional angular momentum observatins (black and blue, respectively).}
 	 \label{fig:added_value_MSE}
 \end{figure}
