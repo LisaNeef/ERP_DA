@@ -2,15 +2,15 @@
 \caption{Overview of assimilation experiments performed.}
 \centering
 \begin{tabular}{p{2cm}p{2cm}p{6cm}p{4cm}}
-	Experiment& Model &  Assimilated Quantities  & Run dates \\
+	Number & Model &  Assimilated Quantities  & Run dates \\
 \hline
-E1 & WACCM &	none   & 1 Oct 2009 - 31 Mar 2010	\\
-E2 & WACCM &	GPS-RO + NNRA$^a$ tropics only & 1 Oct 2009 - 31 Mar 2010	\\
-E3 & WACCM &	GPS-RO + NNRA$^a$ whole atmosphere  & 1 Oct 2009 - 31 Mar 2010	\\
-E4 & CAM	&	none &  1 Jan - 28 Feb 2009 \\
-E5 & CAM &	$\chi_1$, $\chi_2$, $\Delta$LOD	& 1 Jan - 28 Feb 2009 \\
-E6 & CAM &	Temperature	& 1 Jan -31 Jan 2009	\\
-E7 & CAM &	Temperature, $\chi_1$, $\chi_2$, $\Delta$LOD	& 1 Jan - 17 Jan 2009\\
+1 & WACCM &	none   & 1 Oct 2009 - 31 Mar 2010	\\
+2 & WACCM &	GPS-RO + NNRA$^a$ tropics only & 1 Oct 2009 - 31 Mar 2010	\\
+3 & WACCM &	GPS-RO + NNRA$^a$ whole atmosphere  & 1 Oct 2009 - 31 Mar 2010	\\
+4 & CAM	&	none &  1 Jan - 28 Feb 2009 \\
+5 & CAM &	$\chi_1$, $\chi_2$, $\chi_3$ & 1 Jan - 28 Feb 2009 \\
+6 & CAM &	Temperature	& 1 Jan -31 Jan 2009	\\
+7 & CAM &	Temperature, $\chi_1$, $\chi_2$, $\chi_3$ & 1 Jan - 17 Jan 2009\\
 \hline
 \end{tabular}
 \tablenotetext{a}{Observations used in the NCEP/NCAR Reanalysis project \citet{Saha2010}, which include radiosonde and aircraft winds and temperatures, plus satellite drift winds.}
@@ -18,19 +18,6 @@ E7 & CAM &	Temperature, $\chi_1$, $\chi_2$, $\Delta$LOD	& 1 Jan - 17 Jan 2009\\
 \end{table}
 \clearpage
 
-%-------comparison of the WACCM experiments in terms of true error ----
- \begin{figure}
-	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_evalvariable_state_space.pdf}
-	 \caption{Global-average ensemble variance in the zonal wind as a function of time, comparing a DART-WACCM with no assimilation, and with 6-hourly assimilation of meteorolgical observations (see text).}
-	 \label{fig:evalvariable_state}
-\end{figure}
-
-%-------comparison of the WACCM experiments in terms of aam ----
-\begin{figure}
-	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_evalvariable_aam_space.pdf}
-	 \caption{Comparison of the ensemble (gray) and its mean (black) in DART-WACCM experiments with increasing observational constraints (Table \ref{tab:expts}), in terms of angular momentum excitation functions $\chi_2$ and $\chi_3$ Each angular momentum function is compared to the angular momentum implied by the corresponding Earth rotation parameters (pink).}
-	 \label{fig:evalvariable_aam}
-\end{figure}
 
 %------comparison of the DA runs in the observation space
 \begin{figure}[p]
@@ -67,4 +54,17 @@ E7 & CAM &	Temperature, $\chi_1$, $\chi_2$, $\Delta$LOD	& 1 Jan - 17 Jan 2009\\
 	 \includegraphics[width=0.7\textwidth]{Paper_figures/ERPDA_paper_MSE_RST_vs_ERPRST_global.pdf}
 	 \caption{(a) Global average mean square error (solid lines) and scaled ensemble variance (dashed lines, see eqn \ref{eq:EvsS}) in the surface pressure, comparing the assimilation of regularly-spaced temperature observations with and without additional angular momentum observatins (black and blue, respectively).}
 	 \label{fig:added_value_MSE}
+\end{figure}
+
+%-------comparison of the WACCM experiments in terms of true error ----
+ \begin{figure}
+	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_evalvariable_state_space.pdf}
+	 \caption{Global-average ensemble variance in the zonal wind as a function of time, comparing a DART-WACCM with no assimilation, and with 6-hourly assimilation of meteorolgical observations (see text).}
+	 \label{fig:evalvariable_state}
+\end{figure}
+%-------comparison of the WACCM experiments in terms of aam ----
+\begin{figure}
+	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_evalvariable_aam_space.pdf}
+	 \caption{Comparison of the ensemble (gray) and its mean (black) in DART-WACCM experiments with increasing observational constraints (Table \ref{tab:expts}), in terms of angular momentum excitation functions $\chi_2$ and $\chi_3$ Each angular momentum function is compared to the angular momentum implied by the corresponding Earth rotation parameters (pink).}
+	 \label{fig:evalvariable_aam}
 \end{figure}
