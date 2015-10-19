@@ -1,23 +1,33 @@
 The three DART-WACCM simulations represent three ensembles with varying levels of observational constraint. 
-We can evaluate the strength of the constraint imposed by the observations in each case by comparing the spread of the ensemble in each case. 
-Figure \ref{fig:evalvariable_state} shows the global mean ensemble variance in the zonal wind in each case for the first four months of assimilation. 
-Not surprisingly, the ensemble variance is lowest for global assimilation and highest for no assimilation.
+To evaluate the strength of the constraint imposed by the observations in each case, we might compare the ensemble variance in each case. 
+The global mean ensemble variance of the zonal wind (Fig. \ref{fig:evalvariable_state}) 
+is lowest for global assimilation and highest for no assimilation, while assimilating in the tropics only gives an ensemble variance somewhere in between.
 The simulation with tropical assimilation only has much higher ensemble spread than the global assimilation case, indicating that it is much less certain. 
-However, while the ensemble variance gives us an idea of global uncertainty, it does not tell us anything about accuracy. 
-The global assimilation case shows a peak in ensemble variance on 17 December 2009, suggesting that the adaptive inflation algorithm has detected some divergenece of the filter from the observations; we could check whether more observations are rejected around this time, but that still does not tell us much about the accuracy of the state estimate. 
-It is also unclear why the ensemble variance grows much more quickly in the two assimilation cases relative to the no-assimilation case, in the first week. 
+Thus we know that (not surprisingly) assimilating fewer observations results in a less certain simulation, but the the ensemble variance 
+does not tell us anything about the relative accuracy of the three ensembles, no to what extent the ensembles might be diverging from the truth. 
+A local peak in ensemble variance of the global assimilation case on 17 Dec 2009 suggests that the adaptive inflation algorithm has detected some divergenece of the filter from the observations, causing it to artificially increase the ensemble spread. 
+We could check whether more observations are rejected around this time, but that still does not tell us much about the accuracy of the state estimate, i.e. whether observations were rightfully rejected or not. 
+Moreover it is unclear why the ensemble variance grows much more quickly in the two assimilation cases relative to the no-assimilation case, in the first week of assimilation. 
 
-Since Earth rotation parameters are proportional to the atmospheric angular momentum, they can be used to evaluate the accuracy of each simulation. 
-Figure \ref{fig:evalvariable_aam} shows the three angular momentum components for each of the three WACCM ensembles, compared to the angular momentum implied by the observed Earth rotation parameter components [(\ref{eq:X12_to_PM})-(\ref{eq:X3_to_LOD})]. 
-\hl{Describe what is wrong with X1 as a parameter -- it suffers from the IB approximation.}
-\hl{Describe what is wrong with X3 as a parameter -- there's the problem if a constant of integration.}
-This leaves $\chi_2$ as the best parameter to evaluate the performance of an ensemble data assimilation system. 
+However, we have 24-hourly observations of the polar motion and length-of-day anomalies, which tell us something about 
+the atmospheric angular momentum of the simulated time period. 
+Figure \ref{fig:evalvariable_aam} shows the three angular momentum components for each of the three WACCM ensembles, compared to the angular momentum implied by the observed Earth rotation parameter components [using (\ref{eq:X12_to_PM})-(\ref{eq:X3_to_LOD})]. 
+For $\chi_1$ (top row), we see stronger variability in the modeled angular momentum than in the angular momentum implied by the polar motion, even when observations are assimilated globally. 
+This is likely due to the effect of oceanic angular momentum, which is considerable on subseasonal timescales for the $\chi_1$ component, since it is weighted most strongly over the oceans. 
+Indeed, we have found (not shown) that approximating the oceanic contribution using the so-called ``inverted barometer'' approximation \hl{[CITE]} increases the agreement between $\chi_1$ in the model and implied by observations. 
+However, the inverted barometer approximation is not always accurate (\hl{explain...}), so for standalone atmospheric simulations, the first component of angular momentum is not a great evaluation parameter. 
 
-Comparing $\chi_2$ in observations and the ensemble (second row) between the three experiments shows not only the relative ensemble spread between the three cases, but also the relative accuracies of the ensemble mean. 
-For example, we can see that assimilating in the tropics only actually results in a fairly accurate ensemble mean, despite the larger ensemble variance. 
-The anomalously large ensemble variance on 17 Dec in the global-DA case does indeed follow a period of filter divergence, where the ensemble variance is persistently smaller than the distance to the observations. 
+The third angular momentum component (Fig. \ref{fig:evalvariable_aam}, bottom row)
+suffers from a different problem, namely that there is an undefined constant of integration in the relationship between observed length-of-day anomalies and the absolute axial angular momentum [that is, we can only relate their relative anomalies, (\ref{eq:X3_to_LOD})].
+We can compare their relative anomalies by subtracting out a long-term mean (the Oct-Jan mean was subtracted out to compute each curve in the bottom row of Fig. \ref{fig:evalvariable_aam}), but then the comparison of the modeled and observed angular momentum anomalies will depend over the chosen time window. 
 
-We can also see how ading the first observation at the initial time immediately corrects a strong bias in the model fields, which also increases the ensemble spread. 
-\hl{[explain more clearly.]}
+This leaves $\chi_2$, which is strongly weighted over North America and Asia, as the most reliable angular momentum component for comparison with observations. 
+Comparing $\chi_2$ (second row of Fig. \ref{fig:evalvariable_aam}) in the observations and each WACCM ensemble shows not only the relative ensemble spread between the three cases, but also the relative accuracies of the ensemble mean. 
+For example, we can see that assimilating only in the tropics actually results in a fairly accurate ensemble mean, despite the larger ensemble variance. 
+We can also see that the anomalously large ensemble variance on 17 Dec 2009 in the global-assimilation case does indeed follow a period of filter divergence, where the ensemble variance is persistently smaller than the distance to the observations. 
 
-In summary, $\chi_2$, the equatorial component of angular momentum that \hl{[wait, which one is this again?]}, is a convenient way to check the fidelity of a data assimilation system, because it can indicate times of filter divergence and the overall accuracy of a data-constrained simulation. 
+The greater ensemble spread in the assimilation cases \hl{note annotation} can also be explained by examining $\chi_2$, because this variable shows how adding the first observation at the initial time immediately corrects 
+a strong bias in the model fields, which also increases the ensemble spread. 
+\hl{[Probably need to explain this more clearly.]}  
+
+\hl{[Should add a summary sentence.]}
