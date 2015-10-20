@@ -19,6 +19,7 @@
 \clearpage
 
 
+
 %------comparison of the DA runs in the observation space
 \begin{figure}[p]
 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_erpda_obs_space.pdf} 
@@ -29,13 +30,13 @@
 %-----evolution of the covariances between local variables and the AAM observations 
  \begin{figure}
 	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_U_to_LOD_covariances.pdf}
-	 \caption{Evolution of the covariance between the zonal wind and the axial angular momentum ($\chi_3$) on three dates, when we assimilate only the three components of angular momentum. The top row shows values averaged over stratospheric levels, while the bottom row shows values averaged over tropospheric levels.}
+	 \caption{Snapshots of the covariance between the zonal wind and the axial angular momentum ($\chi_3$) shortly after spin-up (top row), at the end of the assimilation period (middle row), and averaging over the entire period minus spinup time (bottom row), assimilatng only the angular momentum. The lefthand column shows snapshots at 320 hPa; the righthand column shows snapshots at 10 hPa.}
  \label{fig:covariances}
 \end{figure}
 
 %-----evolution of the prior error and corresponding increments 
  \begin{figure}
-	 \includegraphics[width=\textwidth]{Paper_figures/ERPDA_paper_U_priorerror_vs_increment_vs_ER_30jan.pdf}
+	 \includegraphics[height=0.9\textheight]{Paper_figures/ERPDA_paper_U_priorerror_vs_increment_vs_ER_30jan_strattrop.pdf}
 	 \caption{Snapshots of the 320 hPa zonal wind (a) true error (true minus prior ensemble mean), (b) analysis increment (posterior minus prior ensemble mean), (c) square error reduction (posterior minus prior mean square error), and (d) variance reduction (posterior minus prior ensemble variance, scaled as in (\ref{eq:EvsS})). All plots are shown for 30 Jan, for the CAM ensemble assimilating only atmospheric angular momentum. } 
  \label{fig:error_increments}
 \end{figure}
