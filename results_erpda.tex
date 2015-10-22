@@ -31,44 +31,39 @@ For a given point $x_i$ in the model state, the covariance to angular momentum c
 In other words, a point will be updated by an angular momentum observation if it is located in a region that is weighted strongly for that particular angular momentum component, and/or if it happens to covary strongly with other points that are strongly weighted in the integrals.  
 
 % covariance figure-----------------------------------
-Figure \ref{fig:covariances} shows the covariance between the zonal wind field and the axial angular momentum ($\chi_3$) over the Northern Hemisphere in the simulation assimilating the three angular momentum components, roughly dividing between the 
-stratosphere [100-24 hPa, (a)-(c)] 
-and
-troposphere [surface to 100 hPa, (d)-(f)].
-Snapshots of the covariance field are shown for two days after the initial spin-up of the experiment (left and center columns), and averaged over the time period 15 Jan - 28 Feb (right column).
-First, note that 
-the covariances in both the troposphere and stratosphere are on the order of $10^{-12}\text{m/s}$.  
+Figure \ref{fig:covariances} shows snapshots of the covariance between the zonal wind field and $\chi_3$ over the Northern Hemisphere, in the simulation assimilating only the angular momentum, on a tropospheric level [320 hPa; (a), (c), and (e)], and on a stratospheric level [10 hPa; (b), (d), and (f)].
+The top row show shows covariances on 20 Jan, the second ten days later on 30 Jan, and the bottom row shows covariances averaged over the time period 15 Jan - 28 Feb (right column).
+% (a) time dependence of covariances
+The covariance pattern for neither region or date resembles the weighting function of the axial wind integral (\ref{eq:h3}) as one might as expect, 
+and varies strongly in time, with a much weaker time-average signal [(e) and (f)] than on individual days. 
+This implies that if there is any hope of capturing the relationship between global angular momentum and local dynamical fields, the dynamic covariances estimated by the ensemble filter (rather than a static estimate based on the weighting functions) will be necessary.
+
+% (b) covariances are tiny rel to sampling error 
+Nevertheless, the covariances in both the troposphere and stratosphere are on the order of $10^{-12}\text{m/s}$.  
+(Even though the stratospheric contribution to the angular momentum is much smaller than that of the tropopshere \citep{Rosen1985,Zhou2008} 
+the magnitudes of the covariances are similar in the stratosphere and the troposphere, because the winds have higher variance in the stratsphere.) 
 Considering the standard deviation of the zonal wind (of order 10 m/s) and the (dimensionless) axial angular momentum (of order $10^{-9}$), the corresponding state-to-observation correlations turn out to be on the order of $10^{-4}$. 
 The miniscule correlations are not surprising, given that each individual state component contributes only a small amount to the global angular momentum integral, but to 
 correctly estimate them, the correlations need to be significantly larger than the sampling error that comes from using a finite ensemble, which 
 scales as $1/\sqrt{N}$ \citep{Houtekamer1998}. 
 This means that we would need upwards of $N=1000$ ensemble members to compute correlations that have at least the same order of magnitude as their sampling error, which is not computationally feasible. 
-
-The covariance pattern also does not resemble the weighting function of the axial wind integral (\ref{eq:h3}) 
-%--cut---which follows the cosine of latitude and is therefore zonally symmetric and maximal in the tropics), 
-and varies strongly in time, with a much weaker time-average signal [(c) and (f)] than on individual days. 
-This implies that if there is any hope of capturing the relationship between global angular momentum and local dynamical fields, the dynamic covariances estimated by the ensemble filter (rather than a static estimate based on the weighting functions) will be necessary.
-
-The only hope for attaining a reasonable correlation estimate from the 80-member model ensemble is if the covariance patterns have a large enough scale.  
-Comparing the two rows of Figure \ref{fig:covariances} shows that, 
-the covariance field in the stratosphere has larger spatial scales, in keeping with the larger spatial structures of stratospheric flow.
-Interestingly, the magnitudes of the covariances are similar in the stratosphere and the troposphere, even though the stratosphere generally contributes very little to overall angular momentum, even during periods of high variability such as during sudden stratospheric warmings \citep{Neef2012}.
-\hl{[insert a sentence explaining why this might be!]}
-This suggests that the analysis increment due to assimilation of global angular momentum might be the most accurate in the stratosphere, where an individual point is more covariant with its neighbors.  
+% (c) larger spatial scales in the stratosphere 
+It is possible that the analysis increment in the stratosphere could be better because the covariance field in the stratosphere [Fig. \ref{fig:covariances}(b),(d), and (f)] has larger spatial scales, in keeping with the larger spatial structures of stratospheric flow.
 
 % increments versus error figure-----------------------------------
-Figure \ref{fig:error_increments} (a) shows the difference in the zonal wind at 320hPa, between the prior ensemble mean and the truth, after one month of assimilating the three angular momentum components (on 30 Jan 2009). 
-We can compare this error field to the analysis increment (the difference between the posterior and prior ensemble mean) on the same day, Fig. \ref{fig:error_increments}(b).
-Ideally, the true error (a) and the analysis increment (b) should look the same. 
-While they do have large-scale similarities (e.g. the North Atlantic jet stream winds are too weak in the prior field, and the assimilation increases wind in this region), it is also easy to  
-find regions where the increment is in the opposite direction of the true error, e.g. over most of Asia. 
-The analysis increments are also an order of magnitude smaller than the true error, which reflects how a single observation has to be spread over the entire state with 
-very small state-to-observation correlations.
+To illustrate what these covariance fields mean for the assimilation of angular momentum data, 
+Figure \ref{fig:error_increments} compares the true error prior error at assimilation time on 30 Jan [(a)-(b)] to the the analysis increment following the angular momentum observations on the same day [(c)-(d)], and the corresponding reduction in error [(e)-(f)] and ensemble variance [(g)-(h)].
+The lefthand column of plots shows all quantities at 320 hPa, and the righthand column shows them at 10 hPa. 
+In the most ideal case, the true error [(a)-(b)] and the analysis increment [(c)-(b)] should look the same. 
+Since a single angular momentum observation has to be spread over the entire state,
+it is not surprising that the increments are an order of magnitude smaller than the true error. 
+However, in many regions (e.g. in the stratospheric eastern hemisphere), the increment does not even go in the same direction of the true error, i.e. the adjustment following the insertion of the angular momentum moves the state even farther from the truth. 
 
-To see whether the assimilation increment has improved things or not, we compute the mean square error for each state vector component $i$, $E_i = \left(\left< x_i \right>-x_{i}^{t}\right)^2i$ for both the prior and posterior states on the same day.
-Their difference (mean square error in the posterior state minus that in the prior state) is shown in Fig. \ref{fig:error_increments}(c);  
+To see whether the assimilation increment has improved things or not, we compute the mean square error for each state vector component $i$, 
+$E_i = \left(\left< x_i \right>-x_{i}^{t}\right)^2$ for both the prior and posterior states on the same day.
+Their difference (mean square error in the posterior state minus that in the prior state) is shown in Fig. \ref{fig:error_increments}(e)-(f);  
 here red shading means that the assimilation has reduced the distance between the ensemble mean and the truth.  
-On this particular date, the assimilation has successfully reduced the zonal wind bias over large swaths of North America, but with commensurate error increases over northern Asia. 
+On this particular date, the assimilation has successfully reduced the zonal wind in some regions, but with commensurate error increases elsewhere.
 
 In order for a data assimilation to be considered reliable, it should not only 
 decrease error but also reflect the correct error statistics in its covariance 
@@ -84,10 +79,10 @@ distribution represented by the ensemble.
 	 \label{eq:EvsS}
  \end{eqnarray}
 where $S_i$ us the ensemble spread in some state variable and $E_i$ is the RMS error in that variable. 
-Figure \ref{fig:error_increments}(d) shows the difference in the scaled ensemble spread (the right hand side of (\ref{eq:EvsS})) between the posterior and prior states. 
+Figure \ref{fig:error_increments}(g)-(h) shows the difference in the scaled ensemble spread (the right hand side of (\ref{eq:EvsS})) between the posterior and prior states. 
 While assimilating the angular momentum descreases error only in some regions [Fig \ref{fig:error_increments}(c)], it decreases the ensemble spread everywhere, 
 following (\ref{eq:y_a}) -(\ref{eq:state_update}).  
-Thus, while the covariance model developed by the ensemble filter has a physical basis, its high degree of sampling error can also lead to analysis increments that make the state estimate worse, all while the ensemble spread decreases.  
+%--redundant?---Thus, while the covariance model developed by the ensemble filter has a physical basis, its high degree of sampling error can also lead to analysis increments that make the state estimate worse, all while the ensemble spread decreases.  
 This will ultimately lead to a divergent data assimilation system, where the ensemble clusters closer together around a mean state that is, generally, farther from the truth than implied by the ensemble. 
 
 
