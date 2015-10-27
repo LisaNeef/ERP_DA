@@ -1,8 +1,10 @@
 The global atmospheric angular momentum represents the integrated atmospheric mass and wind fields in terms of three variables, which are observed at high accuracy in the form of variations in the Earth's rate of rotation and polar orientation. 
 %
 %\hl{AAM is an appealing assimilation variable because it might constrain large scale structures -- but we illustrate here why that doesn't work.}
-We use the Data Assimilation Research Testbed (DART) and the Community Atmosphere Model 5 (CAM) to test whether assimilating these parameters can also increase a model's agreement with reality. 
-Assimilating the angular momentum can sometimes reduce the bias between the ensemble and the true state, but generally leads to filter divergence, with the ensemble clustering around a mean state that is farther from the truth than implied by the ensemble spread. 
+We use the Community Atmosphere Model (CAM) within the Data Assimilation Research Testbed (DART) to test whether assimilating these parameters can increase a model's agreement with reality. 
+We show that
+assimilating the atmospheric angular momentum suffers from a high sampling error relative to a very small state-to-observation covariances, and therefore
+generally leads to filter divergence.
 This result suggests that observations that represent spatial or temporal averages are poor assimilation variables that lead to divergence of the assimilation system.  
 %
 %\hl{We show that it's also a really useful parameter for comparing the degree of constraint imposed by different DA setups.}
