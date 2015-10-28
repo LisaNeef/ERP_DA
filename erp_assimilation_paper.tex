@@ -260,10 +260,15 @@ Section  \ref{sec:obs} then describes the observations, both idealized and reali
 %-------------------------------------RESULTS 2- integral can help us to evaluate stuff----------------------------------
 \section{Global Angular Momentum as an Evaluation Variable}
 \label{sec:evaluation_variable}
-Having found that it is extremely difficult to assimilate Earth rotation observations effectively, we now ask whether Earth rotation variables may be useful as an independent variable for evaluation of data assimilation systems. 
-In practice, it can be difficult to judge whether data assimilation has succeeded in bringing a model closer to the truth, which isn't known. 
-Independent observations that cover the same temporal and spatial domain as the assimilated observations often don't exist. 
-Since the three atmospheric angular momentum components are easy to compute from the modeled wind and pressure fields, and observed in the form of three parameters that are freely available at daily resolution, updated continuously, and available since the 1960s (and at high accuracy since about 1980), they could be a useful set of observables for evaluating the accuracy of constrained simulations.   
+Having found that it is extremely difficult to assimilate the atmospheric angular momentum effectively, we now ask whether Earth rotation variables may be useful as an independent variable for evaluation of data assimilation systems, 
+because it is difficult, in practice, to judge whether data assimilation has actually brought a model closer to the truth, since the truth isn't known and 
+independent observations that cover the same temporal and spatial domain as the assimilated observations often don't exist. 
+The three atmospheric angular momentum components are sometimes used to evaluate reanalysis data \citep{Yu1999, Aoyama2000, Paek2012a,Berrisford2011} because they are
+easy to compute from the modeled wind and pressure fields, freely available at daily resolution, updated continuously, and available since the 1960s (and at high accuracy since about 1980).
+
+The ensemble filter gives us an ensemble of atmospheric angular momenta and therefore information not just about the estimated model state but also its uncertainty. 
+In this section we show how this works by taking advantage of 
+a set of three recent DART-WACCM ensemble simulations of the winter 2009/10, assimilating meteorological observations.
 
 \subsection{DART-WACCM Experiments}
 

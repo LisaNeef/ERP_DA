@@ -1,22 +1,21 @@
-Even when a given type of observation is unable to significantly constrain a modeled state by itself, it may still improve the assimilation of other, more standard observations.  
-If angular momentum / Earth rotation parameter observations are assimilated in the presence of local observations, it is conceivable that an ensemble that is already clustered around the true state could perhaps be pushed even closer to the truth by adding the additional requirement that the global angular momentum should match observations. 
-In this section, we compare the 80-member CAM ensembles assimilating synthetic temperature observations (column 3 of Fig. \ref{fig:fit_to_ERPs}) to an ensemble assimilating both temperature and additional angular momentum observations (column 4 of Fig. \ref{fig:fit_to_ERPs}).
-Figure \ref{fig:fit_to_ERPs} shows that assimilating 
-temperature observations alone is enough to achieve a good fit to the true angular momentum, but also that 
+Even when a given observation is unable to significantly constrain a modeled state by itself, it may still improve the assimilation of other, more standard observations.  
+Figure \ref{fig:fit_to_ERPs} column 3 shows that assimilating 
+temperature observations alone into the ensemble is sufficient to achieve a good fit to the true angular momentum, but also that 
 then adding observations of the angular momentum improves the fit further, which implies that  
 the angular momentum observations add information to the ensemble. 
-The question remains as to whether the information is interpreted correctly by the model.
+If we assimilate angular momentum (or Earth rotation) observations along with local observations that bring the ensemble mean closer to the true state, the angular momentum observations could perhaps push the ensemble even closer to the truth 
+by adding the additional requirement that the modeled angular momentum should match observations. 
+But whether or not the small and error-frought state-to-observation covarainces of the angular momentum really add value to the state estimate is not obvious, and here again we examine the true error in idealized experiments with 80-member CAM ensembles. 
 
 % (a) what happens to the spread?  
-Figure \ref{fig:added_value_MSE}a shows the increment (posterior-prior) in the ensemble variance in the zonal wind for both experiments, averaged globally. 
-The increment in the ensemble spread is always negative [following (\ref{eq:sigma_a}), and adjusts from an initially weak value to a stronger steady-state value as the ensemble, which was at the initial time constrained by both wind and temperature observations, adjusts to being constrained only by temperature observations. 
+Figure \ref{fig:added_value_MSE}a shows the increment (posterior-prior) in the global-average ensemble variance in the zonal wind, assimilating global temperatures with and without additional angular momentum observations. 
+The increment in the ensemble spread is always negative [following (\ref{eq:sigma_a})], and adjusts from an initially weak value to a stronger steady-state value as the ensemble, which was at the initial time constrained by both wind and temperature observations, adjusts to being constrained only by temperature observations. 
 During this early period, adding the angular momentum observations causes a slightly stronger adjustment of the ensemble variance, indicating that the angular momentum observations add some information to the state estimate. 
-
 % (b) but the error increments look really different -- here we see sampling error  
-However, the posterior-prior difference in the mean square error of the ensemble mean (Fig. \ref{fig:added_value_MSE}b) shows that the information imposed by the angular momentum observations is not imposed correctly: while posterior error is also consistently lower than prior error, adding the angular momentum oobservations mostly results in a weaker error reduction during the adjustment period. 
-Once the ensemble variance has reached steady state (after about 9 Jan), the additional angular momentum observations do not add any additional certainty (Fig. \ref{fig:added_value_MSE}a), and only sometimes cause stronger global mean error reduction. 
-
+However, comparing the posterior-prior difference in the mean square error of the ensemble mean (Fig. \ref{fig:added_value_MSE}b) shows that the adding the angular momentum observations actually results in a weaker error reduction during the adjustment period (1-5 Jan). 
+Although the additional angular momentum observations do not add any additional certainty (Fig. \ref{fig:added_value_MSE}a) once the ensemble variance has reached steady state (after about 9 Jan), 
 % (c) what does the total mean square error show? -- adding the ERPs increases error at worst and does nothing at best
-The absolute posterior mean square error (Figure \ref{fig:added_value_MSE}c) is consistently larger when the angular momentum observations are added: the additional observations increase the global mean error at worst (at the beginning of the assimilation), and have no impact at best (at steady-state). 
+the absolute posterior mean square error (Figure \ref{fig:added_value_MSE}c) is consistently larger when the angular momentum observations are added. 
+Thus the additional observations increase the global mean error at worst (at the beginning of the assimilation), and have no impact at best (at steady-state). 
 We therefore find no clear benefit of assimilating atmospheric angular momentum (or Earth rotation parameter) observations, either with or without the assimilation of conventional observations. 
 
