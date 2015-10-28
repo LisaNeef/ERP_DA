@@ -7,16 +7,17 @@ We have evaluated the potential for using observations of Earth rotation paramet
 % (2) if we constrain the ensemble more using other obs, it still doesn't really work because we end up inhibiting out ability to fit the conventional obs by insisting that it fit these small, flawed correlations. 
 %
 Because they are freely available at high accuracy and relatively high temporal resolution and updated continuously \citep{iers}, 
-Earth rotation parameters are useful as simple observables against which to validate constraint imposed by observations in a data assimilation system.  
+Earth rotation parameters are useful as simple observables against which to validate the constraint imposed by observations in a data assimilation system.  
 Comparing the angular momentum of a model ensemble to these observations is computationally straightforward;
-for a standalone atmosphere modle, component $\chi_2$ is the most useful because it is the most dominated by the atmosphere and can be easily related to polar motion without an ambigious constant of integration. 
+for a standalone atmosphere model, component $\chi_2$ is the most useful because it is the most dominated by the atmosphere and can be easily related to polar motion without an ambigious constant of integration. 
 This comparison gives a global view both of how well the modeled wind and mass fields approximate the truth.
+The Earth rotation parameters have been connected to various atmospheric models, and their oceanic residuals have even used to constrain an ocean model via data assimilation. 
 
-However, idealized assimilation experiments using synthetic observations showed that it is difficult to constrain the model state with angular momentum observations because they are global integrals, 
-and the associated state-to-observation covariances are much smaller than any realizible ensemble sampling error (Fig. \ref{fig:covariances}). 
-The ensemble filter used in this study generates a covariance model that is physically plausible and computes the statistically most likely update of each state space component, but it is common that 
+However, assimilation experiments with synthetic observations and a known truth showed that it is difficult to constrain the model state with angular momentum observations because they are global integrals of the model fields, which leads to 
+associated state-to-observation covariances that are much smaller than any realizible ensemble sampling error (Fig. \ref{fig:covariances}). 
+Thus the ensemble filter used in this study generates a covariance model that is physically plausible and computes the statistically most likely update of each state space component, but because of sampling error it is common that 
 the state update computed by the filter moves the ensemble and its mean farther away from the true state, while still satisfying the angular momentum observations (red contours in Fig. \ref{fig:error_increments}). 
-The global angular momentum observations can impose a weak constraint on some aspects of the modeled state (Fig. \ref{fig:point_checks}), it is not enough to yield a reliable and robust correction to the model state. 
+Though the global angular momentum observations can impose a weak constraint on some aspects of the modeled state (Fig. \ref{fig:point_checks}), it is not enough to yield a reliable and robust correction to the model state. 
 
 One might therefore expect that global angular momentum observations can constrain the modeled state better if the ensemble is already largely constrained to the truth by more conventional, spatially-localized observations. 
 We tested this idea by assimilating a global grid of synthetic temperature observations in addition to the global angular momentum observations. 
@@ -37,9 +38,9 @@ For the ocean, it is possible to adjust the freshwater flux into the model, rath
 % points for future research  
 Overall, this work illustrates the difficulties of assimilating observations that represent integrals or averages of the model state. 
 \citet{Dirren2005} proposed a variation of the ensemble filter to deal with observations that are temporal averages of the state; their alternative algorithm projects the observation increment only on the time-average of each ensemble member while keeping deviations from the average untouched. 
-\citet{Huntley2009} showed that applying this method in a global atmosphere model reduces errors over a wide range of errors, and that one can even improve instantanous errors when only time-average observations are assimilated. 
-It is conceivable that this approach could be extended to the assimilation of Earth rotation parameters, by updating the global-average contribution to the AAM at each gridpoint, and thereby improve the state estimate. 
-However, for assimilation systems on the scale of DART-CAM and DART-WACCM, this would require major and fundamental changes in the overall code structure, and the possible gains of such a step are not clear. 
+\citet{Huntley2009} showed that applying this method in a global atmosphere model reduces errors over a wide range of scales, and that one can even improve instantanous errors when only time-average observations are assimilated. 
+It is conceivable that this approach could be extended to the assimilation of Earth rotation parameters, by updating the global-average contribution to the angular momentum at each gridpoint, and thereby improve the state estimate. 
+However, for assimilation systems on the scale of DART-CAM and DART-WACCM, this would require major changes in the code structure, while the possible gains of such a step are not clear. 
 
 
 Another alternative pathway may be to assimilate the rate-of-change of Earth rotation parameters, thereby constraining the total torque between the atmosphere and the solid Earth. 
