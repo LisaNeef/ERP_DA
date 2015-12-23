@@ -1,13 +1,15 @@
-The global atmospheric angular momentum represents the integrated atmospheric mass and wind fields in terms of three variables, which are observed at high accuracy in the form of variations in the Earth's rate of rotation and polar orientation. 
+% (A) the global AM of the atmosphere is observed at high accuracy in terms of ERPs, which has led to suggestions that it can be assimilated into atmo/ocean models in order to remove biases and add extra information. 
+Variations in the atmosphere's angular momentum are observed consistently and at high accuracy in terms of variations in the Earth's rate of rotation and polar orientation.
+It has been suggested that these Earth rotation parameters could therefore be assimilated into atmosphere or ocean models in order to add extra information, either when conventional observations are sparse, or in addition.
 %
-%\hl{AAM is an appealing assimilation variable because it might constrain large scale structures -- but we illustrate here why that doesn't work.}
-We use the Community Atmosphere Model (CAM) within the Data Assimilation Research Testbed (DART) to test whether assimilating these parameters can increase a model's agreement with reality. 
-We show that
+% (B) But the AM also represents global integrals of the wind and pressure fields, and it is unclear how the information from such an observation would be distributed as a correction over the model variable fields.
+However, the atmospheric angular momentum represents represents global integrals of the wind and pressure fields, and it is unclear how a data assimilation system would distribute the information from such observations across model variable fields.  
+%
+% (T) For this reason we ran idealized DA experiments wherein ERP observations are assimilated into the CAM, but with and without local temperature observations. We found that it really doesn't work, but that AAM-space comparison of the different simulations makes the different constrains imposed in each case clear, so we use WACCM simulations with real data assimilations to show that ERPs make a useful parameter for evaluating ensemble reliability in a DA system.  
+To test this, we perform ideaized assimilation experiments with the Community Atmosphere Model (CAM) within the Data Assimilation Research Testbed (DART), assimilating atmospheric angular momentum observations both in the presence and absence of local temperature observations. 
+The experiments show that
 assimilating the atmospheric angular momentum suffers from a high sampling error relative to a very small state-to-observation covariances, and therefore
 generally leads to filter divergence.
-This result suggests that observations that represent spatial or temporal averages are poor assimilation variables that lead to divergence of the assimilation system.  
-%
-%\hl{We show that it's also a really useful parameter for comparing the degree of constraint imposed by different DA setups.}
-However, because the Earth rotation parameters can be compared to the angular momentum of the modeled atmosphere and are also independent of meteorological observations, they can be used to measure 
-the magnitude of the constraint imposed by a data assimilation system.
-%
+Nevertheless, comparing the experiments in terms of their angular momentum also illustrates the different constraints imposed in each case. 
+This suggests that the Earth rotation parameters can be used as a tool to evaluate ensemble reliability and accuracy of a data assimilation system, without being assimilated. 
+We illustrate this idea with a set of ensemble simulations of the Whole Atmosphere Community Climate Model (WACCM).
