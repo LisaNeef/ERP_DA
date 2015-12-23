@@ -33,7 +33,7 @@ This makes physical sense: a point will be updated by an angular momentum observ
 
 % covariance figure-----------------------------------
 Figure \ref{fig:covariances} shows snapshots of the covariance between the zonal wind field and $\chi_3$ (over the Northern Hemisphere, and the simulation assimilating only the angular momentum), on a tropospheric level [320 hPa; (a), (c), and (e)], and on a stratospheric level [10 hPa; (b), (d), and (f)].
-The top row show shows covariances on 20 Jan, the second ten days later on 30 Jan, and the bottom row shows covariances averaged over the time period 15 Jan - 28 Feb (right column).
+The top row shows covariances on 20 Jan, the second ten days later on 30 Jan, and the bottom row shows covariances averaged over the time period 15 Jan - 28 Feb (right column).
 Figure \ref{fig:covariances} gives two reasons why the four-dimensional covariances estimated by the ensemble filter should be advantageous over static covariances. 
 First, the covariance pattern for neither region or date resembles the weighting function of the axial wind integral (\ref{eq:h3}), which means that the individual variances of the model variables, and the covariances between model variables, matter. 
 The covariances estimated by the filter in the stratosphere [Fig. \ref{fig:covariances}(b),(d), and (f)] also have much larger scales, reflecting the larger-scale dynamics of this region. 
@@ -41,21 +41,21 @@ Second, comparing the covariances at different points in time, and their
 much weaker time-average signal [(e) and (f)] shows that the covariances themselves vary strongly in time, which tells us again that a four-dimensional covariance model is necessary. 
 
 However, the covariances in both regions on the order of $10^{-12}\text{m}^2/\text{s}^2$.  
-(Even though the stratospheric contribution to the angular momentum is much smaller than that of the tropopshere \citep{Rosen1985,Zhou2008} 
+Even though the stratospheric contribution to the angular momentum is much smaller than that of the tropopshere \citep{Rosen1985,Zhou2008}, 
 the magnitudes of the covariances are similar in the stratosphere and the troposphere, because the winds have higher variance in the stratosphere.) 
 Considering the standard deviation of the zonal wind (of order 10 m/s) and the (dimensionless) axial angular momentum (of order $10^{-9}$), the corresponding state-to-observation correlations turn out to be on the order of $10^{-4}$. 
 The miniscule correlations are not surprising, given that each individual state component contributes only a small amount to the global angular momentum integral, but to 
 correctly estimate them, the correlations need to be significantly larger than the sampling error that comes from using a finite ensemble, which 
 scales as $1/\sqrt{N}$ \citep{Houtekamer1998}. 
 This means that we would need upwards of $N=1000$ ensemble members to compute correlations that have at least the same order of magnitude as their sampling error, which is not computationally feasible. 
-To see whether the ensemble filter's dynamical covariance estimate can outweigh the effects of sampling error, we must look at the error in the idealized assimilation experiments. `
+To see whether the ensemble filter's dynamical covariance estimate can outweigh the effects of sampling error, we must look at the error in the idealized assimilation experiments. 
 
 % increments versus error figure-----------------------------------
 Figure \ref{fig:error_increments}(a)-(b) shows the prior true error (true state minus posterior ensemble mean) at assimilation time on 30 Jan for 320 hPa (a) and 10 hPa (b).
 Ideally, the true error should look similar to the the analysis increment (ensemble mean posterior - ensemble mean prior) (Fig. \ref{fig:error_increments}(c)-(d)).
 It is not surprising that the increments are an order of magnitude smaller than the true error 
 since a single angular momentum observation has to be spread over the entire state,
-but in many regions (e.g. in the stratospheric eastern hemisphere), the increment does not even go in the same direction of the true error, i.e. the adjustment following the insertion of the angular momentum moves the state even farther from the truth. 
+but in many regions, such as the stratospheric eastern hemisphere, the increment does not even go in the same direction of the true error, i.e. the adjustment following the insertion of the angular momentum moves the state even farther from the truth. 
 
 Therefore, to see whether the assimilation increment on 30 Jan has improved things or not, we check the increment in the mean square error on the same day (Fig. \ref{fig:error_increments}(e)-(f);
 here red shading means that the assimilation has reduced the distance between the ensemble mean and the truth).
@@ -72,7 +72,7 @@ distribution represented by the ensemble, in which case
 	 E_i = \frac{N+1}{N} S_i, 
 	 \label{eq:EvsS}
  \end{eqnarray}
-where $S_i$ us the ensemble spread in some state variable and $E_i=\left(\left< x_i \right>-x_{i}^{t}\right)^2$ is the RMS error in that variable \citep{Huntley2009, Murphy1988}.  
+where $S_i$ is the ensemble spread in some state variable and $E_i=\left(\left< x_i \right>-x_{i}^{t}\right)^2$ is the RMS error in that variable \citep{Huntley2009, Murphy1988}.  
 Figure \ref{fig:error_increments}(g)-(h) shows the increment (posterior minus prior) in the scaled ensemble spread (the right hand side of (\ref{eq:EvsS})).
 Assimilating the angular momentum decreases error only in some regions [Fig \ref{fig:error_increments}(e)-(f)], but it decreases the ensemble spread everywhere, 
 following (\ref{eq:y_a}) -(\ref{eq:state_update}).  
