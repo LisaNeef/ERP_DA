@@ -4,33 +4,34 @@ all ensemble filters unite two basic quantities: the observation $y$, and $N$ pr
 Bayes' theorem states that the conditional probability distribution of the observation, given the prior ensemble estimate on the one hand, and the physical measurement on the other, is the product of their probability distributions.
 The resulting joint (or posterior) probability distribution has variance 
 \begin{eqnarray}
-	\sigma_y^{\text{po}} = 
+	\sigma_{y,{\text{po}}}^2 = 
 \left[
-	\frac{1}{\sigma_y^{\text{pri}}}
+	\frac{1}{\sigma_y^2}
 	+
-	\frac{1}{R}
+	\frac{1}{\sigma_{y,\text{obs}}^2}
 \right]^{-1},
 \label{eq:sigma_a}
 \end{eqnarray}
-where $\sigma_y^{\text{pri}}$ is  the prior variance of the observation implied by the ensemble, and $R$ is the variance of the observation itself (i.e. the measurement error).
+where $\sigma_y^2$ is  the prior variance of the observation implied by the ensemble, 
+and $\sigma_{y,\text{obs}}^2$ is the variance of the observation itself (i.e. the measurement error).
 The ensemble mean of this joint probability distribution is given by
 \begin{eqnarray}
-	\left< y^{\text{po}}_n \right> = \sigma_y^{\text{po}} 
+	\left< y^{\text{po}}_n \right> = \sigma_{y,\text{po}}^2 
 	\left[
-		\frac{\left< y^{\text{pri}}_n \right>}{\sigma_y^{\text{pri}}} +
-		\frac{y}{R} 
+		\frac{\left< y_n \right>}{\sigma_y^2} +
+		\frac{y^{\text{obs}}}{\sigma_{y,\text{obs}}^2} 
 	\right].
 \label{eq:y_a}
 \end{eqnarray}
 
-This means that the equivalent observations implied by each ensemble member must change by $\Delta y_n =  y^{\text{po}}_n - y^{\text{pri}}_n$.
-Given an update $\Delta y_n$ in the observation space, ensemble filters compute a corresponding update in the model state (in this study: the wind, surface pressure, and temperature fields of an atmospheric model) via linear regression \citep{Anderson2003}:
+This means that the equivalent observations implied by each ensemble member must change by $\Delta y_n =  y^{\text{po}}_n - y_n$, such that the new ensemble spread and mean satisfy (\ref{eq:sigma_a}) and (\ref{eq:y_a}), respectively.
+Given an update $\Delta y_n$ in the observation space, the ensemble filter then computes a corresponding update in the model state (in this study: the wind, surface pressure, and temperature fields of an atmospheric model) via linear regression \citep{Anderson2003}:
 \begin{eqnarray}
  \Delta x_{i,n} = 
 \left(
-	\frac{c_{x_iy}}{\sigma_y,n}
+	\frac{c_{x_iy}}{\sigma_y^2}
 \right)
-\Delta y,
+\Delta y_n,
 \label{eq:state_update}
 \end{eqnarray}
 where $x_{i,n}$ represents a component of the model state for ensemble member $n$, and $c_{x_iy}$ represents the prior covariance between the state component $x_i$ and the observation $y$.
@@ -62,7 +63,7 @@ where
 	e_{{x_i},n} &=& x_{i,n} - \left< x_{i,n} \right>   \label{eq:exn} \\
 	e_{y,n} &=& y_{n} - \left< y_{n} \right>    \label{eq:eyn}
 \end{eqnarray}
-are the deviations of each ensemble member from the ensemble mean.
+are the deviations of each ensemble member from the ensemble mean in the state space and observation space, respectively.
 
 Thus the error statistics can vary in time and space (according to the physical relationships simulated in the model), and are updated with new information whenever a new observation comes in.  
 In a successful ensemble assimilation system, these terms should reflect the true error statistics of the model system.
