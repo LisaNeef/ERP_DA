@@ -1,0 +1,111 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+%\usepackage{ucs}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{amssymb}
+%\usepackage{fontenc}
+%\usepackage{graphicx}
+\usepackage{default}
+\usepackage{color}
+
+% define some colors
+\definecolor{unsure}{RGB}{27,158,119}
+\definecolor{alert}{RGB}{217,95,2}
+\definecolor{reviewer}{RGB}{117,112,179}
+
+
+\title{AAM (ERP) Assimilation: What can we learn from individual increments?}
+\date{\today}
+
+\begin{document}
+\bibliographystyle{apalike}
+
+
+
+
+\frame{\frametitle{Troposphere - Increments}
+\begin{figure}[p]
+	\noindent\includegraphics[width=1.0\textwidth]{ERPDA_Truth-Prior_NH_lower.pdf} \\
+	\noindent\includegraphics[width=1.0\textwidth]{ERPDA_Po-Pri_NH_lower.pdf} 
+	\caption{Progression of true error (top) and the increments (bottom). Does the increment happen in the same places as the true error?}
+\label{fig:increments_lower}
+\end{figure}
+}
+
+\frame{\frametitle{Stratosphere - Increments}
+\begin{figure}[p]
+	\noindent\includegraphics[width=1.0\textwidth]{ERPDA_Truth-Prior_NH_higher.pdf} \\
+	\noindent\includegraphics[width=1.0\textwidth]{ERPDA_Po-Pri_NH_higher.pdf}
+	\caption{Progression of true error (top) and the increments (bottom). Does the increment happen in the same places as the true error?}
+\label{fig:increments_higher}
+\end{figure}
+}
+
+\frame{\frametitle{Troposphere - Covariances to ERPs}
+\begin{figure}[p]
+	\noindent\includegraphics[width=0.8\textwidth]{ERPDA_Po-Pri_NH_lower.pdf} \\
+	\noindent\includegraphics[width=0.8\textwidth]{ERPDA_Covariance_to_PM1_NH_lower.pdf} \\
+	\noindent\includegraphics[width=0.8\textwidth]{ERPDA_Covariance_to_PM2_NH_lower.pdf} \\
+	\noindent\includegraphics[width=0.8\textwidth]{ERPDA_Covariance_to_LOD_NH_lower.pdf} 
+	\caption{Increment (top), compared o the covariances to PM1, PM2, and LOD}
+\label{fig:covars_lower}
+\end{figure}
+}
+
+\frame{\frametitle{Stratosphere - Covariances to ERPs}
+\begin{figure}[p]
+	\noindent\includegraphics[width=0.8\textwidth]{ERPDA_Po-Pri_NH_higher.pdf} \\
+	\noindent\includegraphics[width=0.8\textwidth]{ERPDA_Covariance_to_PM1_NH_higher.pdf} \\
+	\noindent\includegraphics[width=0.8\textwidth]{ERPDA_Covariance_to_PM2_NH_higher.pdf} \\
+	\noindent\includegraphics[width=0.8\textwidth]{ERPDA_Covariance_to_LOD_NH_higher.pdf} 
+	\caption{Increment (top), compared o the covariances to PM1, PM2, and LOD}
+\label{fig:covars_higher}
+\end{figure}
+}
+
+\frame{\frametitle{Troposphere - How much do the covariances follow th ensemble spread?}
+\begin{figure}[p]
+	\noindent\includegraphics[width=0.8\textwidth]{ERPDA_Spread_NH_lower.pdf} \\
+	\noindent\includegraphics[width=0.8\textwidth]{ERPDA_Covariance_to_PM1_NH_lower.pdf} \\
+	\noindent\includegraphics[width=0.8\textwidth]{ERPDA_Covariance_to_PM2_NH_lower.pdf} \\
+	\noindent\includegraphics[width=0.8\textwidth]{ERPDA_Covariance_to_LOD_NH_lower.pdf} 
+	\caption{Ensemble spread(top), compared to the covariances to PM1, PM2, and LOD}
+\label{fig:covars_spread_lower}
+\end{figure}
+}
+
+\frame{\frametitle{Error Reduction - Troposphere and Stratosphere}
+\begin{figure}[p]
+	\noindent\includegraphics[width=1.0\textwidth]{ERPDA_Error_Reduction_NH_lower.pdf} \\
+	\noindent\includegraphics[width=1.0\textwidth]{ERPDA_Error_Reduction_NH_higher.pdf}
+	\caption{Error reduction (rel. to No DA) for the troposphere (top) and stratosphere (bottom).}
+\label{fig:increments_lower}
+\end{figure}
+}
+
+
+%\frame{\frametitle{Stratosphere - Increments}
+%\begin{figure}[p]
+%	\noindent\includegraphics[width=1.0\textwidth]{ERPDA_Truth-Prior_NH_higher.pdf} \\
+%	\noindent\includegraphics[width=1.0\textwidth]{ERPDA_Po-Pri_NH_higher.pdf} 
+%	\caption{}
+%\label{fig:increments_higher}
+%\end{figure}
+%}
+
+%\frame{\frametitle{Stratosphere - Error Reduction and Spread}
+%\begin{figure}[p]
+%	\noindent\includegraphics[width=1.0\textwidth]{ERPDA_Error_Reduction_NH_higher.pdf} \\
+%	\noindent\includegraphics[width=1.0\textwidth]{ERPDA_Spread_NH_higher.pdf} 
+%	\caption{}
+%\label{fig:increments_higher}
+%\end{figure}
+%}
+
+
+\bibliography{everything}
+
+ 
+\end{document}
